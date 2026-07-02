@@ -1,6 +1,6 @@
 # CMake generation dependency list for this directory.
-C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src/cmake/VorbisConfig.cmake.in
-C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src/lib/CMakeLists.txt
 C:/Program Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
 C:/Program Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-src/cmake/VorbisConfig.cmake.in
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-src/lib/CMakeLists.txt

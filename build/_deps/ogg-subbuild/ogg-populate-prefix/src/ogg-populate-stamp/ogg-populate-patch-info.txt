@@ -2,5 +2,5 @@
 # The update step will be re-executed if anything in this file changes.
 # No other meaning or use of this file is supported.
 
-command=C:/Program Files/CMake/bin/cmake.exe;-DOGG_DIR=C:/Development/Computer Science Captstone Project/build/_deps/ogg-src;-P;C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/tools/ogg/PatchOgg.cmake
-work_dir=C:/Development/Computer Science Captstone Project/build/_deps/ogg-src
+command=C:/Program Files/CMake/bin/cmake.exe;-DOGG_DIR=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src;-P;C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/tools/ogg/PatchOgg.cmake
+work_dir=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src

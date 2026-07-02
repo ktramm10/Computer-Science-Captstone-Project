@@ -1,9 +1,4 @@
 # CMake generation dependency list for this directory.
-C:/Development/Computer Science Captstone Project/build/_deps/ogg-src/CMakeLists.txt
-C:/Development/Computer Science Captstone Project/build/_deps/ogg-src/cmake/CheckSizes.cmake
-C:/Development/Computer Science Captstone Project/build/_deps/ogg-src/cmake/OggConfig.cmake.in
-C:/Development/Computer Science Captstone Project/build/_deps/ogg-src/include/ogg/config_types.h.in
-C:/Development/Computer Science Captstone Project/build/_deps/ogg-src/ogg.pc.in
 C:/Program Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
 C:/Program Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/CPack.cmake
@@ -17,3 +12,8 @@ C:/Program Files/CMake/share/cmake-4.4/Modules/CheckTypeSize.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake
 C:/Program Files/CMake/share/cmake-4.4/Templates/CPackConfig.cmake.in
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src/CMakeLists.txt
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src/cmake/CheckSizes.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src/cmake/OggConfig.cmake.in
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src/include/ogg/config_types.h.in
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src/ogg.pc.in

@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-mkdir.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-mkdir.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-download.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-download.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-update.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-update.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-patch.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-patch.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-configure.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-configure.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-build.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-build.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-install.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-install.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\8a0552ab566accaaa08efc70e251464d\nlohmann_json-populate-test.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\11232dfbe7ac8af88f6330fe36682170\nlohmann_json-populate-test.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\07078be8117206d6f546c1b57b51f00c\nlohmann_json-populate-complete.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\85aec5b56c56e4f33c952d0ffbbe8dfb\nlohmann_json-populate-complete.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\653a2db5f1f9ee8460fbd3ee5385b5b6\nlohmann_json-populate.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\6b7cc75071682bb56f2392583713745a\nlohmann_json-populate.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\nlohmann_json-populate" />
+    <None Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-subbuild\CMakeFiles\nlohmann_json-populate" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{FC4B05E8-E6D0-3E58-9951-10B26A2C3438}</UniqueIdentifier>
+      <UniqueIdentifier>{ED2A616E-201A-3921-8015-97206B98A404}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CCDEB458-183F-3FB7-90A2-DAF5275C7155}</ProjectGuid>
+    <ProjectGuid>{6F0D495A-4911-316C-852E-93D79EC323E1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -46,13 +46,13 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-mkdir.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-mkdir.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp/vorbis-populate-mkdirs.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp/vorbis-populate-mkdirs.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-mkdir"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-mkdir
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -61,21 +61,21 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-mkdir</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-mkdir</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-download.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-download.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing download step (git clone) for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp/vorbis-populate-gitclone.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp/vorbis-populate-gitclone.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-download"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-download
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -83,20 +83,20 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\vorbis-populate-gitinfo.txt;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-download</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\vorbis-populate-gitinfo.txt;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-download</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-update.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-update.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing update step for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\vorbis-src"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-src
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp/vorbis-populate-gitupdate.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp/vorbis-populate-gitupdate.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -104,23 +104,23 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\tmp\vorbis-populate-gitupdate.cmake;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\vorbis-populate-update-info.txt;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-download;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-update</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\tmp\vorbis-populate-gitupdate.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\vorbis-populate-update-info.txt;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-update</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-patch.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-patch.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing patch step for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\vorbis-src"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-src
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" "-DVORBIS_DIR=C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src" -P "C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/tools/vorbis/PatchVorbis.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -DVORBIS_DIR=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-src -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/tools/vorbis/PatchVorbis.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-patch"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-patch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -128,24 +128,24 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\vorbis-populate-patch-info.txt;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-update;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-patch</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\vorbis-populate-patch-info.txt;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-patch</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-configure.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-configure.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No configure step for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\vorbis-build"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-configure"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-configure
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -153,23 +153,23 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\tmp\vorbis-populate-cfgcmd.txt;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-patch;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-configure</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\tmp\vorbis-populate-cfgcmd.txt;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-configure</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-build.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-build.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No build step for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\vorbis-build"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-build"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-build
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -177,23 +177,23 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-configure;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-build</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-build</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-install.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-install.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No install step for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\vorbis-build"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-install"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-install
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -201,23 +201,23 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-build;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-install</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-install</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\913ddfa71896934a4e9271bfa1f40872\vorbis-populate-test.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\76cc9aaf69e903fea0d0c6d96ce5ac48\vorbis-populate-test.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No test step for 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\vorbis-build"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-test"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-test
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,21 +225,21 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-install;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-test</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-test</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\6fff393525018df573fb270a9e8a95c5\vorbis-populate-complete.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\1e60d26d84f47849fd42657dbee8e072\vorbis-populate-complete.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'vorbis-populate'</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/Debug"
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/CMakeFiles/Debug
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/Debug/vorbis-populate-complete"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/CMakeFiles/Debug/vorbis-populate-complete
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-done"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/Debug/vorbis-populate-done
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -247,14 +247,14 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-install;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-mkdir;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-download;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-update;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-patch;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-configure;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-build;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-test;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\Debug\vorbis-populate-complete</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-install;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-mkdir;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-download;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-update;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-patch;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-configure;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\src\vorbis-populate-stamp\Debug\vorbis-populate-test;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\Debug\vorbis-populate-complete</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\f5d8ad60fc299e6f517a5d254caeb2b8\vorbis-populate.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\a67b8f0c1d1844d0f9d11a2be148cb50\vorbis-populate.rule">
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
@@ -264,18 +264,18 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\Debug\vorbis-populate-complete;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\vorbis-populate</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\Debug\vorbis-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\vorbis-populate</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild" "-BC:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild --check-stamp-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -283,19 +283,19 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\4.4.0-rc2\CMakeSystem.cmake;C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\tmp\vorbis-populate-mkdirs.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\cfgcmd.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\mkdirs.cmake.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\PatchInfo.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\RepositoryInfo.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\UpdateInfo.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\cfgcmd.txt.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\gitclone.cmake.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\gitupdate.cmake.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\mkdirs.cmake.in;C:\Program Files\CMake\share\cmake-4.4\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\4.4.0-rc2\CMakeSystem.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\vorbis-populate-prefix\tmp\vorbis-populate-mkdirs.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\CMakeFiles\vorbis-populate">
+    <None Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\CMakeFiles\vorbis-populate">
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="C:\Development\Computer Science Captstone Project\build\_deps\vorbis-subbuild\ZERO_CHECK.vcxproj">
-      <Project>{0B43B744-8673-3F3C-B423-33746282E564}</Project>
+    <ProjectReference Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\vorbis-subbuild\ZERO_CHECK.vcxproj">
+      <Project>{2B8D499A-BA88-3F85-812B-B68A38523096}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

@@ -1,5 +1,5 @@
 # CMake generation dependency list for this directory.
-C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/cmake/CompilerWarnings.cmake
-C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/cmake/Macros.cmake
-C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/src/SFML/CMakeLists.txt
 C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeParseArguments.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/cmake/CompilerWarnings.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/cmake/Macros.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/src/SFML/CMakeLists.txt

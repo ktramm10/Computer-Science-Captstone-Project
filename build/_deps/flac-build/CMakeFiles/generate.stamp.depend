@@ -1,8 +1,4 @@
 # CMake generation dependency list for this directory.
-C:/Development/Computer Science Captstone Project/build/_deps/flac-src/CMakeLists.txt
-C:/Development/Computer Science Captstone Project/build/_deps/flac-src/cmake/UseSystemExtensions.cmake
-C:/Development/Computer Science Captstone Project/build/_deps/flac-src/config.cmake.h.in
-C:/Development/Computer Science Captstone Project/build/_deps/flac-src/flac-config.cmake.in
 C:/Program Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
 C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake
@@ -22,3 +18,7 @@ C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckFlagCommonConfig.cm
 C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/TestBigEndian.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/CMakeLists.txt
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/cmake/UseSystemExtensions.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/config.cmake.h.in
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/flac-config.cmake.in

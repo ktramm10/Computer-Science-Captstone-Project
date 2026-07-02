@@ -51,7 +51,7 @@ add_library(FLAC::FLAC STATIC IMPORTED)
 
 set_target_properties(FLAC::FLAC PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<NOT:\$<BOOL:OFF>>:FLAC__NO_DLL>"
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Development/Computer Science Captstone Project/build/_deps/flac-src/include"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/include"
   INTERFACE_LINK_LIBRARIES "\$<\$<BOOL:>:m>;Ogg::ogg"
 )
 
@@ -59,28 +59,28 @@ set_target_properties(FLAC::FLAC PROPERTIES
 set_property(TARGET FLAC::FLAC APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(FLAC::FLAC PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C;RC"
-  IMPORTED_LOCATION_DEBUG "C:/Development/Computer Science Captstone Project/build/_deps/sfml-build/lib/Debug/FLACd.lib"
+  IMPORTED_LOCATION_DEBUG "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-build/lib/Debug/FLACd.lib"
   )
 
 # Import target "FLAC::FLAC" for configuration "Release"
 set_property(TARGET FLAC::FLAC APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(FLAC::FLAC PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "C;RC"
-  IMPORTED_LOCATION_RELEASE "C:/Development/Computer Science Captstone Project/build/_deps/sfml-build/lib/Release/FLAC.lib"
+  IMPORTED_LOCATION_RELEASE "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-build/lib/Release/FLAC.lib"
   )
 
 # Import target "FLAC::FLAC" for configuration "MinSizeRel"
 set_property(TARGET FLAC::FLAC APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
 set_target_properties(FLAC::FLAC PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_MINSIZEREL "C;RC"
-  IMPORTED_LOCATION_MINSIZEREL "C:/Development/Computer Science Captstone Project/build/_deps/sfml-build/lib/MinSizeRel/FLAC.lib"
+  IMPORTED_LOCATION_MINSIZEREL "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-build/lib/MinSizeRel/FLAC.lib"
   )
 
 # Import target "FLAC::FLAC" for configuration "RelWithDebInfo"
 set_property(TARGET FLAC::FLAC APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
 set_target_properties(FLAC::FLAC PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_RELWITHDEBINFO "C;RC"
-  IMPORTED_LOCATION_RELWITHDEBINFO "C:/Development/Computer Science Captstone Project/build/_deps/sfml-build/lib/RelWithDebInfo/FLAC.lib"
+  IMPORTED_LOCATION_RELWITHDEBINFO "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-build/lib/RelWithDebInfo/FLAC.lib"
   )
 
 # Make sure the targets which have been exported in some other

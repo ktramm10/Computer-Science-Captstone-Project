@@ -1,4 +1,4 @@
-prefix=C:/Program Files (x86)/MyGameEngine
+prefix=C:/Program Files/MyGameEngine
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include

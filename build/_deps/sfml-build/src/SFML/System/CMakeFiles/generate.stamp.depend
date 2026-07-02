@@ -1,6 +1,4 @@
 # CMake generation dependency list for this directory.
-C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/src/SFML/System/CMakeLists.txt
-C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/src/SFML/System/Dependencies.cmake.in
 C:/Program Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake
@@ -10,3 +8,5 @@ C:/Program Files/CMake/share/cmake-4.4/Modules/FindPackageMessage.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/FindThreads.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/src/SFML/System/CMakeLists.txt
+C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/src/SFML/System/Dependencies.cmake.in

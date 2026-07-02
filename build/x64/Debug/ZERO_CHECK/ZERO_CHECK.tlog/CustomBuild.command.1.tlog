@@ -1,6 +1,6 @@
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\CMAKEFILES\566D46484FC1525A7F5A36A5D06A7BBF\GENERATE.STAMP.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\CMAKEFILES\BD89680C50F036EB06BF26E5A1C8F062\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project" "-BC:/Development/Computer Science Captstone Project/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Development/Computer Science Captstone Project/build/MyGameEngine.sln"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/MyGameEngine.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

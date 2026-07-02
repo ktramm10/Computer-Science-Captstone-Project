@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\src\bitwise.c">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\src\bitwise.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\src\framing.c">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\src\framing.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include\ogg\config_types.h">
+    <ClInclude Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include\ogg\config_types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include\ogg\ogg.h">
+    <ClInclude Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include\ogg\ogg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include\ogg\os_types.h">
+    <ClInclude Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include\ogg\os_types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\src\crctable.h">
+    <ClInclude Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\src\crctable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{2CC61B84-BAA8-3232-B57D-44AC3C1FFD79}</UniqueIdentifier>
+      <UniqueIdentifier>{DFAC7532-B196-324C-83DA-DB432C71771D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{3E3BCC23-4349-3BD9-88F6-1C8E1C7040A5}</UniqueIdentifier>
+      <UniqueIdentifier>{60AE4A44-917B-33B6-9911-6661009D2CD5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

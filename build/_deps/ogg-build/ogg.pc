@@ -1,9 +1,9 @@
 # ogg pkg-config file
 
-prefix=C:/Program Files (x86)/MyGameEngine
-exec_prefix=C:/Program Files (x86)/MyGameEngine/bin
-libdir=C:/Program Files (x86)/MyGameEngine/lib
-includedir=C:/Program Files (x86)/MyGameEngine/include
+prefix=C:/Program Files/MyGameEngine
+exec_prefix=C:/Program Files/MyGameEngine/bin
+libdir=C:/Program Files/MyGameEngine/lib
+includedir=C:/Program Files/MyGameEngine/include
 
 Name: ogg
 Description: ogg is a library for manipulating ogg bitstreams

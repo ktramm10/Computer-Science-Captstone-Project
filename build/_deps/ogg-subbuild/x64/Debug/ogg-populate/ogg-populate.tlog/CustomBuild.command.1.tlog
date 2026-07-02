@@ -1,8 +1,8 @@
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-MKDIR.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-MKDIR.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/tmp/ogg-populate-mkdirs.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/tmp/ogg-populate-mkdirs.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-mkdir"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-mkdir
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -10,15 +10,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-DOWNLOAD.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-DOWNLOAD.RULE
 setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/tmp/ogg-populate-gitclone.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/tmp/ogg-populate-gitclone.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-download"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-download
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -26,13 +26,13 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-UPDATE.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-UPDATE.RULE
 setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\ogg-src"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/tmp/ogg-populate-gitupdate.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/tmp/ogg-populate-gitupdate.cmake
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -40,31 +40,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-PATCH.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-PATCH.RULE
 setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\ogg-src"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" "-DOGG_DIR=C:/Development/Computer Science Captstone Project/build/_deps/ogg-src" -P "C:/Development/Computer Science Captstone Project/build/_deps/sfml-src/tools/ogg/PatchOgg.cmake"
+"C:\Program Files\CMake\bin\cmake.exe" -DOGG_DIR=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-src -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/sfml-src/tools/ogg/PatchOgg.cmake
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-patch"
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-CONFIGURE.RULE
-setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\ogg-build"
-if %errorlevel% neq 0 goto :cmEnd
-C:
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-configure"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-patch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -72,15 +56,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-BUILD.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-CONFIGURE.RULE
 setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\ogg-build"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-build"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-configure
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -88,15 +72,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-INSTALL.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-BUILD.RULE
 setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\ogg-build"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-install"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-build
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -104,15 +88,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\AC762428922CF4DD48909D37A6309A31\OGG-POPULATE-TEST.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-INSTALL.RULE
 setlocal
-cd "C:\Development\Computer Science Captstone Project\build\_deps\ogg-build"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build
 if %errorlevel% neq 0 goto :cmEnd
 C:
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E echo_append
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-test"
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-install
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -120,13 +104,15 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\20EAB3B8EE11DD487904B72C49941CB3\OGG-POPULATE-COMPLETE.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\10A42EC0C390BCF6F08B268747CE1F26\OGG-POPULATE-TEST.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/CMakeFiles/Debug"
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/CMakeFiles/Debug/ogg-populate-complete"
+C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-done"
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-test
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -134,7 +120,21 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\CA8CE04F1C8BDFC050BEB8BC2DA0704F\OGG-POPULATE.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\E12A7ED396F1EB4B758181E5D0C1D86B\OGG-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/CMakeFiles/Debug/ogg-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/Debug/ogg-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\3157D188976BEB19221F803DEEE0DDF8\OGG-POPULATE.RULE
 setlocal
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -142,9 +142,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKELISTS.TXT
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild" "-BC:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild --check-stamp-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-subbuild/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

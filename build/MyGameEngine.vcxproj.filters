@@ -1,46 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\Engine.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\Entity.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\Scene.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\Renderer.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\PhysicsSystem.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\PhysicsSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\CollisionSystem.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\CollisionSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\InputSystem.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\InputSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\ResourceManager.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\ResourceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\SceneLoader.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\SceneLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\src\SceneSerializer.cpp">
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\SceneSerializer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Natvis Include="C:\Development\Computer Science Captstone Project\build\_deps\nlohmann_json-src\nlohmann_json.natvis" />
+    <Natvis Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\nlohmann_json.natvis" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{3E3BCC23-4349-3BD9-88F6-1C8E1C7040A5}</UniqueIdentifier>
+      <UniqueIdentifier>{60AE4A44-917B-33B6-9911-6661009D2CD5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

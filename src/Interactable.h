@@ -2,7 +2,6 @@
 
 #include "Component.h"
 #include "Entity.h"
-#include "Scene.h"
 #include <string>
 #include <memory>
 

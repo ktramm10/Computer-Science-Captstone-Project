@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\CMakeFiles\bd622f4dff7048cb88ef176e8efe4599\PACKAGE_force.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\CMakeFiles\35592c744d5d275cd72ecd92c2725752\PACKAGE_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{21BAEBC5-B879-3865-8A31-3CA76ED0F768}</UniqueIdentifier>
+      <UniqueIdentifier>{468FCF9A-D403-36ED-8169-C176E58BF1AF}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

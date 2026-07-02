@@ -6,22 +6,22 @@ cmake_minimum_required(VERSION ${CMAKE_VERSION}) # this file comes with cmake
 # If CMAKE_DISABLE_SOURCE_CHANGES is set to true and the source directory is an
 # existing directory in our source tree, calling file(MAKE_DIRECTORY) on it
 # would cause a fatal error, even though it would be a no-op.
-if(NOT EXISTS "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src")
-  file(MAKE_DIRECTORY "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src")
+if(NOT EXISTS "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-src")
+  file(MAKE_DIRECTORY "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-src")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-build"
-  "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix"
-  "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp"
-  "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
-  "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src"
-  "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
+  "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-build"
+  "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix"
+  "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/tmp"
+  "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
+  "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src"
+  "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp"
 )
 
 set(configSubDirs Debug)
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

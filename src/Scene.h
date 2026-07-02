@@ -13,7 +13,6 @@
 #include "ComponentType.h"
 #include "Input.h"
 #include "Health.h"
-#include "Interactable.h"
 
 class Scene{
     private:

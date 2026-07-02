@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\39ebfe1daee9d79d221d650fcb91dbf6\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-subbuild\CMakeFiles\00c5806520cc052de87a77dd6b65733b\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{A019464C-8D8D-327D-A7AB-734771C975DC}</UniqueIdentifier>
+      <UniqueIdentifier>{D3D1826C-DA5F-3B27-9261-3E9750714763}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

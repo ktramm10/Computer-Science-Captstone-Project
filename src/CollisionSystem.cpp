@@ -1,4 +1,5 @@
 #include "CollisionSystem.h"
+#include "Interactable.h"
 #include <iostream>
 
 sf::FloatRect CollisionSystem::getBounds(std::shared_ptr<Entity> entity) {

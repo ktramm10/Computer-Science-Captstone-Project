@@ -1,6 +1,6 @@
-^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\VORBIS-SUBBUILD\CMAKEFILES\F5D8AD60FC299E6F517A5D254CAEB2B8\GENERATE.STAMP.RULE
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\VORBIS-SUBBUILD\CMAKEFILES\A67B8F0C1D1844D0F9D11A2BE148CB50\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild" "-BC:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/vorbis-populate.sln"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/vorbis-subbuild/vorbis-populate.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

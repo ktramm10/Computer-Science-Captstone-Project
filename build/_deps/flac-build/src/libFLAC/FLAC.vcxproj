@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2B93501C-6AE8-3CD1-892A-219AF751050C}</ProjectGuid>
+    <ProjectGuid>{6036DA7D-6A8F-3CB1-A894-BF08D6C9EB81}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\sfml-build\lib\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-build\lib\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FLAC.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FLACd</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Development\Computer Science Captstone Project\build\_deps\sfml-build\lib\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-build\lib\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FLAC.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FLAC</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Development\Computer Science Captstone Project\build\_deps\sfml-build\lib\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-build\lib\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">FLAC.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">FLAC</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Development\Computer Science Captstone Project\build\_deps\sfml-build\lib\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-build\lib\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">FLAC.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">FLAC</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -104,10 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;FLAC__NO_DLL;NDEBUG;_DARWIN_C_SOURCE;_POSIX_PTHREAD_SEMANTICS;__STDC_WANT_IEC_60559_BFP_EXT__;__STDC_WANT_IEC_60559_DFP_EXT__;__STDC_WANT_IEC_60559_FUNCS_EXT__;__STDC_WANT_IEC_60559_TYPES_EXT__;__STDC_WANT_LIB_EXT2__;__STDC_WANT_MATH_SPEC_FUNCS__;_TANDEM_SOURCE;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -120,7 +120,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -150,10 +150,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FLAC__NO_DLL;_DARWIN_C_SOURCE;_POSIX_PTHREAD_SEMANTICS;__STDC_WANT_IEC_60559_BFP_EXT__;__STDC_WANT_IEC_60559_DFP_EXT__;__STDC_WANT_IEC_60559_FUNCS_EXT__;__STDC_WANT_IEC_60559_TYPES_EXT__;__STDC_WANT_LIB_EXT2__;__STDC_WANT_MATH_SPEC_FUNCS__;_TANDEM_SOURCE;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -166,7 +166,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -193,10 +193,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FLAC__NO_DLL;_DARWIN_C_SOURCE;_POSIX_PTHREAD_SEMANTICS;__STDC_WANT_IEC_60559_BFP_EXT__;__STDC_WANT_IEC_60559_DFP_EXT__;__STDC_WANT_IEC_60559_FUNCS_EXT__;__STDC_WANT_IEC_60559_TYPES_EXT__;__STDC_WANT_LIB_EXT2__;__STDC_WANT_MATH_SPEC_FUNCS__;_TANDEM_SOURCE;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -209,7 +209,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -235,10 +235,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;FLAC__NO_DLL;_DARWIN_C_SOURCE;_POSIX_PTHREAD_SEMANTICS;__STDC_WANT_IEC_60559_BFP_EXT__;__STDC_WANT_IEC_60559_DFP_EXT__;__STDC_WANT_IEC_60559_FUNCS_EXT__;__STDC_WANT_IEC_60559_TYPES_EXT__;__STDC_WANT_LIB_EXT2__;__STDC_WANT_MATH_SPEC_FUNCS__;_TANDEM_SOURCE;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include;C:\Development\Computer Science Captstone Project\build\_deps\flac-build;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-src\include;C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -250,11 +250,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Development/Computer Science Captstone Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project" "-BC:/Development/Computer Science Captstone Project/build" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build --check-stamp-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -262,12 +262,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.c.in;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Development/Computer Science Captstone Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project" "-BC:/Development/Computer Science Captstone Project/build" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build --check-stamp-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -275,12 +275,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.c.in;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Development/Computer Science Captstone Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project" "-BC:/Development/Computer Science Captstone Project/build" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build --check-stamp-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -288,12 +288,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.c.in;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Development/Computer Science Captstone Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-src/src/libFLAC/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project" "-BC:/Development/Computer Science Captstone Project/build" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build --check-stamp-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/flac-build/src/libFLAC/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -301,59 +301,59 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Development\Computer Science Captstone Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Development\Computer Science Captstone Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckA64NEON.cmake;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.c.in;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\cmake\CheckCPUArch.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-build\src\libFLAC\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\bitmath.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\bitreader.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\bitwriter.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\cpu.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\crc.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\fixed.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_sse2.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_ssse3.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_sse42.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_avx2.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\float.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\format.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\lpc.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_neon.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_sse2.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_sse41.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_avx2.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_fma.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\md5.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\memory.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\metadata_iterators.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\metadata_object.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\stream_decoder.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\stream_encoder.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\stream_encoder_intrin_sse2.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\stream_encoder_intrin_ssse3.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\stream_encoder_intrin_avx2.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\stream_encoder_framing.c" />
-    <ResourceCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\version.rc" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\window.c" />
-    <ClInclude Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\include\share\win_utf8_io.h" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\share\win_utf8_io\win_utf8_io.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\ogg_decoder_aspect.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\ogg_encoder_aspect.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\ogg_helper.c" />
-    <ClCompile Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-src\src\libFLAC\ogg_mapping.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\bitmath.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\bitreader.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\bitwriter.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\cpu.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\crc.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\fixed.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_sse2.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_ssse3.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_sse42.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\fixed_intrin_avx2.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\float.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\format.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\lpc.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_neon.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_sse2.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_sse41.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_avx2.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\lpc_intrin_fma.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\md5.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\memory.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\metadata_iterators.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\metadata_object.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\stream_decoder.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\stream_encoder.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\stream_encoder_intrin_sse2.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\stream_encoder_intrin_ssse3.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\stream_encoder_intrin_avx2.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\stream_encoder_framing.c" />
+    <ResourceCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\version.rc" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\window.c" />
+    <ClInclude Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\include\share\win_utf8_io.h" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\share\win_utf8_io\win_utf8_io.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\ogg_decoder_aspect.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\ogg_encoder_aspect.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\ogg_helper.c" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\flac-src\src\libFLAC\ogg_mapping.c" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="C:\Development\Computer Science Captstone Project\build\ZERO_CHECK.vcxproj">
-      <Project>{1B52D6EC-8E7A-348D-8AB2-E55FDD19D08B}</Project>
+    <ProjectReference Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\ZERO_CHECK.vcxproj">
+      <Project>{6B67F300-58D1-3D97-809E-7F96FFEAB3DF}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-build\ogg.vcxproj">
-      <Project>{E364589C-0194-3554-9DBB-D744F1F41B29}</Project>
+    <ProjectReference Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\ogg-build\ogg.vcxproj">
+      <Project>{FB91D136-1633-3931-A433-60697DFA3736}</Project>
       <Name>ogg</Name>
     </ProjectReference>
   </ItemGroup>
