@@ -14,6 +14,7 @@ class Entity
     unsigned int id;
     std::string name;
     bool alive = true;
+    bool isPlayer = false;
 
     // bitmask to determine component existence
     uint32_t componentMask = 0u;  
@@ -50,6 +51,7 @@ class Entity
     uint32_t getComponentMask() const;
 
     bool isAlive() const { return alive; }
+    bool isPlayerEntity() const { return isPlayer; }
     void destroy() { alive = false; }
 };
 

@@ -9,6 +9,7 @@
   "entities": [
     {
       "name": "Player",
+      "isPlayer": true,
       "components": {
         "transform": {
           "position": [100.0, 100.0],

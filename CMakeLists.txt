@@ -27,7 +27,9 @@ add_executable(MyGameEngine
     src/Renderer.cpp
     src/PhysicsSystem.cpp
     src/CollisionSystem.cpp
+    src/Health.cpp
     src/InputSystem.cpp
+    src/Interactable.cpp
     src/ResourceManager.cpp
     src/SceneLoader.cpp
     src/SceneSerializer.cpp

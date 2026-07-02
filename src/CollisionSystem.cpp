@@ -1,5 +1,4 @@
 #include "CollisionSystem.h"
-#include "Interactable.h"
 #include <iostream>
 
 sf::FloatRect CollisionSystem::getBounds(std::shared_ptr<Entity> entity) {
@@ -28,34 +27,54 @@ void CollisionSystem::update(Scene& scene) {
         != (ComponentTypes::Transform | ComponentTypes::Collision)) {
             continue;
         }
-            if (a->getComponent<Collision>()->isTrigger || b->getComponent<Collision>()->isTrigger) {
-                // determine which entity is the interacter and which is the interactee
-                if (a->getComponent<Interactable>() && b->getComponent<Interactable>()) {
-                    // both entities are interactable, skip interaction
-                    continue;
-                }
-                else if (a->getComponent<Interactable>()) {
-                    a->getComponent<Interactable>()->interact(b, a, scene);
-                }
-                else if (b->getComponent<Interactable>()) {
-                    b->getComponent<Interactable>()->interact(a, b, scene);
-                    // Need to put the interaction type string as a field in the interactable class because the collision system doesn't know what type of interaction is happening. The interaction type string should be set in the interactable class when the entity is created.
-                }
-            }
+            
             sf::FloatRect boundsA = getBounds(a);
             sf::FloatRect boundsB = getBounds(b);
             
 
             auto intersection = boundsA.findIntersection(boundsB);
             if (intersection) {
+                if (a->getComponent<Collision>()->isTrigger || b->getComponent<Collision>()->isTrigger) {
+
+                // determine which entity is the interacter and which is the interactee
+                if (a->getComponent<Interactable>() && b->getComponent<Interactable>()) {
+                    // both entities are interactable, skip interaction
+                    continue;
+                }
+                else if (a->getComponent<Interactable>()) {
+                    std::cout << "Entity " << a->getName() << " is interacting with Entity " << b->getName() << std::endl;
+                    a->getComponent<Interactable>()->interact(b, a, scene);
+                }
+                else if (b->getComponent<Interactable>()) {
+                    std::cout << "Entity " << a->getName() << " is interacting with Entity " << b->getName() << std::endl;
+                    b->getComponent<Interactable>()->interact(a, b, scene);
+                }
+            } else {
                 sf::FloatRect intersectionRect = *intersection;
-                resolveCollision(a, b, intersectionRect);
+                resolveCollision(a, b, intersectionRect, scene);
+            }
             }
         }
     }
 }
 
-void CollisionSystem::resolveCollision(std::shared_ptr<Entity> entityA, std::shared_ptr<Entity> entityB, sf::FloatRect intersection) {
+void CollisionSystem::resolveCollision(std::shared_ptr<Entity> entityA, std::shared_ptr<Entity> entityB, sf::FloatRect intersection, Scene& scene) {
+    if (entityA->getComponent<Collision>()->isTrigger || entityB->getComponent<Collision>()->isTrigger) {
+        if (entityA->getComponent<Interactable>() && entityB->getComponent<Interactable>()) {
+            // both entities are interactable, skip interaction
+            return;
+        }
+        else if (entityA->getComponent<Interactable>()) {
+            std::cout << "Entity " << entityA->getName() << " is interacting with Entity " << entityB->getName() << std::endl;
+            entityA->getComponent<Interactable>()->interact(entityB, entityA, scene);
+        }
+        else if (entityB->getComponent<Interactable>()) {
+            std::cout << "Entity " << entityB->getName() << " is interacting with Entity " << entityA->getName() << std::endl;
+            entityB->getComponent<Interactable>()->interact(entityA, entityB, scene);
+        }
+        return; // Skip collision resolution for triggers
+    }
+    
     // gather data for collision resolution
     auto transformA = entityA->getComponent<Transform>();
     auto transformB = entityB->getComponent<Transform>();

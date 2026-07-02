@@ -1,0 +1,8 @@
+================================================================================
+Linker Errors
+Generated: 2026-07-02T19:43:15.953Z
+Total Errors: 1
+================================================================================
+
+[LNK1168] (MSVC)
+cannot open C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\Debug\MyGameEngine.exe for writing [C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\MyGameEngine.vcxproj]

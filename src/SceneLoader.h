@@ -21,6 +21,8 @@ class SceneLoader {
     void loadPhysics(const json& componentData, std::shared_ptr<Entity> entity);
     void loadInput(const json& componentData, std::shared_ptr<Entity> entity);
     void loadHealth(const json& componentData, std::shared_ptr<Entity> entity);
+    void loadInteractable(const json& componentData, std::shared_ptr<Entity> entity);
+    void loadCollectable(const json& componentData, std::shared_ptr<Entity> entity);
 
     public:
     bool loadFromFile(const std::string& filePath, Scene& scene, ResourceManager& ResourceManager);

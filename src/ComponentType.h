@@ -15,7 +15,8 @@ public:
         Collision = 1u << 3,
         Input = 1u << 4,
         Health = 1u << 5,
-        Interactable = 1u << 6
+        Interactable = 1u << 6,
+        Collectable = 1u << 7
     };
 
     static constexpr uint32_t combine(std::initializer_list<Value> values)

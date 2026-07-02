@@ -2,20 +2,28 @@
 
 #include "Component.h"
 #include "Entity.h"
-#include <string>
 #include <memory>
+
+class Scene;
+
+enum class InteractionType {
+    Collectable,
+    Dialogue,
+};
+
+enum class CollectableType {
+    Health,
+    Ammo,
+    Coin,
+};
 
 class Interactable : public Component {
     public:
     Interactable() = default;
-    Interactable(const std::string& interactionType) : interactionType(interactionType) {}
-    virtual void interact(std::shared_ptr<Entity> interactee, std::shared_ptr<Entity> interacter, Scene& scene) {}
-    std::string interactionType;
+    InteractionType interactionType;
+    Interactable(InteractionType interactionType) : interactionType(interactionType) {}
+    void interact(std::shared_ptr<Entity> otherEntity, std::shared_ptr<Entity> interactableEntity, Scene& scene);
+    
 };
 
 
-// must be a better way to do this, need a way to differentiate between collectable subtypes such as health, ammo, etc.
-enum InteractionType {
-    CollectableInteraction,
-    DialogueInteraction,
-};

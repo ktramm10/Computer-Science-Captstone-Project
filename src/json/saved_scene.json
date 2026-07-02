@@ -42,7 +42,7 @@
                 },
                 "transform": {
                     "position": [
-                        301.30145263671875,
+                        569.5762329101563,
                         968.0
                     ],
                     "rotation": 0.0,
@@ -52,7 +52,46 @@
                     ]
                 }
             },
+            "isPlayer": true,
             "name": "Player"
+        },
+        {
+            "components": {
+                "interactable": {
+                    "interactionType": 0
+                },
+                "collectable": {
+                    "itemType": 0
+                },
+                "transform": {
+                    "position": [
+                        300.0,
+                        900.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "red_square"
+                },
+                "collision": {
+                    "isStatic": false,
+                    "isTrigger": true,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "coin"
         },
         {
             "components": {
@@ -96,6 +135,7 @@
                     ]
                 }
             },
+            "isPlayer": false,
             "name": "Player2"
         },
         {
@@ -124,6 +164,7 @@
                     ]
                 }
             },
+            "isPlayer": false,
             "name": "platform"
         }
     ],

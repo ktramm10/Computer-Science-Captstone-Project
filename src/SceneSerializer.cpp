@@ -19,10 +19,11 @@ void SceneSerializer::saveTextures(json &sceneData, const ResourceManager &resou
     }
 }
 
-json SceneSerializer::saveEntity(const std::shared_ptr<Entity> &entity) const
+json SceneSerializer::saveEntity(const std::shared_ptr<Entity> &entity, const Scene& scene) const
 {
     json entityData;
     entityData["name"] = entity->getName();
+    entityData["isPlayer"] = entity == scene.getPlayerEntity();
     entityData["components"] = json::object();
     json& components = entityData["components"];
 
@@ -32,6 +33,8 @@ json SceneSerializer::saveEntity(const std::shared_ptr<Entity> &entity) const
     savePhysicsComponent(components, entity);
     saveInputComponent(components, entity);
     saveHealthComponent(components, entity);
+    saveInteractableComponent(components, entity);
+    saveCollectableComponent(components, entity);
 
     return entityData;
 }
@@ -130,13 +133,40 @@ void SceneSerializer::saveHealthComponent(json &components, const std::shared_pt
     };
 }
 
+void SceneSerializer::saveInteractableComponent(json &components, const std::shared_ptr<Entity> &entity) const
+{
+    if ((entity->getComponentMask() & ComponentTypes::Interactable) != ComponentTypes::Interactable) {
+        return;
+    }
+    auto interactable = entity->getComponent<Interactable>();
+    if (!interactable) return;
+
+    components["interactable"] = {
+        {"interactionType", static_cast<int>(interactable->interactionType)}
+    };
+}
+
+void SceneSerializer::saveCollectableComponent(json &components, const std::shared_ptr<Entity> &entity) const
+{
+    if ((entity->getComponentMask() & ComponentTypes::Collectable) != ComponentTypes::Collectable) {
+        return;
+    }
+    auto collectable = entity->getComponent<Collectable>();
+    if (!collectable) return;
+
+    components["collectable"] = {
+        {"collectableType", static_cast<int>(collectable->collectableType)},
+        {"amount", collectable->amount}
+    };
+}
+
 bool SceneSerializer::saveToFile(const std::string &filePath, const Scene &scene, const ResourceManager &resourceManager) const
 {
     json sceneData;
     saveTextures(sceneData, resourceManager);
     sceneData["entities"] = json::array();
     for (const auto& entity : scene.getEntities()) {
-        sceneData["entities"].push_back(saveEntity(entity));
+        sceneData["entities"].push_back(saveEntity(entity, scene));
     }
     std::ofstream file(filePath);
 

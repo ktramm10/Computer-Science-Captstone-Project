@@ -19,7 +19,13 @@
     <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\CollisionSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\Health.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\InputSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\Interactable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\ResourceManager.cpp">

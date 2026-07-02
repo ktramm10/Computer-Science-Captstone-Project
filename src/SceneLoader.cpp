@@ -69,6 +69,10 @@ void SceneLoader::loadEntity(const json &entityData, Scene &scene, ResourceManag
 {
     std::string name = entityData.value("name", "entity");
     auto entity = scene.createEntity(name);
+    bool isPlayer = entityData.value("isPlayer", false);
+    if (isPlayer) {
+        scene.setPlayerEntity(entity);
+    }
 
     if (!entityData.contains("components") || !entityData["components"].is_object()) {
         return;
@@ -92,6 +96,12 @@ void SceneLoader::loadEntity(const json &entityData, Scene &scene, ResourceManag
     }
     if (components.contains("health")) {
         loadHealth(components["health"], entity);
+    }
+    if (components.contains("interactable")) {
+        loadInteractable(components["interactable"], entity);
+    }
+    if (components.contains("collectable")) {
+        loadCollectable(components["collectable"], entity);
     }
 }
 
@@ -126,7 +136,7 @@ void SceneLoader::loadCollision(const json &componentData, std::shared_ptr<Entit
     sf::Vector2f size = readVec2(componentData, "size", {32.f, 32.f});
     sf::Vector2f offset = readVec2(componentData, "offset", {0.0f, 0.0f});
     bool isStatic = componentData.value("isStatic", false);
-    bool isTriggered = componentData.value("isTriggered", false);
+    bool isTriggered = componentData.value("isTrigger", componentData.value("isTriggered", false));
 
     auto collision = std::make_shared<Collision>(size, offset, isStatic, isTriggered);
     entity->addComponent(collision, ComponentTypes::Collision);
@@ -159,4 +169,20 @@ void SceneLoader::loadHealth(const json &componentData, std::shared_ptr<Entity> 
 
     auto health = std::make_shared<Health>(maxHealth, currentHealth);
     entity->addComponent(health, ComponentTypes::Health);
+}
+
+void SceneLoader::loadInteractable(const json &componentData, std::shared_ptr<Entity> entity)
+{
+    InteractionType interactionType = static_cast<InteractionType>(componentData.value("interactionType", static_cast<int>(InteractionType::Collectable)));
+    auto interactable = std::make_shared<Interactable>(interactionType);
+    entity->addComponent(interactable, ComponentTypes::Interactable);
+}
+
+void SceneLoader::loadCollectable(const json &componentData, std::shared_ptr<Entity> entity)
+{
+    int collectableTypeValue = componentData.value("collectableType", componentData.value("itemType", static_cast<int>(CollectableType::Coin)));
+    CollectableType collectableType = static_cast<CollectableType>(collectableTypeValue);
+    float amount = componentData.value("amount", 1.0f);
+    auto collectable = std::make_shared<Collectable>(collectableType, amount);
+    entity->addComponent(collectable, ComponentTypes::Collectable);
 }
