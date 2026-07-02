@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\flac-subbuild\CMakeFiles\9d3c840c5df04e1fc2ed26a8f15f7c1d\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{7FF338C8-9846-3BE9-ADE4-C6A660689408}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/39ebfe1daee9d79d221d650fcb91dbf6/sfml-populate.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/7e6a153f4f245b5389678a1a467e2261/sfml-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-build.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-download.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-install.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-test.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/sfml-subbuild/CMakeFiles/b51c203a9b62681a7c60f4d61a1ce093/sfml-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sfml-populate"
+		],
+		"name" : "sfml-populate"
+	}
+}

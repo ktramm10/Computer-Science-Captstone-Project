@@ -1,0 +1,10 @@
+^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\FREETYPE-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild" "-BC:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

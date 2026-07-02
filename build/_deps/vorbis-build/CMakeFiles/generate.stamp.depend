@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src/CMakeLists.txt
+C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src/vorbis.pc.in
+C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src/vorbisenc.pc.in
+C:/Development/Computer Science Captstone Project/build/_deps/vorbis-src/vorbisfile.pc.in
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckIncludeFiles.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/f5d8ad60fc299e6f517a5d254caeb2b8/vorbis-populate.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/6fff393525018df573fb270a9e8a95c5/vorbis-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-build.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-download.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-install.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-test.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-subbuild/CMakeFiles/913ddfa71896934a4e9271bfa1f40872/vorbis-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vorbis-populate"
+		],
+		"name" : "vorbis-populate"
+	}
+}

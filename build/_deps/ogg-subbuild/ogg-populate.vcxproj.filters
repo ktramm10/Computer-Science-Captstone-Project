@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ac762428922cf4dd48909d37a6309a31\ogg-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\20eab3b8ee11dd487904b72c49941cb3\ogg-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ca8ce04f1c8bdfc050beb8bc2da0704f\ogg-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Development\Computer Science Captstone Project\build\_deps\ogg-subbuild\CMakeFiles\ogg-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{8C67CB91-8846-342D-B953-39B81FD9A5FC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

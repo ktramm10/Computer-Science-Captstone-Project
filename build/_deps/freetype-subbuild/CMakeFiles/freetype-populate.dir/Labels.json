@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/freetype-populate"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/ed32ab152f0b17afacd9d83d14e51f41/freetype-populate.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/6a329454c05797b1b55df97b5bf6cdff/freetype-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-build.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-download.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-install.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-test.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/freetype-subbuild/CMakeFiles/49f67869ff844b6b2644c702337fab89/freetype-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"freetype-populate"
+		],
+		"name" : "freetype-populate"
+	}
+}

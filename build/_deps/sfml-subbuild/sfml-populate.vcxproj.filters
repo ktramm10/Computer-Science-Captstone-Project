@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\b51c203a9b62681a7c60f4d61a1ce093\sfml-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\7e6a153f4f245b5389678a1a467e2261\sfml-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\39ebfe1daee9d79d221d650fcb91dbf6\sfml-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Development\Computer Science Captstone Project\build\_deps\sfml-subbuild\CMakeFiles\sfml-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A019464C-8D8D-327D-A7AB-734771C975DC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

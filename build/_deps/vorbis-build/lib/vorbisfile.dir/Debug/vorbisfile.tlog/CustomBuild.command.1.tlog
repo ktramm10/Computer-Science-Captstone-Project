@@ -1,0 +1,10 @@
+^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\VORBIS-SRC\LIB\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project" "-BC:/Development/Computer Science Captstone Project/build" --check-stamp-file "C:/Development/Computer Science Captstone Project/build/_deps/vorbis-build/lib/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

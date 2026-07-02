@@ -1,0 +1,24 @@
+# CMake generation dependency list for this directory.
+C:/Development/Computer Science Captstone Project/build/_deps/flac-src/CMakeLists.txt
+C:/Development/Computer Science Captstone Project/build/_deps/flac-src/cmake/UseSystemExtensions.cmake
+C:/Development/Computer Science Captstone Project/build/_deps/flac-src/config.cmake.h.in
+C:/Development/Computer Science Captstone Project/build/_deps/flac-src/flac-config.cmake.in
+C:/Program Files/CMake/share/cmake-4.4/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckCCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/CheckTypeSize.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckFlagCommonConfig.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/TestBigEndian.cmake
+C:/Program Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake

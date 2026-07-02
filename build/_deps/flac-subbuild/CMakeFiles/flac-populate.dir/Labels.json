@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/flac-populate"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/9d3c840c5df04e1fc2ed26a8f15f7c1d/flac-populate.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/f42fd3262bb3e11fdb3ccd3c4af886f1/flac-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-build.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-download.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-install.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-test.rule"
+		},
+		{
+			"file" : "C:/Development/Computer Science Captstone Project/build/_deps/flac-subbuild/CMakeFiles/45b2e1e262149ecc9bb632a4651172f0/flac-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"flac-populate"
+		],
+		"name" : "flac-populate"
+	}
+}

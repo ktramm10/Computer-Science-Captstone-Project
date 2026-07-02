@@ -1,0 +1,10 @@
+^C:\DEVELOPMENT\COMPUTER SCIENCE CAPTSTONE PROJECT\BUILD\_DEPS\OGG-SUBBUILD\CMAKEFILES\CA8CE04F1C8BDFC050BEB8BC2DA0704F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild" "-BC:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Development/Computer Science Captstone Project/build/_deps/ogg-subbuild/ogg-populate.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,87 @@
+{
+  "textures": [
+    {
+      "id": "red_square",
+      "path": "C:\\Development\\Computer Science Captstone Project\\src\\images\\RedSpriteTest32x32.png"
+    }
+  ],
+
+  "entities": [
+    {
+      "name": "Player",
+      "components": {
+        "transform": {
+          "position": [100.0, 100.0],
+          "scale": [1.0, 1.0],
+          "rotation": 0.0
+        },
+        "physics": {
+          "velocity": [0.0, 0.0],
+          "acceleration": [0.0, 0.0],
+          "useGravity": true,
+          "gravity": 980.0
+        },
+        "input": {
+          "moveSpeed": 250.0,
+          "jumpForce": 500.0
+        },
+        "sprite": {
+          "texture": "red_square"
+        },
+        "collision": {
+          "size": [32.0, 32.0],
+          "offset": [0.0, 0.0],
+          "isStatic": false,
+          "isTrigger": false
+        },
+        "health": {
+            "currentHealth": 100.0,
+            "maxHealth": 100.0
+          }
+      }
+    },
+
+    {
+      "name": "Player2",
+      "components": {
+        "transform": {
+          "position": [1000.0, 100.0],
+          "scale": [1.0, 1.0],
+          "rotation": 0.0
+        },
+        "physics": {
+          "velocity": [0.0, 0.0],
+          "acceleration": [0.0, 0.0],
+          "useGravity": true,
+          "gravity": 980.0
+        },
+        "sprite": {
+          "texture": "red_square"
+        },
+        "collision": {
+          "size": [32.0, 32.0],
+          "offset": [0.0, 0.0],
+          "isStatic": false,
+          "isTrigger": false
+        }
+      }
+    },
+
+    {
+      "name": "platform",
+      "components": {
+        "transform": {
+          "position": [0.0, 1000.0],
+          "scale": [1.0, 1.0],
+          "rotation": 0.0
+        },
+        "collision": {
+          "size": [1920.0, 64.0],
+          "offset": [0.0, 0.0],
+          "isStatic": true,
+          "isTrigger": false
+        }
+      }
+    }
+  ]
+}
