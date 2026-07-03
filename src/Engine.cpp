@@ -1,7 +1,18 @@
 #include "Engine.h"
 #include <iostream>
 
-Engine::Engine() : window (sf::VideoMode({1920, 1080}), "AI Game Engine") {}
+Engine::~Engine()
+{
+    ImGui::SFML::Shutdown();
+}
+
+Engine::Engine()
+    : window(sf::VideoMode({1920, 1080}), "AI Game Engine")
+{
+    if (!ImGui::SFML::Init(window)) {
+        std::cerr << "Failed to initialize ImGui-SFML." << std::endl;
+    }
+}
 
 void Engine::run()
 {
@@ -17,15 +28,19 @@ void Engine::run()
     sf::Clock clock;
     while (window.isOpen())
     {
-        float dt = clock.restart().asSeconds();
+        sf::Time deltaTime = clock.restart();
+        float dt = deltaTime.asSeconds();
 
         processEvents();
+        ImGui::SFML::Update(window, deltaTime);
         inputSystem.update(scene);
         physicsSystem.update(scene, dt);
         collisionSystem.update(scene);
         scene.cleanupDestroyedEntities();
         window.clear(sf::Color::Black);
         renderer.render(scene, window);
+        editorUI.buildUI(scene); // Build the ImGui UI for the editor
+        ImGui::SFML::Render(window);
         window.display();
     }
 }
@@ -35,6 +50,8 @@ void Engine::processEvents()
     
     while (auto event = window.pollEvent())
     {
+        ImGui::SFML::ProcessEvent(window, *event);
+
         if (event->is<sf::Event::Closed>())
         {
             window.close();

@@ -12,9 +12,9 @@ enum class InteractionType {
 };
 
 enum class CollectableType {
-    Health,
-    Ammo,
     Coin,
+    Health,
+    Ammo
 };
 
 class Interactable : public Component {

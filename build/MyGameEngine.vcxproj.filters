@@ -37,6 +37,9 @@
     <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\SceneSerializer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\EditorUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\CMakeLists.txt" />

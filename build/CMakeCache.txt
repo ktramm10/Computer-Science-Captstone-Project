@@ -316,6 +316,14 @@ FETCHCONTENT_SOURCE_DIR_FLAC:PATH=
 FETCHCONTENT_SOURCE_DIR_FREETYPE:PATH=
 
 //When not empty, overrides where to find pre-populated content
+// for imgui
+FETCHCONTENT_SOURCE_DIR_IMGUI:PATH=
+
+//When not empty, overrides where to find pre-populated content
+// for ImGui-SFML
+FETCHCONTENT_SOURCE_DIR_IMGUI-SFML:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for nlohmann_json
 FETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON:PATH=
 
@@ -339,6 +347,12 @@ FETCHCONTENT_UPDATES_DISCONNECTED_FLAC:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of Freetype
 FETCHCONTENT_UPDATES_DISCONNECTED_FREETYPE:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of imgui
+FETCHCONTENT_UPDATES_DISCONNECTED_IMGUI:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of ImGui-SFML
+FETCHCONTENT_UPDATES_DISCONNECTED_IMGUI-SFML:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of nlohmann_json
 FETCHCONTENT_UPDATES_DISCONNECTED_NLOHMANN_JSON:BOOL=OFF
@@ -369,6 +383,33 @@ GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
 //Path to a program.
 HAVE_GIT:FILEPATH=C:/Program Files/Git/cmd/git.exe
+
+//Dear ImGui source directory
+IMGUI_DIR:PATH=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-src
+
+//Path to a file.
+IMGUI_INCLUDE_DIR:PATH=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-src
+
+//Path to a directory containing user ImGui config
+IMGUI_SFML_CONFIG_DIR:PATH=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-src
+
+//Path where user's config header will be installed
+IMGUI_SFML_CONFIG_INSTALL_DIR:PATH=
+
+//Name of a custom user ImGui config header
+IMGUI_SFML_CONFIG_NAME:STRING=imconfig-SFML.h
+
+//Disable obsolete ImGui functions
+IMGUI_SFML_DISABLE_OBSOLETE_FUNCTIONS:BOOL=OFF
+
+//Enable compiler warnings
+IMGUI_SFML_ENABLE_WARNINGS:BOOL=OFF
+
+//Use find_package to find SFML
+IMGUI_SFML_FIND_SFML:BOOL=OFF
+
+//Use default imconfig-SFML.h
+IMGUI_SFML_USE_DEFAULT_CONFIG:BOOL=ON
 
 //Install CMake package-config module
 INSTALL_CMAKE_CONFIG_MODULE:BOOL=ON
@@ -498,6 +539,15 @@ freetype_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 freetype_SOURCE_DIR:STATIC=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/freetype-src
+
+//Value Computed by CMake
+imgui_sfml_BINARY_DIR:STATIC=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-build
+
+//Value Computed by CMake
+imgui_sfml_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+imgui_sfml_SOURCE_DIR:STATIC=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-src
 
 //Value Computed by CMake
 libogg_BINARY_DIR:STATIC=C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/ogg-build
@@ -665,7 +715,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=18
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=19
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib
@@ -734,7 +784,7 @@ CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //Test DODEFINE_EXTENSIONS
 DODEFINE_EXTENSIONS:INTERNAL=1
 //Details about finding OpenGL
-FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[opengl32][found components: OpenGL ][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[opengl32][ ][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Result of CHECK_CPU_ARCH

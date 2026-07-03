@@ -1,0 +1,150 @@
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/tmp/imgui-sfml-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-DOWNLOAD.RULE
+setlocal
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/tmp/imgui-sfml-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-UPDATE.RULE
+setlocal
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/tmp/imgui-sfml-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-CONFIGURE.RULE
+setlocal
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-BUILD.RULE
+setlocal
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-INSTALL.RULE
+setlocal
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\27E8B17526DB62DF5187A4D8AAB74CFD\IMGUI-SFML-POPULATE-TEST.RULE
+setlocal
+cd C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\A941737A01204A43A496FB91B2CE806E\IMGUI-SFML-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/CMakeFiles/Debug/imgui-sfml-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/imgui-sfml-populate-prefix/src/imgui-sfml-populate-stamp/Debug/imgui-sfml-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKEFILES\F1C0704C82B98B4BD076E17971635233\IMGUI-SFML-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\BATTL\ONEDRIVE\DOCUMENTS\GITHUB\COMPUTER-SCIENCE-CAPTSTONE-PROJECT\BUILD\_DEPS\IMGUI-SFML-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild -BC:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild --check-stamp-file C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

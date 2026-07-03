@@ -61,6 +61,7 @@
                     "interactionType": 0
                 },
                 "collectable": {
+                    "amount": 10.0,
                     "itemType": 0
                 },
                 "transform": {
@@ -75,7 +76,7 @@
                     ]
                 },
                 "sprite": {
-                    "texture": "red_square"
+                    "texture": "yellow_square"
                 },
                 "collision": {
                     "isStatic": false,
@@ -91,7 +92,46 @@
                 }
             },
             "isPlayer": false,
-            "name": "coin"
+            "name": "coin_pickup"
+        },
+                {
+            "components": {
+                "interactable": {
+                    "interactionType": 0
+                },
+                "collectable": {
+                    "amount": 25.0,
+                    "itemType": 1
+                },
+                "transform": {
+                    "position": [
+                        600.0,
+                        900.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "heart"
+                },
+                "collision": {
+                    "isStatic": false,
+                    "isTrigger": true,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "heart_pickup"
         },
         {
             "components": {
@@ -171,7 +211,15 @@
     "textures": [
         {
             "id": "red_square",
-            "path": "C:\\Development\\Computer Science Captstone Project\\src\\images\\RedSpriteTest32x32.png"
+            "path": "C:\\Users\\battl\\OneDrive\\Documents\\GitHub\\Computer-Science-Captstone-Project\\src\\images\\RedSpriteTest32x32.png"
+        },
+        {
+            "id": "yellow_square",
+            "path": "C:\\Users\\battl\\OneDrive\\Documents\\GitHub\\Computer-Science-Captstone-Project\\src\\images\\coin.png"
+        },
+        {
+            "id" : "heart",
+            "path" : "C:\\Users\\battl\\OneDrive\\Documents\\GitHub\\Computer-Science-Captstone-Project\\src\\images\\heart32x32.png"
         }
     ]
 }

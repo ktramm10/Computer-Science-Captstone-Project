@@ -1,8 +1,11 @@
 ================================================================================
 Linker Errors
-Generated: 2026-07-02T19:43:15.953Z
-Total Errors: 1
+Generated: 2026-07-03T02:56:54.715Z
+Total Errors: 2
 ================================================================================
 
-[LNK1168] (MSVC)
-cannot open C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\Debug\MyGameEngine.exe for writing [C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\MyGameEngine.vcxproj]
+[LNK2019] (MSVC)
+unresolved external symbol "public: void __cdecl EditorUI::buildUI(class Scene &)" (?buildUI@EditorUI@@QEAAXAEAVScene@@@Z) referenced in function "public: void __cdecl Engine::run(void)" (?run@Engine@@QEAAXXZ) [C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\MyGameEngine.vcxproj]
+
+[LNK1120] (MSVC)
+1 unresolved externals [C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\MyGameEngine.vcxproj]

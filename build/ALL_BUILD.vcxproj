@@ -178,6 +178,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{6036DA7D-6A8F-3CB1-A894-BF08D6C9EB81}</Project>
       <Name>FLAC</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-build\ImGui-SFML.vcxproj">
+      <Project>{D3AFB66E-98EB-3D74-83B4-29362D61006C}</Project>
+      <Name>ImGui-SFML</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\MyGameEngine.vcxproj">
       <Project>{2141D8F3-1ECD-3E18-98BB-6B4E423BD6DC}</Project>
       <Name>MyGameEngine</Name>

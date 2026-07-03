@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/e89a175995b01055a2299006f59721ef/imgui-populate.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/fd4c3a3088e3af49bf9e32963b0a3516/imgui-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-subbuild/CMakeFiles/7b3c0f732dd28267e5baae2cf81b7dd0/imgui-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"imgui-populate"
+		],
+		"name" : "imgui-populate"
+	}
+}

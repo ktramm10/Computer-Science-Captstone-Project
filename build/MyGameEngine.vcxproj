@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -105,16 +105,16 @@
       <SupportJustMyCode></SupportJustMyCode>
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;SFML_STATIC;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;SFML_STATIC;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;SFML_STATIC;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;SFML_STATIC;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -122,7 +122,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\sfml-build\lib\Debug\sfml-graphics-s-d.lib;_deps\sfml-build\lib\Debug\sfml-window-s-d.lib;_deps\sfml-build\lib\Debug\sfml-system-s-d.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\Debug\freetyped.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\sfml-build\lib\Debug\sfml-graphics-s-d.lib;_deps\sfml-build\lib\Debug\sfml-window-s-d.lib;_deps\sfml-build\lib\Debug\sfml-system-s-d.lib;_deps\imgui-sfml-build\Debug\ImGui-SFML.lib;_deps\sfml-build\lib\Debug\sfml-graphics-s-d.lib;_deps\sfml-build\lib\Debug\sfml-window-s-d.lib;_deps\sfml-build\lib\Debug\sfml-system-s-d.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\Debug\freetyped.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -141,7 +141,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -159,18 +159,18 @@
       <SupportJustMyCode></SupportJustMyCode>
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -178,7 +178,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\sfml-build\lib\Release\sfml-graphics-s.lib;_deps\sfml-build\lib\Release\sfml-window-s.lib;_deps\sfml-build\lib\Release\sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\Release\freetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\sfml-build\lib\Release\sfml-graphics-s.lib;_deps\sfml-build\lib\Release\sfml-window-s.lib;_deps\sfml-build\lib\Release\sfml-system-s.lib;_deps\imgui-sfml-build\Release\ImGui-SFML.lib;_deps\sfml-build\lib\Release\sfml-graphics-s.lib;_deps\sfml-build\lib\Release\sfml-window-s.lib;_deps\sfml-build\lib\Release\sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\Release\freetype.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -197,7 +197,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -215,18 +215,18 @@
       <SupportJustMyCode></SupportJustMyCode>
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -234,7 +234,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\sfml-build\lib\MinSizeRel\sfml-graphics-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-window-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\MinSizeRel\freetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\sfml-build\lib\MinSizeRel\sfml-graphics-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-window-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-system-s.lib;_deps\imgui-sfml-build\MinSizeRel\ImGui-SFML.lib;_deps\sfml-build\lib\MinSizeRel\sfml-graphics-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-window-s.lib;_deps\sfml-build\lib\MinSizeRel\sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\MinSizeRel\freetype.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -253,7 +253,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -272,16 +272,16 @@
       <SupportJustMyCode></SupportJustMyCode>
       <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG="imconfig-SFML.h";CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;SFML_STATIC;IMGUI_USER_CONFIG=\"imconfig-SFML.h\";CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\sfml-src\include;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-src;C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -289,7 +289,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\sfml-build\lib\RelWithDebInfo\sfml-graphics-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-window-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\RelWithDebInfo\freetype.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\sfml-build\lib\RelWithDebInfo\sfml-graphics-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-window-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-system-s.lib;_deps\imgui-sfml-build\RelWithDebInfo\ImGui-SFML.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-graphics-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-window-s.lib;_deps\sfml-build\lib\RelWithDebInfo\sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;_deps\sfml-build\lib\RelWithDebInfo\freetype.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -376,6 +376,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\ResourceManager.cpp" />
     <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\SceneLoader.cpp" />
     <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\SceneSerializer.cpp" />
+    <ClCompile Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\src\EditorUI.cpp" />
     <Natvis Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\nlohmann_json-src\nlohmann_json.natvis">
     </Natvis>
   </ItemGroup>
@@ -386,6 +387,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-sfml-build\ImGui-SFML.vcxproj">
+      <Project>{D3AFB66E-98EB-3D74-83B4-29362D61006C}</Project>
+      <Name>ImGui-SFML</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\freetype-build\freetype.vcxproj">
       <Project>{6F3E07CA-139C-33C0-B23A-8EE18C1D87F5}</Project>

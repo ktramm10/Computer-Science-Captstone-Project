@@ -1,0 +1,51 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/_deps/imgui-sfml-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "ImGui-SFML::@0d4f94df99120bc7405e"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMake"
+	},
+	"id" : "ALL_BUILD::@0d4f94df99120bc7405e",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"orderDependencies" : 
+	[
+		{
+			"id" : "ImGui-SFML::@0d4f94df99120bc7405e"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/imgui-sfml-build",
+		"source" : "build/_deps/imgui-sfml-src"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

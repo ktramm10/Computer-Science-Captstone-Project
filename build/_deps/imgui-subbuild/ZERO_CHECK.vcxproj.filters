@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\battl\OneDrive\Documents\GitHub\Computer-Science-Captstone-Project\build\_deps\imgui-subbuild\CMakeFiles\e89a175995b01055a2299006f59721ef\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FA0F0E5E-8C02-397F-A736-86AB1E7ACC83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,5 +1,6 @@
 #pragma once
 
+
 #include <SFML/Graphics.hpp>
 #include "Scene.h"
 #include "Renderer.h"
@@ -9,6 +10,7 @@
 #include "ResourceManager.h"
 #include "SceneLoader.h"
 #include "SceneSerializer.h"
+#include "EditorUI.h"
 
 class Engine {
     private:
@@ -21,9 +23,12 @@ class Engine {
     PhysicsSystem physicsSystem;
     CollisionSystem collisionSystem;
     InputSystem inputSystem;
+    EditorUI editorUI;
     void processEvents();
+    
 
     public:
+    ~Engine();
     Engine();
     void run();
     
