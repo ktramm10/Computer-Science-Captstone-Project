@@ -1,0 +1,102 @@
+{
+    "started": false,
+    "rules": [
+        {
+            "event": 1,
+            "actions": [
+                {
+                    "type": 2,
+                    "value": 90.0
+                }
+            ]
+        },
+        {
+            "event": 0,
+            "actions": [
+                {
+                    "type": 7,
+                    "x": 16,
+                    "y": 16
+                }
+            ]
+        },
+        {
+            "event": 0,
+            "actions": [
+                {
+                    "type": 8,
+                    "x": 16,
+                    "y": 16
+                }
+            ]
+        },
+        {
+            "event": 0,
+            "actions": [
+                {
+                    "type": 10,
+                    "value": 500
+                }
+            ]
+        },
+        {
+            "event": 3,
+            "actions": [
+                {
+                    "type": 10,
+                    "value": 180
+                }
+            ]
+        },
+        {
+            "event": 3,
+            "actions": [
+                {
+                    "type": 9,
+                    "value": 3.0
+                }
+            ]
+        },
+        {
+            "event": 0,
+            "actions": [
+                {
+                    "type": 9,
+                    "value": 3.5
+                }
+            ]
+        },
+        {
+        	"event": 4,
+        	"actions": [
+        		{
+        			"type": 17
+        		}
+        	]
+        },
+        {
+        	"event": 4,
+        	"actions": [
+        		{
+        			"type": 18
+        		}
+        	]
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

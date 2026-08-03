@@ -10,8 +10,6 @@ class Sprite : public Component
     sf::Sprite *sprite;
     std::string texID;
 
-    Sprite() = default;
-
     Sprite(const sf::Texture& texture, const std::string texID) {
         this->texID = texID;
         sprite = new sf::Sprite(texture);

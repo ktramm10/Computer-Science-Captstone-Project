@@ -1,0 +1,168 @@
+prompt_id,prompt,expected_genre,expected_entities,expected_components,scene_template
+platformer_001,Create a platformer where the player collects coins and avoids enemies,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_002,Make a side scrolling game with platforms and a goal,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_003,Build a simple jump game with coins and enemies,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_004,Create a 2D platform game where the player reaches the finish,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_005,Make a Mario style prototype with platforms enemies and coins,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_006,Create a game where the player jumps across floating platforms,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_007,Build a small platform level with ground tiles and collectibles,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_008,Make a platformer where the player avoids hazards and reaches the exit,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_009,Generate a side view platform game with player movement,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+top_down_shooter_001,Create a top down shooter with enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_002,Make a game where the player shoots enemies from above,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_003,Build a twin stick shooter prototype,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_004,Create a top down arena game with enemy spawns,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_005,Make a shooting game with projectiles and walls,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_006,Generate a top down combat scene with bullets,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_007,Create a player that can shoot projectiles at enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_008,Build a simple arena shooter with waves of enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_009,Make a top down survival shooter with basic enemy movement,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+puzzle_001,Create a puzzle game with a key and door,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_002,Make a game where the player solves a room puzzle,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_003,Build a simple puzzle prototype with switches,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_004,Create a game where the player unlocks a door with a key,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_005,Make a puzzle room with obstacles and a goal,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_006,Generate a 2D puzzle game with keys doors and switches,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_007,Create a logic puzzle where the player opens the exit,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_008,Build a simple escape room style game,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+space_shooter_001,Create a space shooter with enemy ships,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_002,Make a game where the player ship shoots asteroids,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_003,Build a simple spaceship shooting game,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_004,Create a vertical space shooter prototype,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_005,Make an arcade shooter with ships and projectiles,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_006,Generate a space combat scene,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_007,Create a game where the player avoids asteroids and shoots enemies,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_008,Build a basic starfighter game,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+runner_001,Create an endless runner with obstacles,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_002,Make a runner game where the player jumps over objects,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_003,Build a simple side scrolling runner,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_004,Create a game where the player runs forward and collects coins,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_005,Make a runner prototype with platforms and hazards,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_006,Generate an auto running 2D game,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_007,Create a jumping runner with obstacles and coins,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_008,Build a game where the player avoids obstacles while running,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+platformer_010,Make a platform game where the player jumps over gaps and collects coins,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_011,Create a small 2D level with platforms enemies and a finish flag,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_012,Build a side scrolling platformer with simple player movement,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_013,Generate a platforming scene where the player avoids enemies and reaches the goal,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_014,Create a beginner platformer with a player ground platforms and collectibles,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_015,Make a jump based game with coins hazards and a goal area,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_016,Build a simple platform game where the player lands on platforms,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_017,Create a side view level with a player enemy coins and platforms,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+top_down_shooter_010,Make a top down game where the player fires bullets at enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_011,Create an overhead shooter with walls enemies and projectiles,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_012,Build an arena shooter where enemies spawn around the player,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_013,Generate a top down shooting prototype with basic collision,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_014,Create a shooter where the player moves in four directions and attacks enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_015,Make a combat arena with bullets enemies and obstacles,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_016,Build a simple top view shooter with projectile collisions,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_017,Create a game where the player defeats enemies using ranged attacks,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+puzzle_009,Make a puzzle where the player presses a switch to open a door,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_010,Create a locked door puzzle with keys and obstacles,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_011,Build a small room puzzle where the player must reach the goal,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_012,Generate a puzzle scene with a key door switch and exit,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_013,Create a game where the player solves a simple object puzzle,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_014,Make a level where a key unlocks the path to the goal,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_015,Build a basic puzzle game with doors switches and collision,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_016,Create a 2D logic puzzle with a player and blocked paths,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_017,Generate an escape style puzzle where the player finds the exit,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+space_shooter_009,Make a space shooter where the player fires lasers at enemy ships,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_010,Create a spaceship game with asteroids projectiles and powerups,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_011,Build a vertical shooter where enemies move toward the player ship,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_012,Generate an arcade space battle with bullets and asteroids,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_013,Create a 2D starship shooter with enemy waves,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_014,Make a space combat prototype where the ship avoids obstacles,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_015,Build a game where the player ship shoots projectiles at enemies,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_016,Create a scrolling space shooter with asteroids and enemy ships,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+runner_009,Make an endless runner where the player jumps over barriers,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_010,Create a side scrolling runner with coins and obstacles,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_011,Build a running game where the player avoids hazards,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_012,Generate a simple runner level with platforms and collectibles,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_013,Create a game where the player automatically runs forward,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_014,Make a runner prototype with jumping obstacles and coins,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_015,Build an obstacle course runner with collision detection,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_016,Create a fast 2D runner where the player reaches a goal,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+platformer_018,Create a platform game where the player jumps over enemies and collects coins,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_019,Make a 2D side scroller with platforms hazards and a goal flag,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_020,Build a platformer level where the player must reach the exit,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_021,Generate a jumping game with coins platforms and one enemy,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_022,Create a simple platform prototype with player movement and gravity,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_023,Make a game where the player runs jumps and lands on platforms,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_024,Build a side view platform level with collectibles and obstacles,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_025,Create a platformer where the player avoids spikes and reaches a goal,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_026,Make a basic jump and run game with ground blocks and coins,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_027,Generate a platform scene with floating platforms and enemies,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_028,Create a game where the player crosses gaps using jumps,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_029,Build a small platform game with a start area and finish area,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_030,Make a side scrolling adventure with coins enemies and platforms,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_031,Create a platformer where the player can jump onto ledges,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_032,Generate a 2D platform prototype with enemies coins and a goal,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+platformer_033,Make a level where the player jumps between platforms to win,platformer,Player;Platform;Coin;Enemy;Goal,Transform;Sprite;Physics;Collision;Input,platformer_basic
+top_down_shooter_018,Create a top down shooter where enemies chase the player,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_019,Make an overhead combat game with bullets and enemy spawners,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_020,Build a top view shooter with walls projectiles and enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_021,Generate an arena shooter where the player survives enemy waves,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_022,Create a game where the player moves in all directions and shoots,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_023,Make a top down action prototype with projectile collision,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_024,Build a shooter scene where enemies spawn around the map,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_025,Create a simple combat arena with a player enemies and bullets,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_026,Make a game where the player fires projectiles at approaching enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_027,Generate a top down shooting level with obstacles and walls,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_028,Create an overhead shooter with enemy movement and player attacks,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_029,Build a 2D arena game where the player defeats enemies,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_030,Make a top down shooter where bullets disappear on impact,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_031,Create a shooting prototype with a player enemy and projectile system,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_032,Generate a top view battle scene with walls and enemy spawns,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+top_down_shooter_033,Make an action shooter where the player dodges enemies and shoots,top_down_shooter,Player;Enemy;Projectile;Wall;Spawner,Transform;Sprite;Physics;Collision;Input,top_down_shooter_basic
+puzzle_018,Create a puzzle game where a key unlocks a door,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_019,Make a room puzzle with switches obstacles and an exit,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_020,Build a logic puzzle where the player activates a switch,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_021,Generate a 2D puzzle level with a key door and goal,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_022,Create a game where the player solves a simple lock puzzle,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_023,Make an escape room prototype with doors keys and switches,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_024,Build a puzzle scene where blocked paths require a key,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_025,Create a level where the player must press a switch to continue,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_026,Generate a puzzle game with obstacles and a goal tile,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_027,Make a key and door puzzle with player movement,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_028,Create a simple puzzle where the player opens the exit,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_029,Build a game where switches control doors in the scene,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_030,Make a 2D puzzle prototype with a player key and door,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_031,Create a room where the player finds a key and reaches the goal,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_032,Generate a puzzle scene with locked doors and path obstacles,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+puzzle_033,Make a puzzle level where the player must unlock the finish,puzzle,Player;Key;Door;Switch;Goal;Obstacle,Transform;Sprite;Collision;Input,puzzle_basic
+space_shooter_017,Create a space shooter where the player ship fires lasers,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_018,Make a spaceship game with asteroids enemies and projectiles,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_019,Build an arcade space shooter with enemy ships and powerups,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_020,Generate a vertical shooter where the player avoids asteroids,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_021,Create a starship battle game with bullets and enemy waves,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_022,Make a space combat prototype with a player ship and enemies,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_023,Build a game where the ship shoots projectiles at asteroids,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_024,Create a scrolling space shooter with enemy ships and hazards,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_025,Generate a 2D asteroid shooting game with powerups,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_026,Make a spaceship shooter where the player dodges obstacles,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_027,Create an arcade space scene with lasers and enemy ships,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_028,Build a space battle prototype with projectiles and collisions,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_029,Make a game where the player ship survives waves of enemies,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_030,Create a shooter in space with asteroids enemy ships and pickups,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_031,Generate a starfighter game with bullets enemies and power ups,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_032,Make a vertical space game where the ship fires at enemies,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_033,Create a simple space shooter where asteroids move toward the player,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+space_shooter_034,Build a space arcade prototype with enemy ships and lasers,space_shooter,PlayerShip;EnemyShip;Projectile;Asteroid;PowerUp,Transform;Sprite;Physics;Collision;Input,space_shooter_basic
+runner_017,Create a runner game where the player jumps over obstacles,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_018,Make an endless runner with coins barriers and platforms,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_019,Build a side scrolling runner where the player avoids hazards,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_020,Generate a running game with obstacles and collectible coins,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_021,Create an auto runner where the player jumps at the right time,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_022,Make a fast runner prototype with platforms and barriers,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_023,Build an obstacle runner where the player reaches a finish goal,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_024,Create a side view runner with coins and collision obstacles,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_025,Generate a game where the player runs forward and avoids blocks,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_026,Make a jumping runner with hazards platforms and pickups,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_027,Create an endless obstacle course with coins,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_028,Build a runner level where the player must jump over gaps,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_029,Make a simple auto running game with obstacles and score,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_030,Create a runner prototype where the player dodges barriers,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_031,Generate a 2D running scene with coins obstacles and a goal,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_032,Make a side scrolling runner where obstacles appear ahead,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_033,Create a game where the player keeps running and collects coins,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic
+runner_034,Build a fast paced runner with platforms hazards and pickups,runner,Player;Obstacle;Coin;Platform;Goal,Transform;Sprite;Physics;Collision;Input,runner_basic

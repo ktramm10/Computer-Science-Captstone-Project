@@ -1,0 +1,533 @@
+{
+    "backgroundColor": [
+        8,
+        165,
+        242,
+        255
+    ],
+    "entities": [
+        {
+            "components": {
+                "collision": {
+                    "faction": 1,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "health": {
+                    "currentHealth": 50.0,
+                    "maxHealth": 50.0
+                },
+                "input": {
+                    "canJump": true,
+                    "canMove": true,
+                    "jumpForce": 483.0,
+                    "moveSpeed": 250.0,
+                    "movementType": 1
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 1088.137939453125,
+                    "isGrounded": true,
+                    "useGravity": true,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "shooter": {
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "projectileDamage": 5.0,
+                    "projectileDirection": [
+                        1.0,
+                        0.0
+                    ],
+                    "projectileScale": [
+                        0.5,
+                        0.5
+                    ],
+                    "projectileSpeed": 400.0,
+                    "textureID": "yellow_sprite"
+                },
+                "sprite": {
+                    "texture": "red_sprite"
+                },
+                "transform": {
+                    "position": [
+                        700.2158813476563,
+                        1015.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": true,
+            "name": "Player"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        1920.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "green_sprite"
+                },
+                "transform": {
+                    "position": [
+                        0.0,
+                        1047.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        61.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Terrain"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        64.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 10.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 30.0
+                },
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "position": [
+                        1049.0,
+                        983.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Obstacle"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "position": [
+                        1182.0,
+                        988.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Coin"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "position": [
+                        1224.0,
+                        988.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Coin_1"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "position": [
+                        1267.0,
+                        989.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Coin_2"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "position": [
+                        1312.0,
+                        988.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Coin_3"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 1
+                },
+                "sprite": {
+                    "texture": "heart_sprite"
+                },
+                "transform": {
+                    "position": [
+                        1452.0,
+                        987.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Heart"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 1
+                },
+                "sprite": {
+                    "texture": "heart_sprite"
+                },
+                "transform": {
+                    "position": [
+                        606.0,
+                        982.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Heart_1"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        64.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 10.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 30.0
+                },
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "position": [
+                        855.0,
+                        983.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Obstacle_1"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        64.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 10.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 30.0
+                },
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "position": [
+                        327.0,
+                        983.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "Obstacle_2"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 1,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        16.0,
+                        16.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 5.0,
+                    "destroyEntityOnContact": true,
+                    "knockback": 0.0
+                },
+                "lifeTime": {
+                    "lifeTimeDuration": 4.0,
+                    "lifeTimeTimer": 3.933307409286499
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 1088.137939453125,
+                    "isGrounded": false,
+                    "useGravity": false,
+                    "velocity": [
+                        -249.9287567138672,
+                        -312.3069152832031
+                    ]
+                },
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "position": [
+                        658.5541381835938,
+                        962.940185546875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        0.5,
+                        0.5
+                    ]
+                }
+            },
+            "isPlayer": false,
+            "name": "projectile1"
+        }
+    ],
+    "gravity": 1088.137939453125
+}

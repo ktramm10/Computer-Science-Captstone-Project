@@ -1,0 +1,25 @@
+{
+    "started": false,
+    "rules": [
+        {
+            "event": 6,
+            "actions": [
+                {
+                    "type": 14,
+                    "target": "temp_wall"
+
+                }
+            ]
+                
+        },
+        {
+            "event": 7,
+            "actions": [
+                {
+                    "type": 15,
+                    "target": "temp_wall"
+                }
+            ]
+        }
+    ]
+}

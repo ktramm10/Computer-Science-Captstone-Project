@@ -1,0 +1,15 @@
+{
+	"started": false,
+	"rules": [
+		{
+			"event": 9,
+			"actions": [
+				{
+					"type": 0,
+					"target": "C:\\Users\\battl\\OneDrive\\Documents\\GitHub\\Computer-Science-Captstone-Project\\src\\json\\saved_scenes\\shooter.json"
+				}
+			]
+		}
+	]
+}
+

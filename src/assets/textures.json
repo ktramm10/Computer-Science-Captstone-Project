@@ -1,0 +1,53 @@
+{
+    "textures": [
+        {
+            "id": "red_sprite",
+            "path": "../../src/images/redSprite32x32.png"
+        },
+        {
+            "id": "yellow_sprite",
+            "path": "../../src/images/yellowSprite32x32.png"
+        },
+        {
+            "id": "heart_sprite",
+            "path": "../../src/images/heartSprite32x32.png"
+        },
+        {
+            "id": "blue_sprite",
+            "path": "../../src/images/blueSprite32x32.png"
+        },
+        {
+            "id": "cactus_sprite",
+            "path": "../../src/images/cactusSprite32x32.png"
+        },
+        {
+            "id": "coin_sprite",
+            "path": "../../src/images/coinSprite32x32.png"
+        },
+        {
+            "id": "green_sprite",
+            "path": "../../src/images/greenSprite32x32.png"
+        },
+        {
+            "id": "pink_sprite",
+            "path": "../../src/images/pinkSprite32x32.png"
+        },
+        {
+            "id": "spikes_sprite",
+            "path": "../../src/images/spikesSprite32x32.png"
+        },
+        {
+            "id": "flag_sprite",
+            "path": "../../src/images/flagSprite32x32.png"
+        },
+        {
+            "id": "switch_sprite_off",
+            "path": "../../src/images/switchSpriteOff32x32.png"
+        },
+        {
+            "id": "switch_sprite_on",
+            "path": "../../src/images/switchSpriteOn32x32.png"
+        }
+
+    ]
+}

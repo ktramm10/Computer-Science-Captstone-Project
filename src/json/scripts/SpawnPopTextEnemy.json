@@ -1,0 +1,25 @@
+{
+    "started": false,
+    "rules": [
+        {
+            "event": 4,
+            "actions": [
+                {
+                    "type": 17
+                }
+            ]
+        },
+        {
+        	"event": 4,
+        	"actions": [
+        		{
+        			"type": 18
+        		}
+        	]
+        }
+    ]
+}
+
+
+
+

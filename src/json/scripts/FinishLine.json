@@ -1,0 +1,15 @@
+{
+    "started": false,
+    "rules": [
+        {
+            "event": 5,
+            "actions": [
+                {
+                    "type": 0,
+                    "target": "../../src/json/saved_scenes/You Win.json"
+                }
+            ]
+        }
+    ]
+
+}

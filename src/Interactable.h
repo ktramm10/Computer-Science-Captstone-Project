@@ -5,24 +5,24 @@
 #include <memory>
 
 class Scene;
+class SceneLoader;
+class ResourceManager;
 
 enum class InteractionType {
-    Collectable,
-    Dialogue,
-};
-
-enum class CollectableType {
-    Coin,
-    Health,
-    Ammo
+    PickUp,
+    Key,
+    Door
 };
 
 class Interactable : public Component {
     public:
-    Interactable() = default;
+    Interactable() {
+        interactionType = InteractionType::PickUp;
+    }
     InteractionType interactionType;
     Interactable(InteractionType interactionType) : interactionType(interactionType) {}
-    void interact(std::shared_ptr<Entity> otherEntity, std::shared_ptr<Entity> interactableEntity, Scene& scene);
+    bool interact(std::shared_ptr<Entity> otherEntity, std::shared_ptr<Entity> interactableEntity, Scene& scene,
+         SceneLoader& sceneLoader, ResourceManager& resourceManager);
     
 };
 

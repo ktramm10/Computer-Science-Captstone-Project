@@ -1,0 +1,13 @@
+{
+    "started": false,
+    "rules": [
+        {
+            "event": 8,
+            "actions": [
+                {
+                    "type": 17
+                }
+            ]
+        }
+    ]
+}

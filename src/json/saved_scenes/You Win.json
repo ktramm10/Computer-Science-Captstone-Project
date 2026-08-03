@@ -1,0 +1,210 @@
+{
+    "backgroundColor": [
+        27,
+        196,
+        215,
+        255
+    ],
+    "entities": [
+        {
+            "components": {
+                "text": {
+                    "characterSize": 197,
+                    "fillColorA": 255,
+                    "fillColorB": 14,
+                    "fillColorG": 222,
+                    "fillColorR": 222,
+                    "font": "default",
+                    "linkGameValue": false,
+                    "linkedGameValue": 0,
+                    "positionRelativeToViewport": false,
+                    "style": 0,
+                    "textString": "You Win!"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        998.1070556640625,
+                        902.0000610351563
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "You Win Text"
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2160.10693359375,
+                        339.00006103515625
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        11.5,
+                        11.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Sun"
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1995.1070556640625,
+                        531.0000610351563
+                    ],
+                    "rotation": 71.0,
+                    "scale": [
+                        -0.5,
+                        2.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "sun streak"
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1989.10693359375,
+                        654.0000610351563
+                    ],
+                    "rotation": 54.0,
+                    "scale": [
+                        -0.5,
+                        2.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "sun streak_1"
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2119.10693359375,
+                        772.0000610351563
+                    ],
+                    "rotation": 40.0,
+                    "scale": [
+                        -0.5,
+                        2.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "sun streak_2"
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2259.10693359375,
+                        776.0000610351563
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        -0.5,
+                        2.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "sun streak_3"
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2381.10693359375,
+                        757.0000610351563
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        -0.5,
+                        2.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "sun streak_4"
+        }
+    ],
+    "gravity": 300.0,
+    "viewport_camera_offset": [
+        0.0,
+        0.0
+    ],
+    "viewport_camera_speed": 300.0,
+    "viewport_center_position": [
+        1479.551025390625,
+        903.979736328125
+    ],
+    "viewport_follow_player_character": false,
+    "window_size": [
+        1920.0,
+        1080.0
+    ]
+}

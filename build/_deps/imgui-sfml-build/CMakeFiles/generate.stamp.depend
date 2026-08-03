@@ -1,7 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-4.4/Modules/FindOpenGL.cmake
-C:/Program Files/CMake/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-4.4/Modules/FindPackageMessage.cmake
-C:/Program Files/CMake/share/cmake-4.4/Modules/GNUInstallDirs.cmake
-C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-src/CMakeLists.txt
-C:/Users/battl/OneDrive/Documents/GitHub/Computer-Science-Captstone-Project/build/_deps/imgui-sfml-src/cmake/FindImGui.cmake

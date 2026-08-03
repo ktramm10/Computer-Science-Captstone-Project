@@ -1,0 +1,321 @@
+{
+    "backgroundColor": [
+        221,
+        208,
+        208,
+        255
+    ],
+    "entities": [
+        {
+            "components": {
+                "collision": {
+                    "faction": 1,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "input": {
+                    "acceleration": 50.0,
+                    "canJump": true,
+                    "canMove": true,
+                    "deceleration": 50.0,
+                    "jumpForce": 300.0,
+                    "moveSpeed": 315.0,
+                    "movementType": 1
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 300.0,
+                    "isGrounded": false,
+                    "useAcceleration": false,
+                    "useGravity": true,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "green_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        863.0,
+                        494.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": true,
+            "name": "player"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        1921.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        0.0,
+                        1053.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        60.0,
+                        1.0
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "floor"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        64.0
+                    ]
+                },
+                "door": {
+                    "isLocked": true,
+                    "keyId": "default",
+                    "sceneFilePath": "../../src/json/saved_scenes\\Grassy Adventure.json",
+                    "unlockedTexID": "blue_sprite"
+                },
+                "sprite": {
+                    "texture": "red_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        181.0,
+                        982.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        2.0
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "door"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        16.0,
+                        16.0
+                    ]
+                },
+                "key": {
+                    "keyId": "default"
+                },
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        461.6297302246094,
+                        993.3182983398438
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        0.5,
+                        0.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "key"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        48.0,
+                        48.0
+                    ]
+                },
+                "script": {
+                    "fileName": "Switch",
+                    "filePath": "../../src/json/scripts\\Switch.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "temp_wall",
+                                    "type": 14,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 6
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "temp_wall",
+                                    "type": 15,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 7
+                        }
+                    ],
+                    "started": false
+                },
+                "sprite": {
+                    "texture": "switch_sprite_off"
+                },
+                "switch": {
+                    "activated": false,
+                    "activatedTextureID": "switch_sprite_on",
+                    "deactivatedTextureID": "switch_sprite_off"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1393.0,
+                        1005.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.5,
+                        1.5
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "switch"
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        600.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "red_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1545.47607421875,
+                        381.0001220703125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        22.0
+                    ]
+                }
+            },
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "temp_wall"
+        }
+    ],
+    "gravity": 300.0,
+    "viewport_camera_speed": 485.22601318359375,
+    "viewport_follow_player_character": true
+}

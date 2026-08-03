@@ -52,6 +52,16 @@ add_executable(MyGameEngine
     src/SceneLoader.cpp
     src/SceneSerializer.cpp
     src/EditorUI.cpp
+    src/Hazard.cpp
+    src/Script.cpp
+    src/ScriptSystem.cpp
+    src/TimerManager.cpp
+    src/StringHelper.cpp
+    external/TextEditor.cpp
+)
+
+target_include_directories(MyGameEngine PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/external
 )
 
 target_link_libraries(MyGameEngine PRIVATE
@@ -61,3 +71,23 @@ target_link_libraries(MyGameEngine PRIVATE
     ImGui-SFML::ImGui-SFML
     nlohmann_json::nlohmann_json
 )
+
+set(PROJECT_VENV_PYTHON ${CMAKE_CURRENT_SOURCE_DIR}/.venv/Scripts/python.exe)
+
+if(EXISTS ${PROJECT_VENV_PYTHON})
+    set(PROJECT_PYTHON_EXECUTABLE ${PROJECT_VENV_PYTHON})
+else()
+    find_package(Python3 COMPONENTS Interpreter)
+    if(Python3_Interpreter_FOUND)
+        set(PROJECT_PYTHON_EXECUTABLE ${Python3_EXECUTABLE})
+    endif()
+endif()
+
+if(PROJECT_PYTHON_EXECUTABLE)
+    add_custom_target(train_ai_model
+        COMMAND ${PROJECT_PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/src/AI/train_model.py
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT "Training the scikit-learn game prompt model"
+        VERBATIM
+    )
+endif()

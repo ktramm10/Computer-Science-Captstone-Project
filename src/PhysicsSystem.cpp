@@ -4,6 +4,9 @@
 void PhysicsSystem::update(Scene& scene, float dt) {
     // Update logic for the scene, e.g., updating entities, physics, etc.
     for (auto& entity : scene.getEntities()) {
+        if (entity->isBlueprint()) {
+            continue;
+        }
         const auto componentMask = entity->getComponentMask();
         if ((componentMask & ComponentTypes::Transform) != 0 && (componentMask & ComponentTypes::Physics) != 0) {
             auto physics = entity->getComponent<Physics>();
@@ -17,7 +20,7 @@ void PhysicsSystem::update(Scene& scene, float dt) {
             }
 
             // Update position based on velocity
-            transform->position += physics->velocity * dt;
+            transform->moveWorldPosition(physics->velocity * dt);
         }
     }
 }

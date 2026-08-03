@@ -1,0 +1,12 @@
+{
+    "fonts": [
+        {
+            "id": "arial",
+            "path": "../../src/fonts/arial.ttf"
+        },
+        {
+            "id": "nitro_eagle",
+            "path": "../../src/fonts/NitroEagle-KVP1W.ttf"
+        }
+    ]
+}

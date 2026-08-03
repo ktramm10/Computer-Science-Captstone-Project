@@ -1,0 +1,17 @@
+.vs/
+build/
+out/
+
+.venv/
+__pycache__/
+*.py[cod]
+*.joblib
+
+*.suo
+*.user
+*.vcxproj.user
+*.log
+*.ilk
+*.obj
+*.pdb
+*.exe
