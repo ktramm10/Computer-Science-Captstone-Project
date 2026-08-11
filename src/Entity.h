@@ -6,6 +6,7 @@
 #include <typeindex>
 #include <cstdint>
 #include <string>
+#include <algorithm>
 #include "Component.h"
 
 class Entity : public std::enable_shared_from_this<Entity>
@@ -16,8 +17,8 @@ class Entity : public std::enable_shared_from_this<Entity>
     bool alive = true;
     bool isPlayer = false;
     bool blueprint = false;
-    std::shared_ptr<Entity> parentEntity = nullptr;
-    std::vector<std::shared_ptr<Entity>> childEntities;
+    std::weak_ptr<Entity> parentEntity;
+    std::vector<unsigned int> childEntityIDs;
 
 
     // bitmask to determine component existence
@@ -31,7 +32,10 @@ class Entity : public std::enable_shared_from_this<Entity>
 
     unsigned int getID() const;
     const std::string& getName() const;
+    const std::weak_ptr<Entity>& getParentEntity() const { return parentEntity; }
+    std::vector<unsigned int>& getChildEntitiesIDs() { return childEntityIDs; }
     void setName(const std::string& newName) { name = newName; }
+    void setParentEntity(std::shared_ptr<Entity> parent) { parentEntity = parent; }
 
     template <typename T>
     void addComponent(std::shared_ptr<T> component, uint32_t flag) {
@@ -48,8 +52,7 @@ class Entity : public std::enable_shared_from_this<Entity>
         }
         return nullptr;
     }
-    
-    std::shared_ptr<Component> getComponentByType(ComponentTypes::Value type);
+
 
 
     template <typename T>

@@ -30,7 +30,7 @@ public:
         style = text->style;
     }
 
-    void applyProperties() {
+    void applyProperties(sf::Vector2f parentWorldPosition) {
         if (text) {
             text->fontID = fontID;
             text->textString = textString;
@@ -43,14 +43,12 @@ public:
             lifeTime->lifeTimeDuration = lifeTimeDuration;
         }
         if (transform) {
-            sf::Vector2f worldPosition = offset;
-            if (auto parent = getParent()) {
-                if (auto parentTransform = parent->getComponent<Transform>()) {
-                    worldPosition += parentTransform->getWorldPosition();
-                }
-            }
-            transform->setWorldPosition(worldPosition);
+            transform->setWorldPosition(parentWorldPosition + offset);
         }
+    }
+
+    void applyProperties() {
+        applyProperties({0.0f, 0.0f});
     }
 
 };

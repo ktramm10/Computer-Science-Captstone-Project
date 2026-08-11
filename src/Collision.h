@@ -16,6 +16,7 @@ class Collision : public Component
     bool isStatic = false;
     bool isPhysicalCollider = true;
     bool resolvePhysicalCollisionsWithTeam = true;
+    bool isMovingPlatform = false;
     Faction faction = Faction::Neutral;
 
     Collision() = default;

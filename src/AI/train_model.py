@@ -139,13 +139,19 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--data", type=Path, default=DATA_PATH, help="Path to training.csv")
     parser.add_argument("--model", type=Path, default=MODEL_PATH, help="Path to save/load the model")
     parser.add_argument("--predict", help="Prompt to classify after a model has been trained")
+    parser.add_argument("--predict-file", type=Path, help="File containing a prompt to classify")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    if args.predict:
-        result = predict(args.model, args.predict)
+    prompt = args.predict
+    if args.predict_file:
+        prompt = args.predict_file.read_text(encoding="utf-8")
+    if prompt is not None:
+        if not args.model.exists():
+            train(args.data, args.model)
+        result = predict(args.model, prompt)
         print(json.dumps(result, indent=2))
         return
     package = train(args.data, args.model)

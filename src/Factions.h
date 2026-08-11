@@ -2,5 +2,6 @@
 enum class Faction {
     Neutral,
     Player,
-    Enemy
+    Enemy,
+    Terrain
 };

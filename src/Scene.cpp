@@ -1,5 +1,6 @@
 #include "Scene.h"
 
+#include <algorithm>
 #include <iostream>
 
 std::vector<std::filesystem::path> Scene::getSceneFiles(const std::filesystem::path &folder)
@@ -37,6 +38,19 @@ std::vector<SceneFile> Scene::loadSceneList(const std::filesystem::path &folder)
 std::shared_ptr<Entity> Scene::createEntity(const std::string& name) {
     auto entity = std::make_shared<Entity>(nextEntityID++, name);
     entities.push_back(entity);
+    return entity;
+}
+
+std::shared_ptr<Entity> Scene::createEntityWithID(unsigned int id, const std::string& name) {
+    auto existingEntity = getEntityByID(id);
+    if (existingEntity) {
+        std::cerr << "Entity ID already exists: " << id << std::endl;
+        return existingEntity;
+    }
+
+    auto entity = std::make_shared<Entity>(id, name);
+    entities.push_back(entity);
+    nextEntityID = std::max(nextEntityID, id + 1);
     return entity;
 }
 
@@ -107,6 +121,143 @@ void Scene::debugPrintEntities() const {
     }
 }
 
+std::shared_ptr<Entity> Scene::getEntityByID(unsigned int id) const
+{
+    for (const auto& entity : entities) {
+        if (entity && entity->getID() == id) {
+            return entity;
+        }
+    }
+    return nullptr;
+}
+
+sf::Vector2f Scene::getWorldPosition(std::shared_ptr<Entity> entity) const
+{
+    if (entity->getParentEntity().lock()) {
+        auto parent = entity->getParentEntity().lock();
+        return getWorldPosition(parent) + entity->getComponent<Transform>()->getLocalPosition();
+    }
+    return entity->getComponent<Transform>()->getWorldPosition();
+}
+
+void Scene::moveEntity(std::shared_ptr<Entity> entity, sf::Vector2f delta)
+{
+    if (!entity) return;
+
+    auto transform = entity->getComponent<Transform>();
+    if (!transform) return;
+    if (entity->getParentEntity().lock()) {
+        transform->setLocalPosition(transform->getLocalPosition() + delta);
+    } 
+    else {
+        transform->moveWorldPosition(delta);
+    }
+}
+
+
+void Scene::setParent(unsigned int childID, unsigned int parentID)
+{
+    if (childID == parentID) {
+        std::cerr << "Cannot set entity as its own parent: " << childID << std::endl;
+        return;
+    }
+    auto child = getEntityByID(childID);
+    auto parent = getEntityByID(parentID);
+    if (!child) {
+        std::cerr << "Child entity not found: " << childID << std::endl;
+        return;
+    }
+    if (!parent) {
+        std::cerr << "Parent entity not found: " << parentID << std::endl;
+        return;
+    }
+    auto currentParent = child->getParentEntity().lock();
+    if (currentParent && currentParent->getID() == parentID) {
+        return;
+    }
+    if (isChildOf(parentID, childID)) {
+        std::cerr << "Cannot set entity as parent because it would create a cycle: childID=" << childID << ", parentID=" << parentID << std::endl;
+        return;
+    }
+
+    auto childTransform = child->getComponent<Transform>();
+    sf::Vector2f childWorldPosition = childTransform ? getWorldPosition(child) : sf::Vector2f{0.0f, 0.0f};
+    sf::Vector2f parentWorldPosition = parent->getComponent<Transform>() ? getWorldPosition(parent) : sf::Vector2f{0.0f, 0.0f};
+
+    if (child->getParentEntity().lock()) {
+        clearParent(childID);
+    }
+    child->setParentEntity(parent);
+    auto& children = parent->getChildEntitiesIDs();
+    if (std::find(children.begin(), children.end(), childID) == children.end()) {
+        children.push_back(childID);
+    }
+    if (childTransform) {
+        childTransform->setLocalPosition(childWorldPosition - parentWorldPosition);
+    }
+    
+}
+void Scene::clearParent(unsigned int childID)
+{
+    auto child = getEntityByID(childID);
+    if (!child) {
+        std::cerr << "Child entity not found: " << childID << std::endl;
+        return;
+    }
+    auto transform = child->getComponent<Transform>();
+    sf::Vector2f worldPosition = transform ? getWorldPosition(child) : sf::Vector2f{0.0f, 0.0f};
+    auto parent = child->getParentEntity().lock();
+    if (parent) {
+        auto& siblings = parent->getChildEntitiesIDs();
+        siblings.erase(std::remove(siblings.begin(), siblings.end(), childID), siblings.end());
+    }
+    child->setParentEntity(nullptr);
+    if (transform) {
+        transform->setWorldPosition(worldPosition);
+        transform->setLocalPosition({0.0f, 0.0f});
+    }
+}
+
+void Scene::removeChild(unsigned int parentID, unsigned int childID)
+{
+    auto parent = getEntityByID(parentID);
+    auto child = getEntityByID(childID);
+    if (!parent) {
+        std::cerr << "Parent entity not found: " << parentID << std::endl;
+        return;
+    }
+    if (!child) {
+        std::cerr << "Child entity not found: " << childID << std::endl;
+        return;
+    }
+    for (auto id : parent->getChildEntitiesIDs()) {
+        if (id == childID) {
+            auto& siblings = parent->getChildEntitiesIDs();
+            siblings.erase(std::remove(siblings.begin(), siblings.end(), childID), siblings.end());
+            child->setParentEntity(nullptr);
+            return;
+        }
+    }
+    std::cerr << "Child entity " << childID << " is not a child of parent entity " << parentID << std::endl;
+}
+
+bool Scene::isChildOf(unsigned int childID, unsigned int parentID) const
+{
+    auto child = getEntityByID(childID);
+    if (!child) {
+        return false;
+    }
+
+    auto parent = child->getParentEntity().lock();
+    while (parent) {
+        if (parent->getID() == parentID) {
+            return true;
+        }
+        parent = parent->getParentEntity().lock();
+    }
+    return false;
+}
+
 void Scene::updateDoorLockStates()
 {
     for (auto& entity: entities) {
@@ -129,6 +280,7 @@ void Scene::updateDoorLockStates()
 void Scene::initialize(ResourceManager& resourceManager) {
     rm = resourceManager;
 }
+
 void Scene::clear() {
     entities.clear();
     playerEntity.reset();

@@ -16,10 +16,12 @@ json SceneSerializer::saveEntity(const std::shared_ptr<Entity> &entity, const Sc
     entityData["name"] = entity->getName();
     entityData["isPlayer"] = entity == scene.getPlayerEntity();
     entityData["isBlueprint"] = entity->isBlueprint();
+    entityData["id"] = entity->getID();
+    entityData["parentID"] = entity->getParentEntity().lock() ? entity->getParentEntity().lock()->getID() : -1;
     entityData["components"] = json::object();
     json& components = entityData["components"];
 
-    saveTransformComponent(components, entity);
+    saveTransformComponent(components, entity, scene);
     saveSpriteComponent(components, entity);
     saveCollisionComponent(components, entity);
     savePhysicsComponent(components, entity);
@@ -43,7 +45,7 @@ json SceneSerializer::saveEntity(const std::shared_ptr<Entity> &entity, const Sc
     return entityData;
 }
 
-void SceneSerializer::saveTransformComponent(json &components, const std::shared_ptr<Entity> &entity) const
+void SceneSerializer::saveTransformComponent(json &components, const std::shared_ptr<Entity> &entity, const Scene& scene) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Transform) != ComponentTypes::Transform) {
         return;
@@ -54,7 +56,7 @@ void SceneSerializer::saveTransformComponent(json &components, const std::shared
     if (!transform) return;
 
     components["transform"] = {
-        {"position", writeVec2(transform->getWorldPosition())}, 
+        {"position", writeVec2(scene.getWorldPosition(entity))}, 
         {"localPosition", writeVec2(transform->getLocalPosition())},
         {"scale", writeVec2(transform->getScale())}, 
         {"rotation", transform->getRotation()}
@@ -76,6 +78,7 @@ void SceneSerializer::saveCollisionComponent(json &components, const std::shared
         {"isStatic", collision->isStatic},
         {"isPhysicalCollider", collision->isPhysicalCollider},
         {"resolvePhysicalCollisionsWithTeam", collision->resolvePhysicalCollisionsWithTeam},
+        {"isMovingPlatform", collision->isMovingPlatform},
         {"faction", static_cast<int>(collision->faction)},
         {"knockbackDistance", collision->knockbackDistance}
     };
@@ -422,6 +425,7 @@ bool SceneSerializer::saveToFile(const std::string &filePath, const Scene &scene
     sceneData["viewport_camera_offset"] = writeVec2(VIEWPORT_CAMERA_OFFSET);
     sceneData["viewport_center_position"] = writeVec2(VIEWPORT_CENTER_POSITION);
     sceneData["viewport_follow_player_character"] = VIEWPORT_FOLLOW_PLAYER_CHARACTER;
+    sceneData["music_file_path"] = MUSIC_FILE_PATH;
     sceneData["window_size"] = writeVec2(WINDOW_SIZE);
     sceneData["backgroundColor"] = json::array({
         scene.backgroundColor.r,

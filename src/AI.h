@@ -26,7 +26,7 @@ class AI : public Component {
     float strafeDistance = 150.f;
     float strafeStartX = 0.f;
     float strafeStartY = 0.f;
-    float strafeDirection = 1;
+    float strafeDirection = 0.f;
     bool hasStrafeStart = false;
 
     // top down movement vars

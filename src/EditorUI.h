@@ -6,12 +6,13 @@
 #include "SceneSerializer.h"
 #include "SceneLoader.h"
 #include "TextEditor.h"
+#include "AIPromptBridge.h"
 
 class EditorUI {
     public:
     EditorUI() = default;
     TextEditor editor;
-    void buildUI(Scene& scene, ResourceManager& resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera);
+    void buildUI(Scene& scene, ResourceManager& resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer);
     void handleDragMove(sf::RenderWindow& window, bool isPlaying);
     const bool getIsSceneLoaded() { return isSceneLoaded; }
     private:
@@ -23,10 +24,11 @@ class EditorUI {
     void buildRenameEntityPopup();
     void buildAddComponentPopup(Scene& scene, ResourceManager& ResourceManager);
     void buildRemoveComponentPopup();
-    void buildScenePanel(Scene& scene, ResourceManager& resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera);
+    void buildScenePanel(Scene& scene, ResourceManager& resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer);
     void buildSaveSceneAsPanel(SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, Scene& scene, ResourceManager& resourceManager, sf::View& camera);
     void buildNewScenePanel(SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, Scene& scene, ResourceManager& resourceManager, sf::View& camera);
-    void buildToolBarPanel(SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, Scene& scene, ResourceManager& resourceManager, bool& isPlaying, sf::View& camera);
+    void buildToolBarPanel(SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, Scene& scene, ResourceManager& resourceManager, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer);
+    void buildAIPromptPanel(Scene& scene, ResourceManager& resourceManager, SceneLoader& sceneLoader, sf::View& camera, SceneSerializer& sceneSerializer);
     void buildScriptEditor();
     void buildCreateScriptPopup();
     void openScriptInEditor(std::string fileName, std::string filePath);
@@ -45,6 +47,11 @@ class EditorUI {
     bool createScriptPopupOpen = false;
     bool openScriptEditor = false;
     bool hideEditorPanels = false;
+    bool openAIPromptPanel = false;
+    std::string aiPromptStatus;
+    bool hasAIPromptResult = false;
+    AIPromptResult lastAIPromptResult;
+    AIPromptBridge aiPromptBridge;
     std::string currentFileName = "none";
     std::string currentFilePath = "null";
     

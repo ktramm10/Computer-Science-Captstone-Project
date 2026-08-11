@@ -1,6 +1,7 @@
 #pragma once
 
 
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "Scene.h"
 #include "Renderer.h"
@@ -29,6 +30,7 @@ class Engine {
     TimerManager timerManager;
     EditorUI editorUI;
     sf::View camera;
+    sf::Music musicPlayer;
     void processEvents();
     
 

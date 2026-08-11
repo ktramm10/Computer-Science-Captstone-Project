@@ -62,6 +62,7 @@ class Scene {
     GameState& getGameState() { return gameState; }
     const GameState& getGameState() const { return gameState; }
     std::shared_ptr<Entity> createEntity(const std::string& name);
+    std::shared_ptr<Entity> createEntityWithID(unsigned int id, const std::string& name);
     const std::vector<std::shared_ptr<Entity>>& getEntities() const;
     std::shared_ptr<Entity> getPlayerEntity() const;
     const std::filesystem::path& getCurrentScenePath() const { return currentScenePath; }
@@ -79,4 +80,11 @@ class Scene {
     void destroyEntity(std::shared_ptr<Entity> entity);
     void cleanupDestroyedEntities();
     void debugPrintEntities() const;
+    std::shared_ptr<Entity> getEntityByID(unsigned int id) const;
+    sf::Vector2f getWorldPosition(std::shared_ptr<Entity> entity) const;
+    void moveEntity(std::shared_ptr<Entity> entity, sf::Vector2f delta);
+    void setParent(unsigned int childID, unsigned int parentID);
+    void clearParent(unsigned int childID);
+    void removeChild(unsigned int parentID, unsigned int childID);
+    bool isChildOf(unsigned int childID, unsigned int parentID) const;
 };

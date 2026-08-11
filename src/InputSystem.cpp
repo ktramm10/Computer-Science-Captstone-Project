@@ -199,7 +199,7 @@ namespace {
                 spawnedPopText->style = popText->style;
                 spawnedPopText->lifeTimeDuration = popText->lifeTimeDuration;
                 spawnedEntity->addComponent(spawnedPopText, ComponentTypes::PopText);
-                spawnedPopText->applyProperties();
+                spawnedPopText->applyProperties(scene.getWorldPosition(spawnedEntity));
             }
         }
         if ((componentMask & ComponentTypes::Loot) != 0) {
@@ -336,7 +336,7 @@ namespace {
         }
     }
 
-    void processPlatformerPlayerInput(std::shared_ptr<Input> input, std::shared_ptr<Physics> physics) {
+    void processPlatformerPlayerInput(std::shared_ptr<Input> input, std::shared_ptr<Physics> physics, Scene& scene) {
         if (!input->canMove) {
             return;
         }
@@ -351,6 +351,12 @@ namespace {
             if (!physics->isGrounded) {
                 return;
             }
+            auto entity = input->getParent();
+            auto parent = entity->getParentEntity().lock();
+            if (entity && parent) {
+                scene.clearParent(entity->getID());
+                physics->useGravity = true;
+            }
             physics->velocity.y = -input->jumpForce;
             physics->isGrounded = false;
         }
@@ -362,11 +368,11 @@ namespace {
             input->canMove = input->movementLockTimer <= 0.0f;
         }
     }
-    sf::Vector2f CalculatePlayerShootDirection(std::shared_ptr<Entity> entity, sf::RenderWindow& window ) {
+    sf::Vector2f CalculatePlayerShootDirection(std::shared_ptr<Entity> entity, const Scene& scene, sf::RenderWindow& window ) {
         auto shootertransform = entity->getComponent<Transform>();
         if (shootertransform) {
             sf::Vector2f mousePosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-            sf::Vector2f shooterToMouse = mousePosition - shootertransform->getWorldPosition();
+            sf::Vector2f shooterToMouse = mousePosition - scene.getWorldPosition(entity);
             sf::Vector2f projectileDirection;
             if (shooterToMouse.lengthSquared() > 0.f) {
                 projectileDirection = shooterToMouse.normalized();
@@ -394,7 +400,7 @@ namespace {
         shooter->collisionScaling = {32.f * shooter->projectileScale.x, 32.f * shooter->projectileScale.y};
         auto shooterTransform = shooterEntity->getComponent<Transform>();
         auto shooterCollider = shooterEntity->getComponent<Collision>();
-        projectileTransform->setWorldPosition(shooterTransform->getWorldPosition() + projectileDirection * 40.0f);
+        projectileTransform->setWorldPosition(scene.getWorldPosition(shooterEntity) + projectileDirection * 40.0f);
         projectileTransform->setScale(shooter->projectileScale);
         collision->size = shooter->collisionScaling;
         collision->offset = shooter->offset;
@@ -424,13 +430,13 @@ namespace {
             if (requiredComponentsValid) {
                 switch(shooter->gunMode) {
                     case GunMode::default: {
-                        createProjectile(CalculatePlayerShootDirection(entity, window), scene, resourceManager, entity, window);
+                        createProjectile(CalculatePlayerShootDirection(entity, scene, window), scene, resourceManager, entity, window);
                         break;
                     }
                     case GunMode::Shotgun: {
                         // create multiple projectiles for shotgun spread
                         for (int i = 0; i < shooter->shotGunPelletCount; ++i) {
-                            createProjectile(CalculatePlayerShootDirection(entity, window).rotatedBy(sf::degrees(10.f * (i - (shooter->shotGunPelletCount - 1) / 2.f))), scene, resourceManager, entity, window);
+                            createProjectile(CalculatePlayerShootDirection(entity, scene, window).rotatedBy(sf::degrees(10.f * (i - (shooter->shotGunPelletCount - 1) / 2.f))), scene, resourceManager, entity, window);
                         }
                         break;
                     }
@@ -466,7 +472,7 @@ namespace {
                     default:
                         physics->velocity.x *= 0.f;
                         handleMovementLock(input, dt);
-                        processPlatformerPlayerInput(input, physics);
+                        processPlatformerPlayerInput(input, physics, scene);
                         break;
                     }
 
@@ -478,12 +484,12 @@ namespace {
 
         
         
-    sf::Vector2f calculateAIShootDirection(std::shared_ptr<Entity> playerEntity, std::shared_ptr<Entity> self, float errorMargin) {
+    sf::Vector2f calculateAIShootDirection(const Scene& scene, std::shared_ptr<Entity> playerEntity, std::shared_ptr<Entity> self, float errorMargin) {
         auto playerTransform = playerEntity->getComponent<Transform>();
         auto selfTransform = self->getComponent<Transform>();
         bool validTransforms = selfTransform && playerTransform;
         if (validTransforms) {
-            sf::Vector2f AItoPlayer = playerTransform->getWorldPosition() - selfTransform->getWorldPosition();
+            sf::Vector2f AItoPlayer = scene.getWorldPosition(playerEntity) - scene.getWorldPosition(self);
             sf::Vector2f AItoPlayerDirection = AItoPlayer.normalized();
             // offset by random float within error margin
             float offsetDegrees = Random::range(0.f, 15.f);
@@ -519,9 +525,9 @@ namespace {
 
                     std::string projectileTextureID = resourceManager.hasTexture(shooter->textureID) ? shooter->textureID : ResourceManager::DefaultTextureID;
                     auto projectileSprite = std::make_shared<Sprite>(resourceManager.getTexture(projectileTextureID), projectileTextureID);
-                    sf::Vector2f projectileDirection = calculateAIShootDirection(playerEntity, entity, ai->errorMargin);
+                    sf::Vector2f projectileDirection = calculateAIShootDirection(scene, playerEntity, entity, ai->errorMargin);
                     shooter->collisionScaling = {32.f * shooter->projectileScale.x, 32.f * shooter->projectileScale.y};
-                    projectileTransform->setWorldPosition(shooterTransform->getWorldPosition() + projectileDirection * 40.0f);
+                    projectileTransform->setWorldPosition(scene.getWorldPosition(entity) + projectileDirection * 40.0f);
                     projectileTransform->setScale(shooter->projectileScale);
                     collision->size = shooter->collisionScaling;
                     collision->offset = shooter->offset;
@@ -551,7 +557,7 @@ namespace {
     }
 
     void topDownAI(std::shared_ptr<AI> ai, std::shared_ptr<Transform> transform, std::shared_ptr<Physics> physics, std::shared_ptr<Entity> entity, Scene& scene, float dt, ResourceManager& resourceManager) {
-        sf::Vector2f aiPosition = transform->getWorldPosition();
+        sf::Vector2f aiPosition = scene.getWorldPosition(entity);
         
         HandleAIShoot(entity, scene, ai, resourceManager, dt);
         // if goal_position is out of bound that means that its the 
@@ -600,15 +606,17 @@ namespace {
         if (!playerTransform) {
             return;
         }
-        sf::Vector2f aiToPlayerVec = playerTransform->getWorldPosition() - transform->getWorldPosition();
-        float distanceFromStartX = transform->getWorldPosition().x - ai->strafeStartX;
-        float distanceFromStartY = transform->getWorldPosition().y - ai->strafeStartY;
+        sf::Vector2f aiPosition = scene.getWorldPosition(entity);
+        sf::Vector2f strafePosition = entity->getParentEntity().lock() ? scene.getWorldPosition(entity->getParentEntity().lock()) : aiPosition;
+        sf::Vector2f aiToPlayerVec =  aiPosition - scene.getWorldPosition(playerEntity);
+        float distanceFromStartX = strafePosition.x - ai->strafeStartX;
+        float distanceFromStartY = strafePosition.y - ai->strafeStartY;
         float strafeLimit = std::abs(ai->strafeDistance);
         switch (ai->currentMovementState) {
             case PlatformerMovementStates::Strafe:
                 if (ai->verticalStrafe) {
                     if (!ai->hasStrafeStart) {
-                        ai->strafeStartY = transform->getWorldPosition().y;
+                        ai->strafeStartY = strafePosition.y;
                         ai->hasStrafeStart = true;
                     }
                     if (ai->strafeDirection == 0) {
@@ -623,7 +631,7 @@ namespace {
                 }
                 else {
                     if (!ai->hasStrafeStart) {
-                        ai->strafeStartX = transform->getWorldPosition().x;
+                        ai->strafeStartX = strafePosition.x;
                         ai->hasStrafeStart = true;
                     }
                     if (ai->strafeDirection == 0) {

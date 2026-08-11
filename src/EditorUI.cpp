@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <unordered_map>
 #include <nlohmann/json.hpp>
 
 namespace {   
@@ -111,8 +112,11 @@ const char* getFactionLabel(Faction faction)
     case Faction::Enemy:
         return "Enemy";
     case Faction::Neutral:
-    default:
         return "Neutral";
+    case Faction::Terrain:
+    default:
+        return "Terrain";
+
     }
 }
 
@@ -122,8 +126,75 @@ void drawFactionCombo(const char* label, Faction& faction)
         if (ImGui::Selectable("Neutral", faction == Faction::Neutral)) faction = Faction::Neutral;
         if (ImGui::Selectable("Player", faction == Faction::Player)) faction = Faction::Player;
         if (ImGui::Selectable("Enemy", faction == Faction::Enemy)) faction = Faction::Enemy;
+        if (ImGui::Selectable("Terrain", faction == Faction::Terrain)) faction = Faction::Terrain;
         ImGui::EndCombo();
     }
+}
+
+std::string getSceneOutlinePath(const AIPromptResult& result)
+{
+    static const std::unordered_map<std::string, std::string> sceneOutlines = {
+        {"platformer", "../../src/json/scene_outlines/platformer_outline.json"},
+        {"platformer_basic", "../../src/json/scene_outlines/platformer_outline.json"},
+        {"top_down_shooter", "../../src/json/scene_outlines/shooter_outline.json"},
+        {"top_down_shooter_basic", "../../src/json/scene_outlines/shooter_outline.json"},
+        {"shooter", "../../src/json/scene_outlines/shooter_outline.json"},
+        {"puzzle", "../../src/json/scene_outlines/puzzler_outline.json"},
+        {"puzzle_basic", "../../src/json/scene_outlines/puzzler_outline.json"},
+        {"puzzler", "../../src/json/scene_outlines/puzzler_outline.json"},
+        {"space_shooter", "../../src/json/scene_outlines/space_shooter_outline.json"},
+        {"space_shooter_basic", "../../src/json/scene_outlines/space_shooter_outline.json"},
+        {"runner", "../../src/json/scene_outlines/runner_outline.json"},
+        {"runner_basic", "../../src/json/scene_outlines/runner_outline.json"},
+    };
+
+    auto templateMatch = sceneOutlines.find(result.sceneTemplate);
+    if (templateMatch != sceneOutlines.end()) {
+        return templateMatch->second;
+    }
+
+    auto genreMatch = sceneOutlines.find(result.genre);
+    if (genreMatch != sceneOutlines.end()) {
+        return genreMatch->second;
+    }
+
+    return "";
+}
+
+std::string joinValues(const std::vector<std::string>& values)
+{
+    std::string joined;
+    for (const auto& value : values) {
+        if (!joined.empty()) {
+            joined += ", ";
+        }
+        joined += value;
+    }
+    return joined;
+}
+
+std::string sanitizeSceneFileName(const std::string& sceneName, const AIPromptResult& result)
+{
+    std::string sanitized;
+    const std::string source = sceneName.empty() ? result.genre : sceneName;
+    for (char character : source) {
+        const bool isInvalid = character == '<' || character == '>' || character == ':' || character == '"'
+            || character == '/' || character == '\\' || character == '|' || character == '?' || character == '*';
+        if (isInvalid || static_cast<unsigned char>(character) < 32) {
+            sanitized += '_';
+        }
+        else {
+            sanitized += character;
+        }
+    }
+
+    while (!sanitized.empty() && (sanitized.back() == '.' || sanitized.back() == ' ')) {
+        sanitized.pop_back();
+    }
+    if (sanitized.empty()) {
+        return "ai_generated_scene";
+    }
+    return sanitized;
 }
 
 const char* getPickUpTypeLabel(PickUpType pickUpType)
@@ -248,7 +319,7 @@ void drawGameValueCombo(const char* label, Text& text)
 }
 
 
-void EditorUI::buildUI(Scene &scene, ResourceManager &resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera)
+void EditorUI::buildUI(Scene &scene, ResourceManager &resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer)
 {
     if (isSceneLoaded) {
         if (!hideEditorPanels) {
@@ -271,8 +342,8 @@ void EditorUI::buildUI(Scene &scene, ResourceManager &resourceManager, SceneSeri
             if (openScriptEditor) {
                 buildScriptEditor();
             }
-            buildScenePanel(scene, resourceManager, sceneSerializer, sceneLoader, isPlaying, camera);
-            buildToolBarPanel(sceneSerializer, sceneLoader, scene, resourceManager, isPlaying, camera);
+            buildScenePanel(scene, resourceManager, sceneSerializer, sceneLoader, isPlaying, camera, musicPlayer);
+            buildToolBarPanel(sceneSerializer, sceneLoader, scene, resourceManager, isPlaying, camera, musicPlayer);
         }
         else
         buildHiddenEditorPanel();
@@ -282,6 +353,9 @@ void EditorUI::buildUI(Scene &scene, ResourceManager &resourceManager, SceneSeri
     }
     if (newSceneOpen) {
         buildNewScenePanel(sceneSerializer, sceneLoader, scene, resourceManager, camera);
+    }
+    if (openAIPromptPanel) {
+        buildAIPromptPanel(scene, resourceManager, sceneLoader, camera, sceneSerializer);
     }
 }
 
@@ -300,7 +374,11 @@ void EditorUI::buildSceneSelect(Scene& scene, SceneLoader& sceneLoader, Resource
     if (ImGui::Button("Create New Scene")) {
         newSceneOpen = true;
     }
+    if (ImGui::Button("Create New Scene with AI Prompt")) {
+        openAIPromptPanel = true;
+    }
     ImGui::End();
+
     
 }
 
@@ -462,8 +540,8 @@ void EditorUI::duplicateSelectedEntity(Scene& scene, ResourceManager& resourceMa
         duplicatedPopText->color = popText->color;
         duplicatedPopText->style = popText->style;
         duplicatedPopText->lifeTimeDuration = popText->lifeTimeDuration;
-        duplicatedPopText->applyProperties();
         duplicatedEntity->addComponent(duplicatedPopText, ComponentTypes::PopText);
+        duplicatedPopText->applyProperties(scene.getWorldPosition(duplicatedEntity));
     }
     if ((componentMask & ComponentTypes::Loot) != 0) {
         auto loot = selectedEntity->getComponent<Loot>();
@@ -656,6 +734,20 @@ void EditorUI::buildCreateScriptPopup() {
     if (ImGui::Button("Link Existing Script")){
         newScriptName[0] = '\0';
         createScriptPopupOpen = false;
+        std::ifstream fileStream(entityScript->filePath);
+        if (!fileStream.is_open()) {
+            std::cerr << "Failed to open file: " << entityScript->filePath << std::endl;
+        }
+        else {
+            nlohmann::json data;
+            try {
+                fileStream >> data;
+                loadScriptFromJson(data, *entityScript);
+            }
+            catch (const nlohmann::json::parse_error& e) {
+                std::cerr << "JSON parse error in file: " << entityScript->filePath << " - " << e.what() << std::endl;
+            }
+        }
     }
     ImGui::End();
     
@@ -777,10 +869,11 @@ void EditorUI::buildRemoveComponentPopup()
     ImGui::End();
 }
 
-void EditorUI::buildScenePanel(Scene& scene, ResourceManager& resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera)
+void EditorUI::buildScenePanel(Scene& scene, ResourceManager& resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer)
 {
     ImGui::Begin("Scene Configuration");
 
+    ImGui::Text("Scene File Path: %s", scene.getCurrentScenePath().string().c_str());
     const char* preview = "none";
     auto playerEntity = scene.getPlayerEntity();
     for (const auto& option : scene.getEntities()) {
@@ -800,6 +893,7 @@ void EditorUI::buildScenePanel(Scene& scene, ResourceManager& resourceManager, S
     ImGui::Text("Score: %d", scene.getGameState().score);
     ImGui::Text("Experience: %.2f", scene.getGameState().experience);
 
+    ImGui::Separator();
     if (ImGui::SliderFloat("Scene Gravity", &GRAVITY, 0.0f, 2000.0f)) {
         for (const auto& entity : scene.getEntities()) {
             if ((entity->getComponentMask() & ComponentTypes::Physics) != 0) {
@@ -833,6 +927,29 @@ void EditorUI::buildScenePanel(Scene& scene, ResourceManager& resourceManager, S
             static_cast<std::uint8_t>(backgroundColor[2] * 255.0f),
             static_cast<std::uint8_t>(backgroundColor[3] * 255.0f)
         );
+    }
+
+    ImGui::Separator();
+    
+    const char* musicPathPreview = "none";
+    for (const auto& musicPath : resourceManager.getMusicPaths()) {
+        if (MUSIC_FILE_PATH == musicPath.second) musicPathPreview = musicPath.first.c_str();
+    }
+    
+    if (ImGui::BeginCombo("Background Music", musicPathPreview)) {
+        for (const auto& musicPath : resourceManager.getMusicPaths()) {
+            bool isSelected = MUSIC_FILE_PATH == musicPath.second;
+            if (ImGui::Selectable(musicPath.first.c_str(), isSelected)) {
+                MUSIC_FILE_PATH = musicPath.second;
+            }
+            if (isSelected) ImGui::SetItemDefaultFocus();
+        }
+        ImGui::EndCombo();
+    }
+
+    float volume = musicPlayer.getVolume();
+    if (ImGui::DragFloat("Music Volume", &volume, 1.f, 0.0f, 100.0f)) {
+        musicPlayer.setVolume(volume);
     }
     ImGui::End();
 }
@@ -882,7 +999,7 @@ void EditorUI::buildNewScenePanel(SceneSerializer &sceneSerializer, SceneLoader 
     ImGui::End(); 
 }
 
-void EditorUI::buildToolBarPanel(SceneSerializer &sceneSerializer, SceneLoader &sceneLoader, Scene &scene, ResourceManager &resourceManager, bool& isPlaying, sf::View& camera)
+void EditorUI::buildToolBarPanel(SceneSerializer &sceneSerializer, SceneLoader &sceneLoader, Scene &scene, ResourceManager &resourceManager, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer)
 {
     ImGui::Begin("ToolBar");
         if (isPlaying) {
@@ -892,12 +1009,16 @@ void EditorUI::buildToolBarPanel(SceneSerializer &sceneSerializer, SceneLoader &
                 camera.setCenter(VIEWPORT_CENTER_POSITION);
             }
             selectedEntity = nullptr;
+            musicPlayer.stop();
         }
     }
     else {
         if (ImGui::Button("Play")) {
             if (sceneSerializer.saveToFile(scene.getCurrentScenePath().string(), scene, resourceManager)) {
                 isPlaying = true;
+                if (musicPlayer.openFromFile(MUSIC_FILE_PATH)) {
+                    musicPlayer.play();
+                }
             }
         }
     }
@@ -929,6 +1050,72 @@ void EditorUI::buildToolBarPanel(SceneSerializer &sceneSerializer, SceneLoader &
     ImGui::SameLine();
     if (ImGui::Button("Hide Editor")) {
         hideEditorPanels = true;
+    }
+    ImGui::End();
+}
+
+void EditorUI::buildAIPromptPanel(Scene& scene, ResourceManager& resourceManager, SceneLoader& sceneLoader, sf::View& camera, SceneSerializer& sceneSerializer)
+{
+    ImGui::Begin("AI Prompt");
+    static char aiPromptBuffer[1024] = "";
+    ImGui::InputTextMultiline("Prompt", aiPromptBuffer, IM_ARRAYSIZE(aiPromptBuffer), ImVec2(-1.0f, 80.0f));
+    static char aiSceneName[256] = "";
+    ImGui::InputText("Scene Name", aiSceneName, IM_ARRAYSIZE(aiSceneName));
+    if (ImGui::Button("Generate Scene")) {
+        AIPromptResult result;
+        if (aiPromptBridge.predict(aiPromptBuffer, result)) {
+            lastAIPromptResult = result;
+            hasAIPromptResult = true;
+            const std::string sceneOutlinePath = getSceneOutlinePath(result);
+            if (sceneOutlinePath.empty()) {
+                aiPromptStatus = "No scene outline mapped for genre: " + result.genre;
+            }
+            else if (sceneLoader.loadFromFile(sceneOutlinePath, scene, resourceManager)) {
+                isSceneLoaded = true;
+                selectedEntity = nullptr;
+                camera.setCenter(VIEWPORT_CENTER_POSITION);
+                aiPromptStatus = "Loaded scene outline: " + sceneOutlinePath;
+                const std::string sceneFileName = sanitizeSceneFileName(aiSceneName, result);
+                std::string newSceneFilePath = sceneFolderPath.string() + "/" + sceneFileName + ".json";
+                if (sceneSerializer.saveToFile(newSceneFilePath, scene, resourceManager)) {
+                    scene.clear();
+                    if (sceneLoader.loadFromFile(newSceneFilePath, scene, resourceManager)) {
+                        camera.setCenter(VIEWPORT_CENTER_POSITION);
+                        aiPromptStatus += " and saved as: " + sceneFileName + ".json";
+                    }
+                }
+            }
+            else {
+                aiPromptStatus = "Failed to load scene outline: " + sceneOutlinePath;
+            }
+            aiPromptBuffer[0] = '\0';
+            aiSceneName[0] = '\0';
+            openAIPromptPanel = false;
+            isSceneLoaded = true;
+
+            std::cout << "AI Prediction Result:" << std::endl;
+            std::cout << "Genre: " << result.genre << std::endl;
+            std::cout << "Scene Template: " << result.sceneTemplate << std::endl;
+            std::cout << "Confidence: " << result.confidence << std::endl;
+        }
+        else {
+            aiPromptStatus = "AI prediction failed: " + aiPromptBridge.getLastError();
+        }
+    }
+
+
+        
+
+    if (!aiPromptStatus.empty()) {
+        ImGui::Separator();
+        ImGui::TextWrapped("%s", aiPromptStatus.c_str());
+    }
+    if (hasAIPromptResult) {
+        ImGui::Text("Genre: %s", lastAIPromptResult.genre.c_str());
+        ImGui::Text("Template: %s", lastAIPromptResult.sceneTemplate.c_str());
+        ImGui::Text("Confidence: %.3f", lastAIPromptResult.confidence);
+        ImGui::TextWrapped("Entities: %s", joinValues(lastAIPromptResult.entities).c_str());
+        ImGui::TextWrapped("Components: %s", joinValues(lastAIPromptResult.components).c_str());
     }
     ImGui::End();
 }
@@ -989,11 +1176,61 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
         selectedEntity->setBlueprint(isBlueprint);
     }
 
+    ImGui::Separator();
+    ImGui::Text("Hierarchy");
+    auto parentEntity = selectedEntity->getParentEntity().lock();
+    std::string parentPreview = parentEntity ? parentEntity->getName() + " (" + std::to_string(parentEntity->getID()) + ")" : "None";
+    if (ImGui::BeginCombo("Parent Entity", parentPreview.c_str())) {
+        if (ImGui::Selectable("None", !parentEntity)) {
+            scene.clearParent(selectedEntity->getID());
+        }
+        for (const auto& entity : scene.getEntities()) {
+            if (!entity || !entity->isAlive() || entity == selectedEntity) {
+                continue;
+            }
+            if (scene.isChildOf(entity->getID(), selectedEntity->getID())) {
+                continue;
+            }
+
+            bool isSelectedParent = parentEntity && parentEntity->getID() == entity->getID();
+            std::string label = entity->getName() + " (" + std::to_string(entity->getID()) + ")";
+            if (ImGui::Selectable(label.c_str(), isSelectedParent)) {
+                scene.setParent(selectedEntity->getID(), entity->getID());
+            }
+            if (isSelectedParent) ImGui::SetItemDefaultFocus();
+        }
+        ImGui::EndCombo();
+    }
+
+    auto childIDs = selectedEntity->getChildEntitiesIDs();
+    ImGui::Text("Children: %zu", childIDs.size());
+    if (childIDs.empty()) {
+        ImGui::TextDisabled("None");
+    }
+    for (auto childID : childIDs) {
+        auto childEntity = scene.getEntityByID(childID);
+        if (!childEntity || !childEntity->isAlive()) {
+            continue;
+        }
+
+        ImGui::BulletText("%s (%u)", childEntity->getName().c_str(), childEntity->getID());
+        ImGui::SameLine();
+        std::string selectLabel = "Select##Child" + std::to_string(childID);
+        if (ImGui::SmallButton(selectLabel.c_str())) {
+            selectedEntity = childEntity;
+        }
+        ImGui::SameLine();
+        std::string detachLabel = "Detach##Child" + std::to_string(childID);
+        if (ImGui::SmallButton(detachLabel.c_str())) {
+            scene.clearParent(childID);
+        }
+    }
+
     auto transform = selectedEntity->getComponent<Transform>();
     if (transform) {
         ImGui::Separator();
         ImGui::Text("Transform");
-        sf::Vector2f position = transform->getWorldPosition();
+        sf::Vector2f position = scene.getWorldPosition(selectedEntity);
         sf::Vector2f localPosition = transform->getLocalPosition();
         sf::Vector2f scale = transform->getScale();
         float rotation = transform->getRotation();
@@ -1035,6 +1272,7 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
         ImGui::Checkbox("Static", &collision->isStatic);
         ImGui::Checkbox("Physical Collider", &collision->isPhysicalCollider);
         ImGui::Checkbox("Resolve Physical Collisions With Team", &collision->resolvePhysicalCollisionsWithTeam);
+        ImGui::Checkbox("Moving Platform", &collision->isMovingPlatform);
         drawFactionCombo("Collision Faction", collision->faction);
     }
 
@@ -1109,7 +1347,13 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
         if (ai->movementType == MovementType::Platformer) {
         ImGui::DragFloat("Aggro Range", &ai->aggroRange, 1.0f);
         ImGui::DragFloat("Strafe Distance", &ai->strafeDistance, 1.0f, 0.0f);
+        ImGui::DragFloat("Strafe Starting Direction", &ai->strafeDirection, 1.0f, -1.f, 1.f);
         ImGui::Checkbox("Vertical Strafe", &ai->verticalStrafe);
+        if (ImGui::Button("Reset Strafe Calculations")) {
+            auto transform = selectedEntity->getComponent<Transform>();
+            ai->strafeStartX = transform ? scene.getWorldPosition(selectedEntity).x : 0.0f;
+            ai->strafeStartY = transform ? scene.getWorldPosition(selectedEntity).y : 0.0f;
+        }
 
         
         const char* movementPreview = "Strafe";
@@ -1305,7 +1549,7 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
         popTextBuffer[sizeof(popTextBuffer) - 1] = '\0';
         if (ImGui::InputTextMultiline("PopText String", popTextBuffer, sizeof(popTextBuffer))) {
             popText->textString = popTextBuffer;
-            popText->applyProperties();
+            popText->applyProperties(scene.getWorldPosition(selectedEntity));
         }
         if (ImGui::BeginCombo("PopText Font ID", popText->fontID.c_str())) {
             for (const auto& option : resourceManager.getFonts()) {
@@ -1313,19 +1557,19 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
                 if (ImGui::Selectable(option.first.c_str(), isSelected)) {
                     popText->fontID = option.first;
                     popText->text->text->setFont(resourceManager.getFont(popText->fontID));
-                    popText->applyProperties();
+                    popText->applyProperties(scene.getWorldPosition(selectedEntity));
                 }
                 if (isSelected) ImGui::SetItemDefaultFocus();
             }
             ImGui::EndCombo();
         }
         if (ImGui::DragFloat2("PopText Offset", &popText->offset.x, 1.0f)) {
-            popText->applyProperties();
+            popText->applyProperties(scene.getWorldPosition(selectedEntity));
         }
         int popTextSize = static_cast<int>(popText->size);
         if (ImGui::DragInt("PopText Character Size", &popTextSize, 1.0f, 1, 300)) {
             popText->size = static_cast<unsigned int>(popTextSize);
-            popText->applyProperties();
+            popText->applyProperties(scene.getWorldPosition(selectedEntity));
         }
         if (ImGui::BeginCombo("PopText Style", getTextStyleLabel(popText->style))) {
             if (ImGui::Selectable("Regular", popText->style == sf::Text::Style::Regular)) popText->style = sf::Text::Style::Regular;
@@ -1334,7 +1578,7 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
             if (ImGui::Selectable("Underlined", popText->style == sf::Text::Style::Underlined)) popText->style = sf::Text::Style::Underlined;
             if (ImGui::Selectable("StrikeThrough", popText->style == sf::Text::Style::StrikeThrough)) popText->style = sf::Text::Style::StrikeThrough;
             ImGui::EndCombo();
-            popText->applyProperties();
+            popText->applyProperties(scene.getWorldPosition(selectedEntity));
         }
         float popTextColor[4] = {
             popText->color.r / 255.0f,
@@ -1349,10 +1593,10 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
                 static_cast<std::uint8_t>(popTextColor[2] * 255.0f),
                 static_cast<std::uint8_t>(popTextColor[3] * 255.0f)
             );
-            popText->applyProperties();
+            popText->applyProperties(scene.getWorldPosition(selectedEntity));
         }
         if (ImGui::DragFloat("PopText Life Time Duration", &popText->lifeTimeDuration, 0.1f, 0.0f)) {
-            popText->applyProperties();
+            popText->applyProperties(scene.getWorldPosition(selectedEntity));
         }
     }
 

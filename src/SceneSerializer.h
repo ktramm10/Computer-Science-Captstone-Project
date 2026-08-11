@@ -13,7 +13,7 @@ class SceneSerializer {
     using json = nlohmann::json;
     json writeVec2(const sf::Vector2f& vector) const;
     json saveEntity(const std::shared_ptr<Entity>& entity, const Scene& scene) const;
-    void saveTransformComponent(json& components, const std::shared_ptr<Entity>& entity) const;
+    void saveTransformComponent(json& components, const std::shared_ptr<Entity>& entity, const Scene& scene) const;
     void saveCollisionComponent(json& components, const std::shared_ptr<Entity>& entity) const;
     void saveSpriteComponent(json& components, const std::shared_ptr<Entity>& entity) const;
     void savePhysicsComponent(json& components, const std::shared_ptr<Entity>& entity) const;

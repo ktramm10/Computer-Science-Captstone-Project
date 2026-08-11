@@ -27,7 +27,7 @@ namespace {
             if (shouldFollowPlayer) {
                 auto transform = scene.getPlayerEntity()->getComponent<Transform>();
                 if (transform) {
-                    camera.setCenter(transform->getWorldPosition() + VIEWPORT_CAMERA_OFFSET);
+                    camera.setCenter(scene.getWorldPosition(scene.getPlayerEntity()) + VIEWPORT_CAMERA_OFFSET);
                 }
             }
         }
@@ -52,12 +52,15 @@ Engine::Engine()
 void Engine::run()
 {
     std::cout << __cplusplus << std::endl;
+    musicPlayer.setLooping(true);
     camera = sf::View(sf::FloatRect({0.f, 0.f}, {1920.f, 1080.f}));
     camera.setCenter(VIEWPORT_CENTER_POSITION);
     resourceManager.createDefaultTexture();
     resourceManager.loadTextureManifest("../../src/assets/textures.json");
     resourceManager.createDefaultFont();
     resourceManager.loadFontManifest("../../src/assets/fonts.json");
+    resourceManager.loadSoundBufferManifest("../../src/assets/sounds.json");
+    resourceManager.loadMusicManifest("../../src/assets/music.json");
     scene.initialize(resourceManager);
 
     sf::Clock clock;
@@ -87,7 +90,7 @@ void Engine::run()
         scene.cleanupDestroyedEntities();
         window.clear(scene.backgroundColor);
         renderer.render(scene, window);
-        editorUI.buildUI(scene, resourceManager, sceneSerializer, sceneLoader, isPlaying, camera); // Build the ImGui UI for the editor
+        editorUI.buildUI(scene, resourceManager, sceneSerializer, sceneLoader, isPlaying, camera, musicPlayer); // Build the ImGui UI for the editor
         editorUI.handleDragMove(window, isPlaying);
         ImGui::SFML::Render(window);
         window.display();

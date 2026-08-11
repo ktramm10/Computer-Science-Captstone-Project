@@ -51,6 +51,7 @@ add_executable(MyGameEngine
     src/ResourceManager.cpp
     src/SceneLoader.cpp
     src/SceneSerializer.cpp
+    src/AIPromptBridge.cpp
     src/EditorUI.cpp
     src/Hazard.cpp
     src/Script.cpp
@@ -66,6 +67,7 @@ target_include_directories(MyGameEngine PRIVATE
 
 target_link_libraries(MyGameEngine PRIVATE
     SFML::Graphics
+    SFML::Audio
     SFML::Window
     SFML::System
     ImGui-SFML::ImGui-SFML

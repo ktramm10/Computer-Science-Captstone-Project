@@ -20,7 +20,7 @@ void PhysicsSystem::update(Scene& scene, float dt) {
             }
 
             // Update position based on velocity
-            transform->moveWorldPosition(physics->velocity * dt);
+            scene.moveEntity(entity, physics->velocity * dt);
         }
     }
 }

@@ -40,7 +40,8 @@ enum class ScriptActionType {
     SpawnPopText, // 17
     CollectLoot, // 18
     PlaySound, // 19
-    StopSound // 20
+    StopSound, // 20
+    ReloadCurrentScene // 21
     
 };
 

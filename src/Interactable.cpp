@@ -17,17 +17,14 @@ bool Interactable::interact(std::shared_ptr<Entity> otherEntity, std::shared_ptr
             case PickUpType::Health: {
                 auto health = otherEntity->getComponent<Health>();
                 if (health) {
-                    std::cout << "Player picked up health: " << pickUp->amount << std::endl;
                     health->heal(pickUp->amount);
                 }
                 break;
             }
             case PickUpType::Ammo:
                 // Handle ammo collection
-                std::cout << "Player picked up ammo: " << pickUp->amount << std::endl;
                 break;
             case PickUpType::Coin:
-                std::cout << "Player picked up coins: " << pickUp->amount << std::endl;
                 scene.getGameState().coins += static_cast<int>(pickUp->amount);
                 break;
         }

@@ -75,7 +75,7 @@ void ScriptSystem::runEvent(Scene& scene, std::shared_ptr<Entity> entity, Script
                 if (player && physics && transform) {
                     auto playerTransform = player->getComponent<Transform>();
                     if (playerTransform) {
-                        sf::Vector2f entityToPlayerDirection = (playerTransform->getWorldPosition() - transform->getWorldPosition());
+                        sf::Vector2f entityToPlayerDirection = (scene.getWorldPosition(player) - scene.getWorldPosition(entity));
                         if (entityToPlayerDirection.lengthSquared() > 0.0f) entityToPlayerDirection = entityToPlayerDirection.normalized();
                         physics->velocity = entityToPlayerDirection * action.value;
                     }
@@ -121,7 +121,7 @@ void ScriptSystem::runEvent(Scene& scene, std::shared_ptr<Entity> entity, Script
                     else if (auto powerUp = entity->getComponent<PowerUp>()) {
                         popText->textString = powerUp->getPowerUpName();
                     }
-                    popText->applyProperties();
+                    popText->applyProperties(scene.getWorldPosition(entity));
                     auto popTextEntity = scene.createEntity("PopText " + entity->getName());
                     auto transform = std::make_shared<Transform>(*popText->transform);
                     auto text = std::make_shared<Text>(*popText->text);
@@ -138,6 +138,9 @@ void ScriptSystem::runEvent(Scene& scene, std::shared_ptr<Entity> entity, Script
                     scene.getGameState().score += loot->score;
                     scene.getGameState().experience += loot->experience;
                 }
+                break;
+            case ScriptActionType::ReloadCurrentScene:
+                scene.requestSceneLoad(scene.getCurrentScenePath().string());
                 break;
             }
             

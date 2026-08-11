@@ -18,11 +18,6 @@ bool ResourceManager::hasTexture(const std::string& id) const{
     return (it != textures.end());
 }
 
-const std::unordered_map<std::string, std::string> &ResourceManager::getTexturePaths() const
-{
-    return texturePaths;
-}
-
 void ResourceManager::createDefaultTexture()
 {
     if (hasTexture(DefaultTextureID)) {
@@ -36,6 +31,133 @@ void ResourceManager::createDefaultTexture()
 
     textures.emplace(DefaultTextureID, std::move(texture));
     texturePaths[DefaultTextureID] = "";
+}
+
+bool ResourceManager::loadSoundBuffer(const std::string &id, const std::string &filePath)
+{
+    if (hasSoundBuffer(id)) {
+        soundBufferPaths[id] = filePath;
+        return true;
+    }
+    sf::SoundBuffer soundBuffer;
+    if (!soundBuffer.loadFromFile(filePath)) {
+        return false;
+    }
+    soundBuffers.emplace(id, std::move(soundBuffer));
+    soundBufferPaths[id] = filePath;
+    return true;
+}
+
+sf::SoundBuffer &ResourceManager::getSoundBuffer(const std::string &id)
+{
+    auto it = soundBuffers.find(id);
+    if (it == soundBuffers.end()) {
+        throw std::runtime_error("SoundBuffer not found: " + id);
+    }
+    return it->second;
+}
+
+bool ResourceManager::hasSoundBuffer(const std::string &id) const
+{
+    return soundBuffers.find(id) != soundBuffers.end();
+}
+
+bool ResourceManager::loadSoundBufferManifest(const std::string &filePath)
+{
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open sound buffer manifest: " << filePath << std::endl;
+        return false;
+    }
+    
+    nlohmann::json manifestData;
+    try {
+        file >> manifestData;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Failed to parse sound buffer manifest: " << e.what() << std::endl;
+        return false;
+    }
+    if (!manifestData.contains("soundBuffers") || !manifestData["soundBuffers"].is_array()) {
+        std::cerr << "Sound buffer manifest has no soundBuffers array." << std::endl;
+        return false;
+    }
+    bool loadedAllSoundBuffers = true;
+    for (const auto& soundBufferData : manifestData["soundBuffers"]) {
+        std::string id = soundBufferData.value("id", "");
+        std::string path = soundBufferData.value("path", "");
+
+        if (id.empty() || path.empty()) {
+            std::cerr << "Invalid sound buffer manifest entry." << std::endl;
+            loadedAllSoundBuffers = false;
+            continue;
+        }
+
+        if (!loadSoundBuffer(id, path)) {
+            std::cerr << "Failed to load sound buffer: " << id << " from " << path << std::endl;
+            loadedAllSoundBuffers = false;
+        }
+    }
+    return loadedAllSoundBuffers;
+}
+
+bool ResourceManager::loadMusic(const std::string &id, const std::string &filePath)
+{
+    if (hasMusic(id)) {
+        musicPaths[id] = filePath;
+        return true;
+    }
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open music file: " << filePath << std::endl;
+        return false;
+    }
+    musicPaths[id] = filePath;
+    return true;
+}
+
+bool ResourceManager::hasMusic(const std::string &id) const
+{
+    return musicPaths.find(id) != musicPaths.end();
+}
+
+bool ResourceManager::loadMusicManifest(const std::string &filePath)
+{
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open music manifest: " << filePath << std::endl;
+        return false;
+    }
+    
+    nlohmann::json manifestData;
+    try {
+        file >> manifestData;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Failed to parse music manifest: " << e.what() << std::endl;
+        return false;
+    }
+    if (!manifestData.contains("music") || !manifestData["music"].is_array()) {
+        std::cerr << "Music manifest has no music array." << std::endl;
+        return false;
+    }
+    bool loadedAllMusics = true;
+    for (const auto& musicData : manifestData["music"]) {
+        std::string id = musicData.value("id", "");
+        std::string path = musicData.value("path", "");
+
+        if (id.empty() || path.empty()) {
+            std::cerr << "Invalid music manifest entry." << std::endl;
+            loadedAllMusics = false;
+            continue;
+        }
+
+        if (!loadMusic(id, path)) {
+            std::cerr << "Failed to load music: " << id << " from " << path << std::endl;
+            loadedAllMusics = false;
+        }
+    }
+    return loadedAllMusics;
 }
 
 bool ResourceManager::loadFont(const std::string &id, const std::string &filePath)
@@ -111,10 +233,6 @@ bool ResourceManager::hasFont(const std::string &id) const
     return (it != fonts.end());
 }
 
-const std::unordered_map<std::string, std::string> &ResourceManager::getFontPaths() const
-{
-    return fontPaths;
-}
 
 void ResourceManager::createDefaultFont()
 {

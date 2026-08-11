@@ -1,0 +1,16 @@
+{
+    "music": [
+        {
+            "id": "naruto_8bit_w_drums",
+            "path": "../../src/music/naruto_8bit_w_drums.ogg"
+        },
+        {
+            "id": "dopamine_machine",
+            "path": "../../src/music/dopamine_machine.ogg"
+        },
+        {
+            "id": "asteroid_mania",
+            "path": "../../src/music/asteroid_mania.ogg"
+        }
+    ]
+}

@@ -10,7 +10,11 @@ void Renderer::render(const Scene& scene, sf::RenderWindow& window)
             auto transform = entity->getComponent<Transform>();
             auto sprite = entity->getComponent<Sprite>();
             if (transform && sprite) {
-                sprite->sprite->setPosition(transform->getWorldPosition() + transform->getLocalPosition());
+                sf::Vector2f renderPosition = scene.getWorldPosition(entity);
+                if (!entity->getParentEntity().lock()) {
+                    renderPosition += transform->getLocalPosition();
+                }
+                sprite->sprite->setPosition(renderPosition);
                 sprite->sprite->setScale(sf::Vector2f(transform->getScale().x, transform->getScale().y));
                 sprite->sprite->setRotation(sf::degrees(transform->getRotation()));
 
@@ -24,7 +28,11 @@ void Renderer::render(const Scene& scene, sf::RenderWindow& window)
                 if (text->positionRelativeToViewport) {
                     text->text->setPosition(window.getView().getCenter() + transform->getLocalPosition());
                 } else {
-                    text->text->setPosition(transform->getWorldPosition() + transform->getLocalPosition());
+                    sf::Vector2f renderPosition = scene.getWorldPosition(entity);
+                    if (!entity->getParentEntity().lock()) {
+                        renderPosition += transform->getLocalPosition();
+                    }
+                    text->text->setPosition(renderPosition);
                 }
                 text->text->setScale(transform->getScale());
                 text->text->setRotation(sf::degrees(transform->getRotation()));

@@ -29,6 +29,7 @@ bool SceneLoader::loadFromFile(const std::string &filePath, Scene &scene, Resour
     VIEWPORT_CAMERA_SPEED = sceneData.value("viewport_camera_speed", VIEWPORT_CAMERA_SPEED);
     VIEWPORT_CAMERA_OFFSET = readVec2(sceneData, "viewport_camera_offset", VIEWPORT_CAMERA_OFFSET);
     VIEWPORT_CENTER_POSITION = readVec2(sceneData, "viewport_center_position", VIEWPORT_CENTER_POSITION);
+    MUSIC_FILE_PATH = sceneData.value("music_file_path", MUSIC_FILE_PATH);
     VIEWPORT_FOLLOW_PLAYER_CHARACTER = sceneData.value("viewport_follow_player_character", VIEWPORT_FOLLOW_PLAYER_CHARACTER);
     WINDOW_SIZE = readVec2(sceneData, "window_size", WINDOW_SIZE);
     if (sceneData.contains("backgroundColor") && sceneData["backgroundColor"].is_array() && sceneData["backgroundColor"].size() >= 4) {
@@ -47,6 +48,13 @@ bool SceneLoader::loadFromFile(const std::string &filePath, Scene &scene, Resour
 
     for (const auto& entityData : sceneData["entities"]) {
         loadEntity(entityData, scene, resourceManager);
+    }
+    for (const auto& entityData : sceneData["entities"]) {
+        int childID = entityData.value("id", -1);
+        int parentID = entityData.value("parentID", -1);
+        if (childID != -1 && parentID != -1) {
+            scene.setParent(static_cast<unsigned int>(childID), static_cast<unsigned int>(parentID));
+        }
     }
     scene.setCurrentScenePath(filePath);
     
@@ -68,7 +76,9 @@ sf::Vector2f SceneLoader::readVec2(const json& object, const std::string& key, c
 void SceneLoader::loadEntity(const json &entityData, Scene &scene, ResourceManager &resourceManager)
 {
     std::string name = entityData.value("name", "entity");
-    auto entity = scene.createEntity(name);
+    auto entity = entityData.contains("id")
+        ? scene.createEntityWithID(entityData.value("id", 0u), name)
+        : scene.createEntity(name);
     entity->setBlueprint(entityData.value("isBlueprint", false));
     bool isPlayer = entityData.value("isPlayer", false);
     if (isPlayer && !entity->isBlueprint()) {
@@ -179,8 +189,10 @@ void SceneLoader::loadCollision(const json &componentData, std::shared_ptr<Entit
     bool isPhysicalCollider = componentData.value("isPhysicalCollider", true);
     Faction faction = static_cast<Faction>(componentData.value("faction", static_cast<int>(Faction::Neutral)));
     bool resolvePhysicalCollisionsWithTeam = componentData.value("resolvePhysicalCollisionsWithTeam", true);
+    bool isMovingPlatform = componentData.value("isMovingPlatform", false);
 
     auto collision = std::make_shared<Collision>(size, offset, isStatic, knockback, isPhysicalCollider, faction, resolvePhysicalCollisionsWithTeam);
+    collision->isMovingPlatform = isMovingPlatform;
     entity->addComponent(collision, ComponentTypes::Collision);
 }
 

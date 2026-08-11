@@ -10,14 +10,11 @@ void Hazard::applyHazard(std::shared_ptr<Entity> otherEntity, std::shared_ptr<En
     auto& contactDamage = hazardEntity->getComponent<ContactDamage>();
     if (contactDamage) {
         auto& input = otherEntity->getComponent<Input>();
-
-        std::cout << "apply hazard is being called by " << hazardEntity->getName() << std::endl;
         auto& health = otherEntity->getComponent<Health>();
         if (health) {
             // damage function returns false if entity is killed and true if still alive
             if (!health->damage(contactDamage->damage)) {
                 if (otherEntity == scene.getPlayerEntity()) {
-                    std::cout << "Player has died." << std::endl;
                     scriptSystem.OnPlayerDeath(scene, dt);
                 }
                 otherEntity->destroy();

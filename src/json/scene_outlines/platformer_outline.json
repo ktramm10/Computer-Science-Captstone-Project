@@ -10,6 +10,7 @@
             "components": {
                 "collision": {
                     "faction": 1,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -69,14 +70,17 @@
                     ]
                 }
             },
+            "id": 1,
             "isBlueprint": false,
             "isPlayer": true,
-            "name": "Player"
+            "name": "Player",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -109,14 +113,17 @@
                     ]
                 }
             },
+            "id": 2,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Terrain"
+            "name": "Terrain",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 2,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -133,7 +140,12 @@
                 "contactDamage": {
                     "damage": 10.0,
                     "destroyEntityOnContact": false,
-                    "knockback": 30.0
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
                 },
                 "sprite": {
                     "texture": "spikes_sprite"
@@ -154,14 +166,17 @@
                     ]
                 }
             },
+            "id": 3,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Obstacle"
+            "name": "Obstacle",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -198,14 +213,17 @@
                     ]
                 }
             },
+            "id": 4,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin"
+            "name": "Coin",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -242,14 +260,17 @@
                     ]
                 }
             },
+            "id": 5,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_1"
+            "name": "Coin_1",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -286,14 +307,17 @@
                     ]
                 }
             },
+            "id": 6,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_2"
+            "name": "Coin_2",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -330,14 +354,17 @@
                     ]
                 }
             },
+            "id": 7,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_3"
+            "name": "Coin_3",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -389,14 +416,17 @@
                     ]
                 }
             },
+            "id": 8,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Finish"
+            "name": "Finish",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 2,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -413,7 +443,12 @@
                 "contactDamage": {
                     "damage": 10.0,
                     "destroyEntityOnContact": false,
-                    "knockback": 30.0
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
                 },
                 "sprite": {
                     "texture": "spikes_sprite"
@@ -434,14 +469,17 @@
                     ]
                 }
             },
+            "id": 9,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Obstacle_1"
+            "name": "Obstacle_1",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 2,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -458,7 +496,12 @@
                 "contactDamage": {
                     "damage": 10.0,
                     "destroyEntityOnContact": false,
-                    "knockback": 30.0
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
                 },
                 "sprite": {
                     "texture": "spikes_sprite"
@@ -479,14 +522,17 @@
                     ]
                 }
             },
+            "id": 10,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Obstacle_2"
+            "name": "Obstacle_2",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -523,14 +569,17 @@
                     ]
                 }
             },
+            "id": 11,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_4"
+            "name": "Coin_4",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -567,14 +616,17 @@
                     ]
                 }
             },
+            "id": 12,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_5"
+            "name": "Coin_5",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -611,14 +663,17 @@
                     ]
                 }
             },
+            "id": 13,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_6"
+            "name": "Coin_6",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -635,7 +690,12 @@
                 "contactDamage": {
                     "damage": 1000.0,
                     "destroyEntityOnContact": false,
-                    "knockback": 0.0
+                    "knockback": 0.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
                 },
                 "sprite": {
                     "texture": "red_sprite"
@@ -656,14 +716,17 @@
                     ]
                 }
             },
+            "id": 14,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Lava"
+            "name": "Lava",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -696,14 +759,17 @@
                     ]
                 }
             },
+            "id": 15,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Parkour Platform"
+            "name": "Parkour Platform",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -736,14 +802,17 @@
                     ]
                 }
             },
+            "id": 16,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Parkour Platform_1"
+            "name": "Parkour Platform_1",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -776,14 +845,17 @@
                     ]
                 }
             },
+            "id": 17,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Parkour Platform_2"
+            "name": "Parkour Platform_2",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -816,14 +888,17 @@
                     ]
                 }
             },
+            "id": 18,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Parkour Platform_3"
+            "name": "Parkour Platform_3",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -856,14 +931,17 @@
                     ]
                 }
             },
+            "id": 19,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Parkour Platform_4"
+            "name": "Parkour Platform_4",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -896,14 +974,17 @@
                     ]
                 }
             },
+            "id": 20,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Parkour Platform_5"
+            "name": "Parkour Platform_5",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": true,
                     "knockbackDistance": 0.0,
@@ -936,14 +1017,17 @@
                     ]
                 }
             },
+            "id": 21,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Terrain_1"
+            "name": "Terrain_1",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -980,14 +1064,17 @@
                     ]
                 }
             },
+            "id": 22,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_7"
+            "name": "Coin_7",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1024,14 +1111,17 @@
                     ]
                 }
             },
+            "id": 23,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_8"
+            "name": "Coin_8",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1068,14 +1158,17 @@
                     ]
                 }
             },
+            "id": 24,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_9"
+            "name": "Coin_9",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1112,14 +1205,17 @@
                     ]
                 }
             },
+            "id": 25,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_10"
+            "name": "Coin_10",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1156,14 +1252,17 @@
                     ]
                 }
             },
+            "id": 26,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_11"
+            "name": "Coin_11",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1200,14 +1299,17 @@
                     ]
                 }
             },
+            "id": 27,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Heart_2"
+            "name": "Heart_2",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 2,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1224,7 +1326,12 @@
                 "contactDamage": {
                     "damage": 5.0,
                     "destroyEntityOnContact": false,
-                    "knockback": 30.0
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
                 },
                 "sprite": {
                     "texture": "spikes_sprite"
@@ -1245,9 +1352,11 @@
                     ]
                 }
             },
+            "id": 28,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Obstacle_3"
+            "name": "Obstacle_3",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -1270,9 +1379,11 @@
                     ]
                 }
             },
+            "id": 29,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Obstacle_4"
+            "name": "Obstacle_4",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -1295,9 +1406,11 @@
                     ]
                 }
             },
+            "id": 30,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Obstacle_5"
+            "name": "Obstacle_5",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -1319,12 +1432,15 @@
                     "movementType": 1,
                     "shootFrequency": 2.0,
                     "shootTimeLeft": 0.0,
-                    "strafeDirection": 1,
+                    "strafeDirection": 1.0,
                     "strafeDistance": 200.0,
-                    "strafeStartX": 3591.010498046875
+                    "strafeStartX": 3591.010498046875,
+                    "strafeStartY": 0.0,
+                    "verticalStrafe": false
                 },
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": true,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1341,7 +1457,12 @@
                 "contactDamage": {
                     "damage": 20.0,
                     "destroyEntityOnContact": false,
-                    "knockback": 35.0
+                    "knockback": 35.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
                 },
                 "physics": {
                     "acceleration": [
@@ -1376,14 +1497,17 @@
                     ]
                 }
             },
+            "id": 31,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Patrol enemy"
+            "name": "Patrol enemy",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1420,14 +1544,17 @@
                     ]
                 }
             },
+            "id": 32,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_12"
+            "name": "Coin_12",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1464,14 +1591,17 @@
                     ]
                 }
             },
+            "id": 33,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_13"
+            "name": "Coin_13",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1508,14 +1638,17 @@
                     ]
                 }
             },
+            "id": 34,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_14"
+            "name": "Coin_14",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1552,14 +1685,17 @@
                     ]
                 }
             },
+            "id": 35,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_15"
+            "name": "Coin_15",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1596,14 +1732,17 @@
                     ]
                 }
             },
+            "id": 36,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_16"
+            "name": "Coin_16",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1640,9 +1779,11 @@
                     ]
                 }
             },
+            "id": 37,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_17"
+            "name": "Coin_17",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -1675,9 +1816,11 @@
                     ]
                 }
             },
+            "id": 38,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Health Display"
+            "name": "Health Display",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -1710,14 +1853,17 @@
                     ]
                 }
             },
+            "id": 39,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coins Display"
+            "name": "Coins Display",
+            "parentID": 4294967295
         },
         {
             "components": {
                 "collision": {
                     "faction": 0,
+                    "isMovingPlatform": false,
                     "isPhysicalCollider": false,
                     "isStatic": false,
                     "knockbackDistance": 0.0,
@@ -1754,12 +1900,15 @@
                     ]
                 }
             },
+            "id": 40,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Coin_18"
+            "name": "Coin_18",
+            "parentID": 4294967295
         }
     ],
     "gravity": 1088.137939453125,
+    "music_file_path": "../../src/music/naruto_8bit_w_drums.ogg",
     "viewport_camera_offset": [
         0.0,
         0.0

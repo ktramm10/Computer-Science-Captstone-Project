@@ -1,0 +1,720 @@
+{
+    "backgroundColor": [
+        0,
+        0,
+        16,
+        255
+    ],
+    "entities": [
+        {
+            "components": {
+                "collision": {
+                    "faction": 3,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        3200.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "green_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        -1.0,
+                        857.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        100.0,
+                        8.0
+                    ]
+                }
+            },
+            "id": 1,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "platform",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 1,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "input": {
+                    "acceleration": 20.0,
+                    "canJump": true,
+                    "canMove": true,
+                    "deceleration": 20.0,
+                    "jumpForce": 401.0,
+                    "moveSpeed": 300.0,
+                    "movementType": 1
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 502.8900146484375,
+                    "isGrounded": true,
+                    "useAcceleration": false,
+                    "useGravity": true,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "blue_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        380.1012268066406,
+                        780.7147827148438
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 2,
+            "isBlueprint": false,
+            "isPlayer": true,
+            "name": "player",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2571.4560546875,
+                        -660.68798828125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        56.5
+                    ]
+                }
+            },
+            "id": 3,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "temp_wall",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        64.0
+                    ]
+                },
+                "door": {
+                    "isLocked": true,
+                    "keyId": "default",
+                    "sceneFilePath": "../../src/json/saved_scenes\\You Win.json",
+                    "unlockedTexID": "blue_sprite"
+                },
+                "sprite": {
+                    "texture": "red_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3010.553466796875,
+                        790.57763671875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        2.0
+                    ]
+                }
+            },
+            "id": 4,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "door",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "key": {
+                    "keyId": "default"
+                },
+                "popText": {
+                    "characterSize": 30,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "lifeTimeDuration": 0.6000000238418579,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "style": 0,
+                    "textString": "+ Key"
+                },
+                "script": {
+                    "fileName": "SpawnPopTextOnDestroy",
+                    "filePath": "../../src/json/scripts\\SpawnPopTextOnDestroy.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 17,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 4
+                        }
+                    ],
+                    "started": false
+                },
+                "sprite": {
+                    "texture": "yellow_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2833.553466796875,
+                        812.57763671875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        0.5,
+                        0.5
+                    ]
+                }
+            },
+            "id": 5,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "key",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 3,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        96.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2152.26220703125,
+                        703.57763671875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        3.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 6,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour 1",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 3,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        96.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1927.26220703125,
+                        579.57763671875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        3.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 7,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour 1_1",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 3,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        96.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2214.26220703125,
+                        458.57763671875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        3.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 8,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour 1_2",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "ai": {
+                    "acceleration": 80.0,
+                    "aggroRange": 300.0,
+                    "canFollow": false,
+                    "currentMovementState": 0,
+                    "decelerating": false,
+                    "deceleration": 80.0,
+                    "defaultMovementState": 0,
+                    "errorMargin": 30.0,
+                    "goalPosition": [
+                        -1.0,
+                        -1.0
+                    ],
+                    "hasStrafeStart": false,
+                    "moveSpeed": 200.0,
+                    "movementType": 1,
+                    "shootFrequency": 2.0,
+                    "shootTimeLeft": 0.0,
+                    "strafeDirection": 1.0,
+                    "strafeDistance": 280.0,
+                    "strafeStartX": 2393.26220703125,
+                    "strafeStartY": 158.57763671875,
+                    "verticalStrafe": true
+                },
+                "collision": {
+                    "faction": 3,
+                    "isMovingPlatform": true,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        96.0,
+                        32.0
+                    ]
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 502.8900146484375,
+                    "isGrounded": false,
+                    "useAcceleration": false,
+                    "useGravity": false,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2393.26220703125,
+                        158.57763671875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        3.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 9,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour 1_3",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "ai": {
+                    "acceleration": 80.0,
+                    "aggroRange": 300.0,
+                    "canFollow": false,
+                    "currentMovementState": 0,
+                    "decelerating": false,
+                    "deceleration": 80.0,
+                    "defaultMovementState": 0,
+                    "errorMargin": 30.0,
+                    "goalPosition": [
+                        -1.0,
+                        -1.0
+                    ],
+                    "hasStrafeStart": false,
+                    "moveSpeed": 200.0,
+                    "movementType": 1,
+                    "shootFrequency": 2.0,
+                    "shootTimeLeft": 0.0,
+                    "strafeDirection": -1.0,
+                    "strafeDistance": 280.0,
+                    "strafeStartX": 1768.5439453125,
+                    "strafeStartY": -108.0198974609375,
+                    "verticalStrafe": false
+                },
+                "collision": {
+                    "faction": 3,
+                    "isMovingPlatform": true,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        128.0,
+                        32.0
+                    ]
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 502.8900146484375,
+                    "isGrounded": false,
+                    "useAcceleration": false,
+                    "useGravity": false,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1768.5439453125,
+                        -108.0198974609375
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        4.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 10,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour 1_4",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 3,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        320.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1039.5439453125,
+                        -73.0198974609375
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        10.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 11,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour 1_5",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        64.0
+                    ]
+                },
+                "script": {
+                    "fileName": "Switch",
+                    "filePath": "../../src/json/scripts\\Switch.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "temp_wall",
+                                    "type": 14,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 6
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "temp_wall",
+                                    "type": 15,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 7
+                        }
+                    ],
+                    "started": false
+                },
+                "sprite": {
+                    "texture": "switch_sprite_off"
+                },
+                "switch": {
+                    "activated": false,
+                    "activatedTextureID": "switch_sprite_on",
+                    "deactivatedTextureID": "switch_sprite_off"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1068.29443359375,
+                        -135.32809448242188
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            },
+            "id": 12,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "switch",
+            "parentID": 4294967295
+        }
+    ],
+    "gravity": 502.8900146484375,
+    "music_file_path": "../../src/music/dopamine_machine.ogg",
+    "viewport_camera_offset": [
+        0.0,
+        0.0
+    ],
+    "viewport_camera_speed": 413.3529968261719,
+    "viewport_center_position": [
+        855.1012573242188,
+        616.7147216796875
+    ],
+    "viewport_follow_player_character": true,
+    "window_size": [
+        1920.0,
+        1080.0
+    ]
+}

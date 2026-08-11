@@ -37,9 +37,11 @@
                     ]
                 }
             },
+            "id": 1,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "You Win Text"
+            "name": "You Win Text",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -62,9 +64,11 @@
                     ]
                 }
             },
+            "id": 2,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "Sun"
+            "name": "Sun",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -87,9 +91,11 @@
                     ]
                 }
             },
+            "id": 3,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "sun streak"
+            "name": "sun streak",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -112,9 +118,11 @@
                     ]
                 }
             },
+            "id": 4,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "sun streak_1"
+            "name": "sun streak_1",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -137,9 +145,11 @@
                     ]
                 }
             },
+            "id": 5,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "sun streak_2"
+            "name": "sun streak_2",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -162,9 +172,11 @@
                     ]
                 }
             },
+            "id": 6,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "sun streak_3"
+            "name": "sun streak_3",
+            "parentID": 4294967295
         },
         {
             "components": {
@@ -187,12 +199,15 @@
                     ]
                 }
             },
+            "id": 7,
             "isBlueprint": false,
             "isPlayer": false,
-            "name": "sun streak_4"
+            "name": "sun streak_4",
+            "parentID": 4294967295
         }
     ],
     "gravity": 300.0,
+    "music_file_path": "../../src/music/naruto_8bit_w_drums.ogg",
     "viewport_camera_offset": [
         0.0,
         0.0
