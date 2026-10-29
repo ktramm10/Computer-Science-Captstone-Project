@@ -1,2 +1,18 @@
+# Project runtime and build requirements
+#
+# System tools to install before building/running on Windows:
+# - Visual Studio 2022 with the Desktop development with C++ workload
+# - CMake 3.24 or newer
+# - Git
+# - Python 3.10 or newer
+# - VS Code with the CMake Tools extension, if building from VS Code
+#
+# CMake downloads the required C++ libraries during configuration:
+# - SFML 3.0.1
+# - Dear ImGui 1.91.9b
+# - ImGui-SFML 3.0
+# - nlohmann/json 3.11.3
+#
+# Python packages required by src/AI/train_model.py:
 scikit-learn>=1.6.0
 joblib>=1.4.2

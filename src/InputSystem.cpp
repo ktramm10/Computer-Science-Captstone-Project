@@ -7,11 +7,17 @@
 #include "StringHelper.h"
 #include <iostream>
 
+/** @brief Namespace for input system implementation details. */
 namespace {
 
     int projectileSuffix = 1;
     bool wasFirePressed = false;
-
+    /**
+     * @brief Retrieves the string representation of a linked game value for UI text components.
+     * @param scene The scene containing the entities and game state.
+     * @param gameValue The specific game value to retrieve (e.g., PlayerHealth, Coins, Score, Experience).
+     * @return A string representing the current value of the specified game value.
+     */
     std::string getLinkedGameValue(Scene& scene, GameValue gameValue) {
         switch (gameValue) {
             case GameValue::PlayerHealth:
@@ -31,7 +37,10 @@ namespace {
                 return "";
         }
     }
-
+    /**
+     * @brief Updates the UI text components in the scene based on their linked game values.
+     * @param scene The scene containing the entities and UI text components.
+     */
     void handleUITextUpdates(Scene& scene) {
         for (const auto& entity : scene.getEntities()) {
             if (!entity || !entity->isAlive() || entity->isBlueprint()) {
@@ -43,7 +52,13 @@ namespace {
             }
         }
     }
-
+    /**
+     * @brief Moves a current value towards a target value by a specified maximum delta, ensuring it does not overshoot the target.
+     * @param current The current value to be moved.
+     * @param target The target value to move towards.
+     * @param maxDelta The maximum amount to change the current value in one step.
+     * @return The new value after moving towards the target.
+     */
     float moveToward(float current, float target, float maxDelta) {
         if (current < target) {
             return std::min(current + maxDelta, target);
@@ -55,7 +70,14 @@ namespace {
 
         return target;
     }
-
+    /**
+     * @brief Creates and spawns a new entity in the scene based on a source entity and a spawner component.
+     * @param scene The scene in which the new entity will be created.
+     * @param sourceEntity The source entity to copy components from.
+     * @param spawner The spawner component that defines the spawning behavior and properties.
+     * @param resourceManager The resource manager used to retrieve textures and fonts for the new entity
+     * @return A shared pointer to the newly created and spawned entity.
+     */
     std::shared_ptr<Entity> createAndSpawnEntity(Scene &scene, std::shared_ptr<Entity> sourceEntity, std::shared_ptr<Spawner>& spawner, ResourceManager& resourceManager)
     {
         auto spawnedEntity = scene.createEntity("spawned " + spawner->baseName + std::to_string(idIndex++));
@@ -212,14 +234,22 @@ namespace {
         return spawnedEntity;
 
     }
-
+    /**
+     * @brief Generates a new random goal position within the bounds of the game window.
+     * @return A 2D vector representing the new goal position.
+     */
     sf::Vector2f newGoalPosition()
     {
         float xBound = WINDOW_SIZE.x;
         float yBound = WINDOW_SIZE.y;
         return sf::Vector2f({Random::range(0.f, xBound), Random::range(0.f, yBound)});
     }
-
+    /**
+     * @brief Handles the spawning of entities in the scene based on spawner components.
+     * @param scene The scene containing the entities and spawner components.
+     * @param dt The delta time since the last update, used for timing spawn intervals.
+     * @param resourceManager The resource manager used to retrieve textures and fonts for the spawned entities.
+     */
     void handleSpawner(Scene& scene, float dt, ResourceManager& resourceManager) {
         auto entities = scene.getEntities();
         for (auto& entity : entities) {
@@ -255,7 +285,11 @@ namespace {
             }
         }
     }
-
+    /**
+     * @brief Updates the timers for various components in the scene, such as LifeTime, Switch, and PowerUp components.
+     * @param scene The scene containing the entities and their components.
+     * @param dt The delta time since the last update, used for timing updates.
+     */
     void updateComponentTimers(Scene& scene, float dt) {
         for (auto& entity : scene.getEntities()) {
             if (!entity || !entity->isAlive()) {
@@ -304,6 +338,12 @@ namespace {
         }
     }
 
+    /**
+     * @brief Processes the input for a top-down player character.
+     * @param input The input component containing the player's input state.
+     * @param physics The physics component containing the player's physical properties.
+     * @param dt The delta time since the last update, used for timing updates.
+     */
     void processTopDownPlayerInput(std::shared_ptr<Input> input, std::shared_ptr<Physics> physics, float dt) {
 
         sf::Vector2f moveDirection{0.0f, 0.0f};
@@ -336,18 +376,33 @@ namespace {
         }
     }
 
-    void processPlatformerPlayerInput(std::shared_ptr<Input> input, std::shared_ptr<Physics> physics, Scene& scene) {
-        if (!input->canMove) {
-            return;
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
-            physics->velocity.x = -input->moveSpeed;
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
-            physics->velocity.x = input->moveSpeed;
+    /**
+     * @brief Processes the input for a platformer player character.
+     * @param input The input component containing the player's input state.
+     * @param physics The physics component containing the player's physical properties.
+     * @param scene The scene containing the game entities and their interactions.
+     */
+    void processPlatformerPlayerInput(std::shared_ptr<Input> input, std::shared_ptr<Physics> physics, Scene& scene, float dt) {
+        float moveDirectionX = 0.0f;
+        if (input->canMove) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
+                moveDirectionX -= 1.0f;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)){
+                moveDirectionX += 1.0f;
+            }
         }
 
-        if (input->canJump && (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))){
+        if (physics->useAcceleration) {
+            float targetVelocityX = moveDirectionX * input->moveSpeed;
+            float maxDelta = moveDirectionX == 0.0f ? input->deceleration * dt : input->acceleration * dt;
+            physics->velocity.x = moveToward(physics->velocity.x, targetVelocityX, maxDelta);
+        }
+        else {
+            physics->velocity.x = moveDirectionX * input->moveSpeed;
+        }
+
+        if (input->canMove && input->canJump && (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))){
             if (!physics->isGrounded) {
                 return;
             }
@@ -361,6 +416,11 @@ namespace {
             physics->isGrounded = false;
         }
     }
+    /**
+     * @brief Handles the movement lock for an input component, updating the canMove flag based on the movement lock timer.
+     * @param input The input component to handle movement lock for.
+     * @param dt The delta time since the last update, used for timing updates.
+     */
     void handleMovementLock(std::shared_ptr<Input> input, float dt) {
         // Handle movement lock and update canMove flag.
         if (input->movementLockTimer > 0.0f) {
@@ -368,6 +428,13 @@ namespace {
             input->canMove = input->movementLockTimer <= 0.0f;
         }
     }
+    /**
+     * @brief Calculates the direction in which a player entity should shoot a projectile based on the mouse position and the entity's position in the scene.
+     * @param entity The player entity that is shooting the projectile.
+     * @param scene The scene containing the player entity and other game entities.
+     * @param window The render window used to map pixel coordinates to world coordinates.
+     * @return A normalized 2D vector representing the direction in which the projectile should be.
+     */
     sf::Vector2f CalculatePlayerShootDirection(std::shared_ptr<Entity> entity, const Scene& scene, sf::RenderWindow& window ) {
         auto shootertransform = entity->getComponent<Transform>();
         if (shootertransform) {
@@ -382,7 +449,14 @@ namespace {
         }
         return sf::Vector2f{0.f, 0.f};
     }
-
+    /**
+     * @brief Creates a projectile entity in the scene with specified properties and components.
+     * @param projectileDirection The direction in which the projectile will move.
+     * @param scene The scene in which the projectile will be created.
+     * @param resourceManager The resource manager used to retrieve textures for the projectile.
+     * @param shooterEntity The entity that is shooting the projectile, used to determine properties like damage and speed.
+     * @param window The render window used for coordinate mapping (not used in this function but included for consistency).
+     */
     void createProjectile(sf::Vector2f projectileDirection, Scene& scene, ResourceManager& resourceManager,
         std::shared_ptr<Entity> shooterEntity, sf::RenderWindow& window) {
         auto projectile = scene.createEntity("projectile" + std::to_string(projectileSuffix));
@@ -410,6 +484,7 @@ namespace {
         contactDamage->destroyEntityOnContact = true;
         projectilePhysics->useGravity = false;
         projectilePhysics->velocity = projectileDirection * shooter->projectileSpeed;
+        
         // link components to entity
         projectile->addComponent(projectileTransform, ComponentTypes::Transform);
         projectile->addComponent(projectileSprite, ComponentTypes::Sprite);
@@ -418,11 +493,19 @@ namespace {
         projectile->addComponent(contactDamage, ComponentTypes::ContactDamage);
         projectile->addComponent(projectileLifeTime, ComponentTypes::LifeTime);
     }
-
-    void HandlePlayerShoot(std::shared_ptr<Entity> entity, Scene& scene, ResourceManager& resourceManager, sf::RenderWindow& window, const bool firePressed) {
+    /**
+     * @brief Handles the shooting action for a player entity, creating projectiles based on the gun mode and input state.
+     * @param entity The player entity that is shooting.
+     * @param scene The scene in which the player entity exists and where projectiles will be created.
+     * @param resourceManager The resource manager used to retrieve textures for the projectiles.
+     * @param window The render window used for coordinate mapping (not used in this function but included for consistency).
+     * @param firePressed A boolean indicating whether the fire button is currently pressed.
+     */
+    void HandlePlayerShoot(std::shared_ptr<Entity> entity, Scene& scene, ResourceManager& resourceManager, sf::RenderWindow& window, const bool firePressed, AudioSystem& audioSystem) {
         
         const bool fireRequested = firePressed && !wasFirePressed; 
         if (fireRequested) {
+            audioSystem.playSound(resourceManager.getSoundBuffer("shoot_sfx"));
             auto shooter = entity->getComponent<Shooter>();
             auto shooterTransform = entity->getComponent<Transform>();
             auto shooterCollider = entity->getComponent<Collision>();
@@ -444,8 +527,15 @@ namespace {
             }
         }
     }
-
-    void parsePlayerInput(Scene &scene, float dt, sf::RenderWindow& window, ResourceManager& resourceManager)
+    /**
+     * @brief Parses player input for all entities in the scene, handling movement and shooting actions based on input components.
+     * @param scene The scene containing the entities and their components.
+     * @param dt The delta time since the last update, used for timing updates.
+     * @param window The render window used for coordinate mapping
+     * @param resourceManager The resource manager used to retrieve textures for projectiles and other resources.
+     * @param audioSystem The system that handles playing sound effects.
+     */
+    void parsePlayerInput(Scene &scene, float dt, sf::RenderWindow& window, ResourceManager& resourceManager, AudioSystem& audioSystem)
     {
         const bool firePressed = sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
 
@@ -470,20 +560,26 @@ namespace {
                         break;
                     case MovementType::Platformer:
                     default:
-                        physics->velocity.x *= 0.f;
                         handleMovementLock(input, dt);
-                        processPlatformerPlayerInput(input, physics, scene);
+                        processPlatformerPlayerInput(input, physics, scene, dt);
                         break;
                     }
 
-                HandlePlayerShoot(entity, scene, resourceManager, window, firePressed);
+                HandlePlayerShoot(entity, scene, resourceManager, window, firePressed, audioSystem);
             }
             wasFirePressed = firePressed;
         }
     }      
 
         
-        
+    /**
+     * @brief Calculates the direction in which an AI entity should shoot a projectile towards the player entity, with an optional error margin for inaccuracy.
+     * @param scene The scene containing the AI and player entities.
+     * @param playerEntity The player entity that the AI is targeting.
+     * @param self The AI entity that is shooting the projectile.
+     * @param errorMargin The maximum angle in degrees by which the AI's shot can deviate from the direct line to the player, simulating inaccuracy.
+     * @return A normalized 2D vector representing the direction in which the AI should shoot
+     */
     sf::Vector2f calculateAIShootDirection(const Scene& scene, std::shared_ptr<Entity> playerEntity, std::shared_ptr<Entity> self, float errorMargin) {
         auto playerTransform = playerEntity->getComponent<Transform>();
         auto selfTransform = self->getComponent<Transform>();
@@ -505,11 +601,20 @@ namespace {
         return {0.f,0.f};
 
     }
-    void HandleAIShoot(std::shared_ptr<Entity> entity, Scene& scene, std::shared_ptr<AI> ai, ResourceManager& resourceManager, float dt) {
+    /**
+     * @brief Handles the shooting action for an AI entity, creating projectiles towards the player entity based on the AI's shooting frequency and error margin.
+     * @param entity The AI entity that is shooting.
+     * @param scene The scene in which the AI entity exists and where projectiles will be created.
+     * @param ai The AI component containing the shooting frequency and error margin for the AI's shots.
+     * @param resourceManager The resource manager used to retrieve textures for the projectiles.
+     * @param dt The delta time since the last update, used for timing updates.
+     */
+    void HandleAIShoot(std::shared_ptr<Entity> entity, Scene& scene, std::shared_ptr<AI> ai, ResourceManager& resourceManager, float dt, AudioSystem& audioSystem) {
         auto AIshooter = entity->getComponent<Shooter>();
         auto playerEntity = scene.getPlayerEntity();
         if (AIshooter && playerEntity){
             if (ai->shootTimeLeft <= 0.0f) {
+                audioSystem.playSound(resourceManager.getSoundBuffer("shoot_sfx"));
                 // shoot implementation
                 auto shooter = entity->getComponent<Shooter>();
                 auto shooterTransform = entity->getComponent<Transform>();
@@ -555,11 +660,20 @@ namespace {
             }
         }
     }
-
-    void topDownAI(std::shared_ptr<AI> ai, std::shared_ptr<Transform> transform, std::shared_ptr<Physics> physics, std::shared_ptr<Entity> entity, Scene& scene, float dt, ResourceManager& resourceManager) {
+    /**
+     * @brief Updates the behavior of an AI entity in a top-down game, including movement towards a goal position and shooting at the player.
+     * @param ai The AI component containing the AI's properties and state.
+     * @param transform The transform component of the AI entity, used for position and scale.
+     * @param physics The physics component of the AI entity, used for velocity and movement.
+     * @param entity The AI entity being updated.
+     * @param scene The scene containing the AI entity and other game entities.
+     * @param dt The delta time since the last update, used for timing updates.
+     * @param resourceManager The resource manager used to retrieve textures for projectiles and other resources
+     */
+    void topDownAI(std::shared_ptr<AI> ai, std::shared_ptr<Transform> transform, std::shared_ptr<Physics> physics, std::shared_ptr<Entity> entity, Scene& scene, float dt, ResourceManager& resourceManager, AudioSystem& audioSystem) {
         sf::Vector2f aiPosition = scene.getWorldPosition(entity);
         
-        HandleAIShoot(entity, scene, ai, resourceManager, dt);
+        HandleAIShoot(entity, scene, ai, resourceManager, dt, audioSystem);
         // if goal_position is out of bound that means that its the 
         if (ai->goalPosition.x < 0 || ai->goalPosition.y < 0) {
             ai->goalPosition = newGoalPosition();
@@ -595,7 +709,16 @@ namespace {
             physics->velocity = toGoal.normalized() * ai->moveSpeed;
         }
     }
-
+    /**
+     * @brief Updates the behavior of an AI entity in a platformer game, including movement states such as strafing and following the player.
+     * @param ai The AI component containing the AI's properties and state.
+     * @param transform The transform component of the AI entity, used for position and scale.
+     * @param physics The physics component of the AI entity, used for velocity and movement.
+     * @param entity The AI entity being updated.
+     * @param scene The scene containing the AI entity and other game entities.
+     * @param dt The delta time since the last update, used for timing updates.
+     * @param resourceManager The resource manager used to retrieve textures for projectiles and other resources.
+     */
     void PlatformerAI(std::shared_ptr<AI> ai, std::shared_ptr<Transform> transform, std::shared_ptr<Physics> physics, std::shared_ptr<Entity> entity,
         Scene& scene, float dt, ResourceManager& resourceManager) {
         auto playerEntity = scene.getPlayerEntity();
@@ -612,6 +735,9 @@ namespace {
         float distanceFromStartX = strafePosition.x - ai->strafeStartX;
         float distanceFromStartY = strafePosition.y - ai->strafeStartY;
         float strafeLimit = std::abs(ai->strafeDistance);
+        float targetVelocityX = 0.0f;
+        float targetVelocityY = physics->velocity.y;
+        bool controlsVerticalVelocity = false;
         switch (ai->currentMovementState) {
             case PlatformerMovementStates::Strafe:
                 if (ai->verticalStrafe) {
@@ -626,7 +752,8 @@ namespace {
                         (ai->strafeDirection < 0 && distanceFromStartY <= -strafeLimit)) {
                         ai->strafeDirection *= -1;
                     }
-                    physics->velocity.y = ai->moveSpeed * ai->strafeDirection;
+                    targetVelocityY = ai->moveSpeed * ai->strafeDirection;
+                    controlsVerticalVelocity = true;
                     break;
                 }
                 else {
@@ -641,21 +768,35 @@ namespace {
                         (ai->strafeDirection < 0 && distanceFromStartX <= -strafeLimit)) {
                         ai->strafeDirection *= -1;
                     }
-                    physics->velocity.x = ai->moveSpeed * ai->strafeDirection;
+                    targetVelocityX = ai->moveSpeed * ai->strafeDirection;
                     break;    
                 }
             case PlatformerMovementStates::Follow:
                 if (aiToPlayerVec.x > 0.0f) {
-                    physics->velocity.x = -ai->moveSpeed;
+                    targetVelocityX = -ai->moveSpeed;
                 }
                 else if (aiToPlayerVec.x < 0.0f) {
-                    physics->velocity.x = ai->moveSpeed;
+                    targetVelocityX = ai->moveSpeed;
                 }
                 break;
             case PlatformerMovementStates::Idle:
             default:
                 // do a little jig for em bro
                 break;
+        }
+        if (physics->useAcceleration) {
+            float maxDeltaX = targetVelocityX == 0.0f ? ai->deceleration * dt : ai->acceleration * dt;
+            physics->velocity.x = moveToward(physics->velocity.x, targetVelocityX, maxDeltaX);
+            if (controlsVerticalVelocity) {
+                float maxDeltaY = targetVelocityY == 0.0f ? ai->deceleration * dt : ai->acceleration * dt;
+                physics->velocity.y = moveToward(physics->velocity.y, targetVelocityY, maxDeltaY);
+            }
+        }
+        else {
+            physics->velocity.x = targetVelocityX;
+            if (controlsVerticalVelocity) {
+                physics->velocity.y = targetVelocityY;
+            }
         }
         float distanceBetween = aiToPlayerVec.length();
         if (ai->currentMovementState == ai->defaultMovementState) {
@@ -669,8 +810,13 @@ namespace {
             }
         }
     }
-
-    void parseAIInput(Scene &scene, float dt, ResourceManager& resourceManager)
+    /**
+     * @brief Parses AI input for all entities in the scene, updating their behavior based on their AI components and movement types.
+     * @param scene The scene containing the entities and their components.
+     * @param dt The delta time since the last update, used for timing updates.
+     * @param resourceManager The resource manager used to retrieve textures for projectiles and other resources
+     */
+    void parseAIInput(Scene &scene, float dt, ResourceManager& resourceManager, AudioSystem& audioSystem)
     {
         auto entities = scene.getEntities();
         for (auto& entity : entities) {
@@ -696,7 +842,7 @@ namespace {
                 if (!physics->useAcceleration) {
                     physics->velocity *= 0.f;
                 }
-                topDownAI(ai, transform, physics, entity, scene, dt, resourceManager);
+                topDownAI(ai, transform, physics, entity, scene, dt, resourceManager, audioSystem);
                 break;
                 case MovementType::Platformer:
                 default:
@@ -705,14 +851,16 @@ namespace {
         }
     }
 }
-
-
-
-
-
-void InputSystem::update(Scene& scene, float dt, sf::RenderWindow& window, ResourceManager& resourceManager) {
-    parsePlayerInput(scene, dt, window, resourceManager);
-    parseAIInput(scene, dt, resourceManager);
+/**
+ * @brief Updates the input system for the scene, processing player and AI input, updating UI text, component timers, and handling entity spawning.
+ * @param scene The scene containing the entities and their components.
+ * @param dt The delta time since the last update, used for timing updates.
+ * @param window The render window used for coordinate mapping and input handling.
+ * @param resourceManager The resource manager used to retrieve textures and fonts for projectiles and other resources.
+ */
+void InputSystem::update(Scene& scene, float dt, sf::RenderWindow& window, ResourceManager& resourceManager, AudioSystem& audioSystem) {
+    parsePlayerInput(scene, dt, window, resourceManager, audioSystem);
+    parseAIInput(scene, dt, resourceManager, audioSystem);
     handleUITextUpdates(scene);
     updateComponentTimers(scene, dt);
     handleSpawner(scene, dt, resourceManager);

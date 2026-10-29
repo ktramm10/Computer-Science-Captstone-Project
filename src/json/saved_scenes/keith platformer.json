@@ -1,0 +1,1983 @@
+{
+    "backgroundColor": [
+        8,
+        165,
+        242,
+        255
+    ],
+    "entities": [
+        {
+            "components": {
+                "collision": {
+                    "faction": 1,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "health": {
+                    "currentHealth": 50.0,
+                    "maxHealth": 50.0
+                },
+                "input": {
+                    "acceleration": 50.0,
+                    "canJump": true,
+                    "canMove": true,
+                    "deceleration": 50.0,
+                    "jumpForce": 550.0,
+                    "moveSpeed": 250.0,
+                    "movementType": 1
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 1088.137939453125,
+                    "isGrounded": true,
+                    "useAcceleration": false,
+                    "useGravity": true,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "red_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        759.0798950195313,
+                        1014.9999389648438
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 1,
+            "isBlueprint": false,
+            "isPlayer": true,
+            "name": "Player",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        1920.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "green_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        0.0,
+                        1047.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        61.0,
+                        7.0
+                    ]
+                }
+            },
+            "id": 2,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Terrain",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        64.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 10.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
+                },
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1049.0,
+                        983.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            },
+            "id": 3,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Obstacle",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1165.0220947265625,
+                        999.759765625
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 4,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1221.5712890625,
+                        1003.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 5,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_1",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1268.5712890625,
+                        1003.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 6,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_2",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1314.5712890625,
+                        1003.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 7,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_3",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        99.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        272.0
+                    ]
+                },
+                "script": {
+                    "fileName": "FinishLine",
+                    "filePath": "../../src/json/scripts\\FinishLine.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "../../src/json/saved_scenes/You Win.json",
+                                    "type": 0,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 5
+                        }
+                    ],
+                    "started": true
+                },
+                "sprite": {
+                    "texture": "flag_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        4372.27685546875,
+                        628.0220336914063
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        7.0,
+                        8.5
+                    ]
+                }
+            },
+            "id": 8,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Finish",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        64.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 10.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
+                },
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        855.0,
+                        983.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            },
+            "id": 9,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Obstacle_1",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        64.0,
+                        64.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 10.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
+                },
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        327.0,
+                        983.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.0,
+                        2.0
+                    ]
+                }
+            },
+            "id": 10,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Obstacle_2",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        530.08544921875,
+                        1010.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 11,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_4",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        659.08544921875,
+                        1008.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 12,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_5",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        974.08544921875,
+                        1011.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 13,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_6",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 1000.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 0.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
+                },
+                "sprite": {
+                    "texture": "red_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        1950.973388671875,
+                        1109.3558349609375
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        20.5,
+                        5.0
+                    ]
+                }
+            },
+            "id": 14,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Lava",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        82.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2021.973388671875,
+                        975.3558959960938
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.5,
+                        1.0
+                    ]
+                }
+            },
+            "id": 15,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour Platform",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        82.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2151.973388671875,
+                        910.3558959960938
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.5,
+                        1.0
+                    ]
+                }
+            },
+            "id": 16,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour Platform_1",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        82.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2019.973388671875,
+                        816.3558959960938
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.5,
+                        1.0
+                    ]
+                }
+            },
+            "id": 17,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour Platform_2",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        82.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2177.973388671875,
+                        743.3558959960938
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.5,
+                        1.0
+                    ]
+                }
+            },
+            "id": 18,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour Platform_3",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        82.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2339.463134765625,
+                        669.84765625
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.5,
+                        1.0
+                    ]
+                }
+            },
+            "id": 19,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour Platform_4",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        82.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "pink_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2510.9228515625,
+                        725.84765625
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        2.5,
+                        1.0
+                    ]
+                }
+            },
+            "id": 20,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Parkour Platform_5",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": true,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        1920.0,
+                        32.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "green_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2606.57568359375,
+                        900.9810180664063
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        61.0,
+                        11.5
+                    ]
+                }
+            },
+            "id": 21,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Terrain_1",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2042.540771484375,
+                        778.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 22,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_7",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2175.540771484375,
+                        876.10205078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 23,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_8",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2201.03662109375,
+                        709.8220825195313
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 24,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_9",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2362.03662109375,
+                        636.8220825195313
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 25,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_10",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2533.03662109375,
+                        691.8220825195313
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 26,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_11",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 1
+                },
+                "sprite": {
+                    "texture": "heart_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        2768.12109375,
+                        864.9671020507813
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 27,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Heart_2",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": false,
+                    "size": [
+                        48.0,
+                        120.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 5.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 30.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
+                },
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3030.1318359375,
+                        853.83203125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.5,
+                        1.5
+                    ]
+                }
+            },
+            "id": 28,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Obstacle_3",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3062.1318359375,
+                        853.83203125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.5,
+                        1.5
+                    ]
+                }
+            },
+            "id": 29,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Obstacle_4",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "sprite": {
+                    "texture": "spikes_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3092.2490234375,
+                        853.3319091796875
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.5,
+                        1.5
+                    ]
+                }
+            },
+            "id": 30,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Obstacle_5",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "ai": {
+                    "acceleration": 80.0,
+                    "aggroRange": 300.0,
+                    "canFollow": false,
+                    "currentMovementState": 0,
+                    "decelerating": false,
+                    "deceleration": 80.0,
+                    "defaultMovementState": 0,
+                    "errorMargin": 30.0,
+                    "goalPosition": [
+                        -1.0,
+                        -1.0
+                    ],
+                    "hasStrafeStart": true,
+                    "moveSpeed": 300.0,
+                    "movementType": 1,
+                    "shootFrequency": 2.0,
+                    "shootTimeLeft": 0.0,
+                    "strafeDirection": 1.0,
+                    "strafeDistance": 200.0,
+                    "strafeStartX": 3591.010498046875,
+                    "strafeStartY": 0.0,
+                    "verticalStrafe": false
+                },
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 20.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 35.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 1088.137939453125,
+                    "isGrounded": true,
+                    "useAcceleration": false,
+                    "useGravity": true,
+                    "velocity": [
+                        300.0,
+                        0.0
+                    ]
+                },
+                "sprite": {
+                    "texture": "red_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3399.037353515625,
+                        868.9810180664063
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 31,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Patrol enemy",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3517.227294921875,
+                        868.0830078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 32,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_12",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3458.227294921875,
+                        868.0830078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 33,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_13",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        3363.227294921875,
+                        867.0830078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 34,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_14",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        4327.15966796875,
+                        868.0830078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 35,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_15",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        4300.15966796875,
+                        868.0830078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 36,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_16",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        4270.15966796875,
+                        868.0830078125
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 37,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_17",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "text": {
+                    "characterSize": 60,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "linkGameValue": true,
+                    "linkedGameValue": 0,
+                    "positionRelativeToViewport": true,
+                    "style": 0,
+                    "textString": "Health: "
+                },
+                "transform": {
+                    "localPosition": [
+                        -943.0,
+                        469.0
+                    ],
+                    "position": [
+                        497.541259765625,
+                        1352.0091552734375
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 38,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Health Display",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "text": {
+                    "characterSize": 60,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "linkGameValue": true,
+                    "linkedGameValue": 1,
+                    "positionRelativeToViewport": true,
+                    "style": 0,
+                    "textString": "Coins: "
+                },
+                "transform": {
+                    "localPosition": [
+                        -949.0,
+                        -531.0
+                    ],
+                    "position": [
+                        495.541259765625,
+                        369.0091552734375
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 39,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coins Display",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "pickUp": {
+                    "amount": 10.0,
+                    "pickUpType": 0
+                },
+                "sound": {
+                    "soundBuffer": "coin_pickup_sfx"
+                },
+                "sprite": {
+                    "texture": "coin_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        596.0221557617188,
+                        1008.759765625
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 40,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Coin_18",
+            "parentID": 4294967295
+        }
+    ],
+    "gravity": 1088.137939453125,
+    "music_file_path": "C:\\Users\\battl\\OneDrive\\Documents\\GitHub\\Computer-Science-Captstone-Project\\src\\music\\naruto_8bit_w_drums.ogg",
+    "viewport_camera_offset": [
+        0.0,
+        0.0
+    ],
+    "viewport_camera_speed": 300.0,
+    "viewport_center_position": [
+        974.022216796875,
+        788.759765625
+    ],
+    "viewport_follow_player_character": true,
+    "window_size": [
+        1920.0,
+        1080.0
+    ]
+}

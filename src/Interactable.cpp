@@ -4,12 +4,25 @@
 #include "Scene.h"
 #include "EditorUI.h"
 #include "Files.h"
+#include "AudioSystem.h"
 #include <iostream>
+
+/**
+ * @brief Handles the interaction between an entity and an interactable entity in the scene, performing actions based on the type of interaction.
+ * @param otherEntity The entity that is interacting with the interactable entity.
+ * @param interactableEntity The entity that has the Interactable component and is being interacted with.
+ * @param scene The scene containing the entities and their components.
+ * @param sceneLoader The scene loader to handle scene transitions.
+ * @param resourceManager The resource manager to handle resource loading.
+ * @return A boolean indicating whether the interaction resulted in a state change (e.g., switch
+ */
 bool Interactable::interact(std::shared_ptr<Entity> otherEntity, std::shared_ptr<Entity> interactableEntity, Scene &scene,
-     SceneLoader& sceneLoader, ResourceManager& resourceManager) 
+    SceneLoader& sceneLoader, ResourceManager& resourceManager, AudioSystem& audioSystem) 
 {
     bool switched = false;
     bool powerUpActivated = false;
+
+
 
     auto pickUp = interactableEntity->getComponent<PickUp>();
     if (pickUp && otherEntity == scene.getPlayerEntity()) {
@@ -26,6 +39,9 @@ bool Interactable::interact(std::shared_ptr<Entity> otherEntity, std::shared_ptr
                 break;
             case PickUpType::Coin:
                 scene.getGameState().coins += static_cast<int>(pickUp->amount);
+                if (auto sound = interactableEntity->getComponent<Sound>()) {
+                    audioSystem.playSound(resourceManager.getSoundBuffer(sound->soundBufferID));
+                }
                 break;
         }
         interactableEntity->destroy();

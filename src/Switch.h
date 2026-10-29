@@ -1,6 +1,10 @@
 #pragma once
 #include "Component.h"
 
+/**
+ * @class Switch
+ * @brief Component that stores activation state and textures for switch entities.
+ */
 class Switch : public Component {
     public:
     bool activated = false;

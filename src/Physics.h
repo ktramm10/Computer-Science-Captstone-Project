@@ -3,6 +3,11 @@
 #include "GameConfig.h"
 #include <SFML/System/Vector2.hpp>
 
+/**
+ * @class Physics
+ * @brief Physics component class that inherits from Component.
+ * @details This class represents the physics properties of an entity in a game. It contains various properties related to the entity's movement and interaction with forces.
+ */
 class Physics : public Component
 {
     public:

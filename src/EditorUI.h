@@ -7,6 +7,12 @@
 #include "SceneLoader.h"
 #include "TextEditor.h"
 #include "AIPromptBridge.h"
+/**
+ * @class EditorUI
+ * @brief Editor UI class that provides a user interface for editing scenes, entities, and components in a game engine.
+ * @details This class utilizes ImGui to create panels for scene selection, entity hierarchy, entity inspector, component management,
+ *  and script editing. It interacts with the Scene, ResourceManager, SceneSerializer, and SceneLoader classes to manage scene data and resources.
+ */
 
 class EditorUI {
     public:

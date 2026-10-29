@@ -9,6 +9,10 @@ class Entity;
 class ResourceManager;
 class Scene;
 
+/**
+ * @class SceneLoader
+ * @brief Deserializes scene JSON files into Scene entities and components.
+ */
 class SceneLoader {
     private:
     using json = nlohmann::json;
@@ -35,7 +39,15 @@ class SceneLoader {
     void loadPowerUp(const json& componentData, std::shared_ptr<Entity> entity);
     void loadPopText(const json& componentData, std::shared_ptr<Entity> entity, ResourceManager& resourceManager);
     void loadLoot(const json& componentData, std::shared_ptr<Entity> entity);
+    void loadSound(const json& componentData, std::shared_ptr<Entity> entity, ResourceManager& resourceManager);
 
     public:
+    /**
+     * @brief Loads a scene from a JSON file into the provided scene instance.
+     * @param filePath The path to the scene JSON file.
+     * @param scene The scene to populate from the file.
+     * @param ResourceManager The resource manager used to resolve component assets.
+     * @return True if the scene was loaded successfully, false otherwise.
+     */
     bool loadFromFile(const std::string& filePath, Scene& scene, ResourceManager& ResourceManager);
 };

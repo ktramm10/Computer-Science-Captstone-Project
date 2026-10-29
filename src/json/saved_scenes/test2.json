@@ -1,0 +1,693 @@
+{
+    "backgroundColor": [
+        0,
+        0,
+        29,
+        255
+    ],
+    "entities": [
+        {
+            "components": {
+                "collision": {
+                    "faction": 1,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "health": {
+                    "currentHealth": 30.0,
+                    "maxHealth": 30.0
+                },
+                "input": {
+                    "acceleration": 300.0,
+                    "canJump": true,
+                    "canMove": false,
+                    "deceleration": 250.0,
+                    "jumpForce": 300.0,
+                    "moveSpeed": 400.0,
+                    "movementType": 0
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 300.0,
+                    "isGrounded": true,
+                    "useAcceleration": true,
+                    "useGravity": false,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "shooter": {
+                    "gunMode": 0,
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "projectileDamage": 10.0,
+                    "projectileDirection": [
+                        1.0,
+                        0.0
+                    ],
+                    "projectileScale": [
+                        0.5,
+                        0.5
+                    ],
+                    "projectileSpeed": 500.0,
+                    "shotGunPelletCount": 5.0,
+                    "textureID": "yellow_sprite"
+                },
+                "sprite": {
+                    "texture": "blue_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        858.4956665039063,
+                        411.504150390625
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 1,
+            "isBlueprint": false,
+            "isPlayer": true,
+            "name": "Player",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "ai": {
+                    "acceleration": 80.0,
+                    "aggroRange": 300.0,
+                    "canFollow": false,
+                    "currentMovementState": 0,
+                    "decelerating": false,
+                    "deceleration": 150.0,
+                    "defaultMovementState": 0,
+                    "errorMargin": 30.0,
+                    "goalPosition": [
+                        -1.0,
+                        -1.0
+                    ],
+                    "hasStrafeStart": false,
+                    "moveSpeed": 300.0,
+                    "movementType": 0,
+                    "shootFrequency": 2.0,
+                    "shootTimeLeft": 0.0,
+                    "strafeDirection": 1.0,
+                    "strafeDistance": 150.0,
+                    "strafeStartX": 0.0,
+                    "strafeStartY": 0.0,
+                    "verticalStrafe": false
+                },
+                "collision": {
+                    "faction": 2,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": false,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "health": {
+                    "currentHealth": 5.0,
+                    "maxHealth": 5.0
+                },
+                "loot": {
+                    "experience": 0.0,
+                    "gold": 0,
+                    "score": 10
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 300.0,
+                    "isGrounded": false,
+                    "useAcceleration": true,
+                    "useGravity": false,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "popText": {
+                    "characterSize": 26,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "lifeTimeDuration": 0.6000000238418579,
+                    "offset": [
+                        0.0,
+                        10.0
+                    ],
+                    "style": 1,
+                    "textString": "+ "
+                },
+                "script": {
+                    "fileName": "SpawnPopTextEnemy",
+                    "filePath": "../../src/json/scripts\\SpawnPopTextEnemy.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 17,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 4
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 18,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 4
+                        }
+                    ],
+                    "started": false
+                },
+                "shooter": {
+                    "gunMode": 0,
+                    "offset": [
+                        16.0,
+                        16.0
+                    ],
+                    "projectileDamage": 5.0,
+                    "projectileDirection": [
+                        1.0,
+                        0.0
+                    ],
+                    "projectileScale": [
+                        0.5,
+                        0.5
+                    ],
+                    "projectileSpeed": 400.0,
+                    "shotGunPelletCount": 5.0,
+                    "textureID": "coin_sprite"
+                },
+                "spawner": {
+                    "baseName": "Alien_",
+                    "spawnFrequency": 2.0,
+                    "spawnMethod": 0,
+                    "spawnPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "spawnTimeLeft": 2.0
+                },
+                "sprite": {
+                    "texture": "green_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        -400.0,
+                        668.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 2,
+            "isBlueprint": true,
+            "isPlayer": false,
+            "name": "Alien Spawner",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 2,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": true,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": false,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "contactDamage": {
+                    "damage": 10.0,
+                    "destroyEntityOnContact": false,
+                    "knockback": 40.0,
+                    "knockbackDirection": [
+                        0.0,
+                        0.0
+                    ],
+                    "knockbackMethod": 0
+                },
+                "health": {
+                    "currentHealth": 1.0,
+                    "maxHealth": 1.0
+                },
+                "loot": {
+                    "experience": 0.0,
+                    "gold": 0,
+                    "score": 15
+                },
+                "physics": {
+                    "acceleration": [
+                        0.0,
+                        0.0
+                    ],
+                    "gravity": 300.0,
+                    "isGrounded": false,
+                    "useAcceleration": false,
+                    "useGravity": false,
+                    "velocity": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "popText": {
+                    "characterSize": 30,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "lifeTimeDuration": 0.6000000238418579,
+                    "offset": [
+                        0.0,
+                        -30.0
+                    ],
+                    "style": 1,
+                    "textString": "+ "
+                },
+                "script": {
+                    "fileName": "spin",
+                    "filePath": "../../src/json/scripts\\spin.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 2,
+                                    "value": 90.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 1
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 7,
+                                    "value": 0.0,
+                                    "x": 16.0,
+                                    "y": 16.0
+                                }
+                            ],
+                            "event": 0
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 8,
+                                    "value": 0.0,
+                                    "x": 16.0,
+                                    "y": 16.0
+                                }
+                            ],
+                            "event": 0
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 10,
+                                    "value": 500.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 0
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 10,
+                                    "value": 180.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 3
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 9,
+                                    "value": 3.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 3
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 9,
+                                    "value": 3.5,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 0
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 17,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 4
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 18,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 4
+                        }
+                    ],
+                    "started": false
+                },
+                "spawner": {
+                    "baseName": "Spawned_Asteroid",
+                    "spawnFrequency": 4.0,
+                    "spawnMethod": 0,
+                    "spawnPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "spawnTimeLeft": 3.1690165996551514
+                },
+                "sprite": {
+                    "texture": "cactus_sprite"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        644.0,
+                        668.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 3,
+            "isBlueprint": true,
+            "isPlayer": false,
+            "name": "Asteroid Spawner",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "collision": {
+                    "faction": 0,
+                    "isMovingPlatform": false,
+                    "isPhysicalCollider": false,
+                    "isStatic": false,
+                    "knockbackDistance": 0.0,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "resolvePhysicalCollisionsWithTeam": true,
+                    "size": [
+                        32.0,
+                        32.0
+                    ]
+                },
+                "popText": {
+                    "characterSize": 25,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "lifeTimeDuration": 0.6000000238418579,
+                    "offset": [
+                        0.0,
+                        0.0
+                    ],
+                    "style": 0,
+                    "textString": "+ "
+                },
+                "powerUp": {
+                    "moveSpeedBoost": 250.0,
+                    "powerUpDuration": 6.0,
+                    "powerUpTimeLeft": 0.0,
+                    "powerUpType": 0,
+                    "selectionMethod": 0,
+                    "velocityBoost": 250.0
+                },
+                "script": {
+                    "fileName": "SpawnPopTextPowerup",
+                    "filePath": "../../src/json/scripts\\SpawnPopTextPowerup.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 17,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 8
+                        }
+                    ],
+                    "started": false
+                },
+                "spawner": {
+                    "baseName": "Spawned_Powerup",
+                    "spawnFrequency": 16.0,
+                    "spawnMethod": 0,
+                    "spawnPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "spawnTimeLeft": 0.10000000149011612
+                },
+                "sprite": {
+                    "texture": "default"
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        476.0,
+                        451.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 4,
+            "isBlueprint": true,
+            "isPlayer": false,
+            "name": "PowerupSpawner",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "script": {
+                    "fileName": "GameRules",
+                    "filePath": "../../src/json/scripts\\GameRules.json",
+                    "rules": [
+                        {
+                            "actions": [
+                                {
+                                    "target": "",
+                                    "type": 21,
+                                    "value": 0.0,
+                                    "x": 0.0,
+                                    "y": 0.0
+                                }
+                            ],
+                            "event": 9
+                        }
+                    ],
+                    "started": false
+                }
+            },
+            "id": 5,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "GameRules",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "text": {
+                    "characterSize": 37,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "linkGameValue": true,
+                    "linkedGameValue": 0,
+                    "positionRelativeToViewport": false,
+                    "style": 0,
+                    "textString": "Health: "
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        18.0,
+                        960.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 6,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Health Display",
+            "parentID": 4294967295
+        },
+        {
+            "components": {
+                "text": {
+                    "characterSize": 36,
+                    "fillColorA": 255,
+                    "fillColorB": 255,
+                    "fillColorG": 255,
+                    "fillColorR": 255,
+                    "font": "nitro_eagle",
+                    "linkGameValue": true,
+                    "linkedGameValue": 2,
+                    "positionRelativeToViewport": false,
+                    "style": 0,
+                    "textString": "Score: "
+                },
+                "transform": {
+                    "localPosition": [
+                        0.0,
+                        0.0
+                    ],
+                    "position": [
+                        47.0,
+                        1007.0
+                    ],
+                    "rotation": 0.0,
+                    "scale": [
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            "id": 7,
+            "isBlueprint": false,
+            "isPlayer": false,
+            "name": "Score Display",
+            "parentID": 4294967295
+        }
+    ],
+    "gravity": 300.0,
+    "music_file_path": "C:\\Users\\battl\\OneDrive\\Documents\\GitHub\\Computer-Science-Captstone-Project\\src\\music\\asteroid_mania.ogg",
+    "viewport_camera_offset": [
+        0.0,
+        0.0
+    ],
+    "viewport_camera_speed": 300.0,
+    "viewport_center_position": [
+        960.0,
+        540.0
+    ],
+    "viewport_follow_player_character": false,
+    "window_size": [
+        1920.0,
+        1080.0
+    ]
+}

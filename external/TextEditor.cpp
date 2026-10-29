@@ -1,3 +1,7 @@
+/**
+ * @file TextEditor.cpp
+ * @brief Implements the embedded ImGui text editor used by the engine editor UI.
+ */
 #include <algorithm>
 #include <chrono>
 #include <string>

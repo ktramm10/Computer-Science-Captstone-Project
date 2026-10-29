@@ -1,0 +1,12 @@
+{
+	"soundBuffers": [
+		{
+			"id": "coin_pickup_sfx",
+			"path": "../../src/sound_effects/coin_pickup_sfx.ogg"
+		},
+		{
+			"id": "shoot_sfx",
+			"path": "../../src/sound_effects/shoot_sfx.ogg"
+		}
+	]
+}

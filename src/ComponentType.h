@@ -5,7 +5,11 @@
 #include <vector>
 
 
-
+/**
+ * @class ComponentTypes
+ * @brief Class that defines the different component types in the entity-component system.
+ * @details This class provides an enumeration of component types, allowing for the combination of multiple component types into a single bitmask.
+ */
 class ComponentTypes
 {
 public:
@@ -31,7 +35,8 @@ public:
         Switch = 1u << 16,
         PowerUp = 1u << 17,
         PopText = 1u << 18,
-        Loot = 1u << 19
+        Loot = 1u << 19,
+        Sound = 1u << 20
     };
     
 
@@ -67,7 +72,8 @@ static const std::string componentNames[] = {
     "Switch",
     "PowerUp",
     "PopText",
-    "Loot"
+    "Loot",
+    "Sound"
 };
 
 static const ComponentTypes::Value allComponentTypes[] = {
@@ -90,7 +96,8 @@ static const ComponentTypes::Value allComponentTypes[] = {
     ComponentTypes::Switch,
     ComponentTypes::PowerUp,
     ComponentTypes::PopText,
-    ComponentTypes::Loot
+    ComponentTypes::Loot,
+    ComponentTypes::Sound
 };
 
 

@@ -1,15 +1,27 @@
 #include "SceneSerializer.h"
 #include "GameConfig.h"
+#include "ProjectPaths.h"
 #include <fstream>
 #include <iostream>
 
 using json = nlohmann::json;
 
+/**
+ * @brief Converts an SFML vector into a JSON array.
+ * @param vector The vector to serialize.
+ * @return A JSON array containing the vector's x and y values.
+ */
 json SceneSerializer::writeVec2(const sf::Vector2f &vector) const
 {
     return json::array({vector.x, vector.y});
 }
 
+/**
+ * @brief Serializes an entity and all supported components to JSON.
+ * @param entity The entity to serialize.
+ * @param scene The scene containing the entity and parent/player context.
+ * @return A JSON object representing the entity.
+ */
 json SceneSerializer::saveEntity(const std::shared_ptr<Entity> &entity, const Scene& scene) const
 {
     json entityData;
@@ -41,10 +53,17 @@ json SceneSerializer::saveEntity(const std::shared_ptr<Entity> &entity, const Sc
     savePowerUpComponent(components, entity);
     savePopTextComponent(components, entity);
     saveLootComponent(components, entity);
+    saveSoundComponent(components, entity);
 
     return entityData;
 }
 
+/**
+ * @brief Saves an entity's Transform component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ * @param scene The scene used to calculate world position.
+ */
 void SceneSerializer::saveTransformComponent(json &components, const std::shared_ptr<Entity> &entity, const Scene& scene) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Transform) != ComponentTypes::Transform) {
@@ -63,6 +82,11 @@ void SceneSerializer::saveTransformComponent(json &components, const std::shared
     };
 }
 
+/**
+ * @brief Saves an entity's Collision component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveCollisionComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Collision) != ComponentTypes::Collision) {
@@ -84,6 +108,11 @@ void SceneSerializer::saveCollisionComponent(json &components, const std::shared
     };
 }
 
+/**
+ * @brief Saves an entity's Sprite component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveSpriteComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Sprite) != ComponentTypes::Sprite) {
@@ -97,6 +126,11 @@ void SceneSerializer::saveSpriteComponent(json &components, const std::shared_pt
     };
 }
 
+/**
+ * @brief Saves an entity's Physics component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::savePhysicsComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Physics) != ComponentTypes::Physics) {
@@ -115,6 +149,11 @@ void SceneSerializer::savePhysicsComponent(json &components, const std::shared_p
     };
 }
 
+/**
+ * @brief Saves an entity's Input component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveInputComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Input) != ComponentTypes::Input) {
@@ -134,6 +173,11 @@ void SceneSerializer::saveInputComponent(json &components, const std::shared_ptr
     };
 }
 
+/**
+ * @brief Saves an entity's Health component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveHealthComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Health) != ComponentTypes::Health) {
@@ -148,6 +192,11 @@ void SceneSerializer::saveHealthComponent(json &components, const std::shared_pt
     };
 }
 
+/**
+ * @brief Saves an entity's PickUp component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::savePickUpComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::PickUp) != ComponentTypes::PickUp) {
@@ -162,6 +211,11 @@ void SceneSerializer::savePickUpComponent(json &components, const std::shared_pt
     };
 }
 
+/**
+ * @brief Saves an entity's ContactDamage component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveContactDamageComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::ContactDamage) != ComponentTypes::ContactDamage) {
@@ -179,6 +233,11 @@ void SceneSerializer::saveContactDamageComponent(json &components, const std::sh
     };
 }
 
+/**
+ * @brief Saves an entity's AI component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveAIComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::AI) != ComponentTypes::AI) {
@@ -210,6 +269,11 @@ void SceneSerializer::saveAIComponent(json &components, const std::shared_ptr<En
     };
 }
 
+/**
+ * @brief Saves an entity's Shooter component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveShooterComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Shooter) != ComponentTypes::Shooter) {
@@ -230,6 +294,11 @@ void SceneSerializer::saveShooterComponent(json &components, const std::shared_p
     };
 }
 
+/**
+ * @brief Saves an entity's LifeTime component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveLifeTimeComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::LifeTime) != ComponentTypes::LifeTime) {
@@ -244,6 +313,11 @@ void SceneSerializer::saveLifeTimeComponent(json &components, const std::shared_
     };
 }
 
+/**
+ * @brief Saves an entity's Spawner component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveSpawnerComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Spawner) != ComponentTypes::Spawner) {
@@ -261,6 +335,11 @@ void SceneSerializer::saveSpawnerComponent(json &components, const std::shared_p
     };
 }
 
+/**
+ * @brief Saves an entity's Door component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveDoorComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Door) != ComponentTypes::Door) {
@@ -277,6 +356,11 @@ void SceneSerializer::saveDoorComponent(json &components, const std::shared_ptr<
     };
 }
 
+/**
+ * @brief Saves an entity's Key component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveKeyComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Key) != ComponentTypes::Key) {
@@ -290,6 +374,11 @@ void SceneSerializer::saveKeyComponent(json &components, const std::shared_ptr<E
     };
 }
 
+/**
+ * @brief Saves an entity's Script component and rules into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveScriptComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Script) != ComponentTypes::Script) {
@@ -325,6 +414,11 @@ void SceneSerializer::saveScriptComponent(json &components, const std::shared_pt
     };
 }
 
+/**
+ * @brief Saves an entity's Text component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveTextComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Text) == 0) {
@@ -347,6 +441,11 @@ void SceneSerializer::saveTextComponent(json &components, const std::shared_ptr<
     };
 }
 
+/**
+ * @brief Saves an entity's Switch component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveSwitchComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Switch) != ComponentTypes::Switch) {
@@ -362,6 +461,11 @@ void SceneSerializer::saveSwitchComponent(json &components, const std::shared_pt
     };
 }
 
+/**
+ * @brief Saves an entity's PowerUp component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::savePowerUpComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::PowerUp) != ComponentTypes::PowerUp) {
@@ -380,6 +484,11 @@ void SceneSerializer::savePowerUpComponent(json &components, const std::shared_p
     };
 }
 
+/**
+ * @brief Saves an entity's PopText component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::savePopTextComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::PopText) != ComponentTypes::PopText) {
@@ -402,6 +511,11 @@ void SceneSerializer::savePopTextComponent(json &components, const std::shared_p
     };
 }
 
+/**
+ * @brief Saves an entity's Loot component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
 void SceneSerializer::saveLootComponent(json &components, const std::shared_ptr<Entity> &entity) const
 {
     if ((entity->getComponentMask() & ComponentTypes::Loot) != ComponentTypes::Loot) {
@@ -417,6 +531,31 @@ void SceneSerializer::saveLootComponent(json &components, const std::shared_ptr<
     };
 }
 
+/**
+ * @brief Saves an entity's Sound component into the component JSON object.
+ * @param components The JSON object receiving component data.
+ * @param entity The entity being serialized.
+ */
+void SceneSerializer::saveSoundComponent(json &components, const std::shared_ptr<Entity> &entity) const
+{
+    if ((entity->getComponentMask() & ComponentTypes::Sound) != ComponentTypes::Sound) {
+        return;
+    }
+    auto sound = entity->getComponent<Sound>();
+    if (!sound) return;
+
+    components["sound"] = {
+        {"soundBuffer", sound->soundBufferID}
+    };
+}
+
+/**
+ * @brief Saves the entire scene to a JSON file.
+ * @param filePath The path of the scene file to write.
+ * @param scene The scene to serialize.
+ * @param resourceManager The resource manager associated with the scene.
+ * @return True if the scene was saved successfully, false otherwise.
+ */
 bool SceneSerializer::saveToFile(const std::string &filePath, const Scene &scene, const ResourceManager &resourceManager) const
 {
     json sceneData;
@@ -438,7 +577,7 @@ bool SceneSerializer::saveToFile(const std::string &filePath, const Scene &scene
     for (const auto& entity : scene.getEntities()) {
         sceneData["entities"].push_back(saveEntity(entity, scene));
     }
-    std::ofstream file(filePath);
+    std::ofstream file(resolveProjectPath(filePath));
 
     if (!file.is_open()) {
         std::cerr << "Failed to open scene file for saving: " << filePath << std::endl;

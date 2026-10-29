@@ -4,6 +4,12 @@
 #include "Component.h"
 #include "MovementType.h"
 
+/**
+ * @class Input
+ * @brief Input component class that inherits from Component.
+ * @details This class represents the input properties of an entity in a game. It contains various properties related to movement, including movement type,
+ *  speed, acceleration, deceleration, jump force, and movement lock timer.
+ */
 class Input : public Component {
     public:
     MovementType movementType = MovementType::Platformer;

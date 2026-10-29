@@ -1,15 +1,24 @@
 #include "SceneLoader.h"
 
 #include "GameConfig.h"
+#include "ProjectPaths.h"
 #include "ResourceManager.h"
 #include "Scene.h"
 
 #include <fstream>
 #include <iostream>
 
+/**
+ * @brief Loads a scene from a JSON file into the provided scene instance.
+ * @param filePath The path to the scene JSON file.
+ * @param scene The scene to populate from the file.
+ * @param resourceManager The resource manager used to resolve component assets.
+ * @return True if the scene was loaded successfully, false otherwise.
+ */
 bool SceneLoader::loadFromFile(const std::string &filePath, Scene &scene, ResourceManager &resourceManager)
 {
-    std::ifstream file(filePath);
+    const auto resolvedFilePath = resolveProjectPath(filePath);
+    std::ifstream file(resolvedFilePath);
     if (!file.is_open()) {
     std::cerr << "Failed to open scene file: " << filePath << std::endl;
     return false;
@@ -29,7 +38,7 @@ bool SceneLoader::loadFromFile(const std::string &filePath, Scene &scene, Resour
     VIEWPORT_CAMERA_SPEED = sceneData.value("viewport_camera_speed", VIEWPORT_CAMERA_SPEED);
     VIEWPORT_CAMERA_OFFSET = readVec2(sceneData, "viewport_camera_offset", VIEWPORT_CAMERA_OFFSET);
     VIEWPORT_CENTER_POSITION = readVec2(sceneData, "viewport_center_position", VIEWPORT_CENTER_POSITION);
-    MUSIC_FILE_PATH = sceneData.value("music_file_path", MUSIC_FILE_PATH);
+    MUSIC_FILE_PATH = resolveProjectPath(sceneData.value("music_file_path", MUSIC_FILE_PATH)).string();
     VIEWPORT_FOLLOW_PLAYER_CHARACTER = sceneData.value("viewport_follow_player_character", VIEWPORT_FOLLOW_PLAYER_CHARACTER);
     WINDOW_SIZE = readVec2(sceneData, "window_size", WINDOW_SIZE);
     if (sceneData.contains("backgroundColor") && sceneData["backgroundColor"].is_array() && sceneData["backgroundColor"].size() >= 4) {
@@ -56,11 +65,18 @@ bool SceneLoader::loadFromFile(const std::string &filePath, Scene &scene, Resour
             scene.setParent(static_cast<unsigned int>(childID), static_cast<unsigned int>(parentID));
         }
     }
-    scene.setCurrentScenePath(filePath);
+    scene.setCurrentScenePath(resolvedFilePath);
     
     return true;
 }
 
+/**
+ * @brief Reads a two-dimensional vector from a JSON array.
+ * @param object The JSON object containing the vector field.
+ * @param key The key of the vector field to read.
+ * @param defaultValue The value to return if the field is missing or invalid.
+ * @return The parsed vector value, or the default value if parsing is not possible.
+ */
 sf::Vector2f SceneLoader::readVec2(const json& object, const std::string& key, const sf::Vector2f& defaultValue) const {
     if (!object.contains(key) || !object[key].is_array()) {
         return defaultValue;
@@ -73,6 +89,12 @@ sf::Vector2f SceneLoader::readVec2(const json& object, const std::string& key, c
     return sf::Vector2f{array[0].get<float>(), array[1].get<float>()};
 }
 
+/**
+ * @brief Creates an entity from JSON and loads each serialized component on it.
+ * @param entityData The JSON data for the entity.
+ * @param scene The scene receiving the entity.
+ * @param resourceManager The resource manager used for asset-backed components.
+ */
 void SceneLoader::loadEntity(const json &entityData, Scene &scene, ResourceManager &resourceManager)
 {
     std::string name = entityData.value("name", "entity");
@@ -150,8 +172,16 @@ void SceneLoader::loadEntity(const json &entityData, Scene &scene, ResourceManag
     if (components.contains("loot")) {
         loadLoot(components["loot"], entity);
     }
+    if (components.contains("sound")) {
+        loadSound(components["sound"], entity, resourceManager);
+    }
 }
 
+/**
+ * @brief Loads a Transform component from JSON onto an entity.
+ * @param componentData The JSON data for the transform component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadTransform(const json &componentData, std::shared_ptr<Entity> entity)
 {
     sf::Vector2f position = readVec2(componentData, "position", {0.0f, 0.0f});
@@ -163,6 +193,12 @@ void SceneLoader::loadTransform(const json &componentData, std::shared_ptr<Entit
     entity->addComponent(transform, ComponentTypes::Transform);
 }
 
+/**
+ * @brief Loads a Sprite component from JSON onto an entity.
+ * @param componentData The JSON data for the sprite component.
+ * @param entity The entity receiving the component.
+ * @param resourceManager The resource manager used to retrieve the sprite texture.
+ */
 void SceneLoader::loadSprite(const json &componentData, std::shared_ptr<Entity> entity, ResourceManager& resourceManager)
 {
     std::string textureID = componentData.value("texture", "");
@@ -180,6 +216,11 @@ void SceneLoader::loadSprite(const json &componentData, std::shared_ptr<Entity> 
 
 }
 
+/**
+ * @brief Loads a Collision component from JSON onto an entity.
+ * @param componentData The JSON data for the collision component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadCollision(const json &componentData, std::shared_ptr<Entity> entity)
 {
     sf::Vector2f size = readVec2(componentData, "size", {32.f, 32.f});
@@ -196,6 +237,11 @@ void SceneLoader::loadCollision(const json &componentData, std::shared_ptr<Entit
     entity->addComponent(collision, ComponentTypes::Collision);
 }
 
+/**
+ * @brief Loads a Physics component from JSON onto an entity.
+ * @param componentData The JSON data for the physics component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadPhysics(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto physics = std::make_shared<Physics>();
@@ -208,6 +254,11 @@ void SceneLoader::loadPhysics(const json &componentData, std::shared_ptr<Entity>
     entity->addComponent(physics, ComponentTypes::Physics);
 }
 
+/**
+ * @brief Loads an Input component from JSON onto an entity.
+ * @param componentData The JSON data for the input component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadInput(const json &componentData, std::shared_ptr<Entity> entity)
 {
     float moveSpeed = componentData.value("moveSpeed", 100.0f);
@@ -222,6 +273,11 @@ void SceneLoader::loadInput(const json &componentData, std::shared_ptr<Entity> e
     entity->addComponent(input, ComponentTypes::Input);
 }
 
+/**
+ * @brief Loads a Health component from JSON onto an entity.
+ * @param componentData The JSON data for the health component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadHealth(const json &componentData, std::shared_ptr<Entity> entity)
 {
     float maxHealth = componentData.value("maxHealth", 100.0f);
@@ -231,6 +287,11 @@ void SceneLoader::loadHealth(const json &componentData, std::shared_ptr<Entity> 
     entity->addComponent(health, ComponentTypes::Health);
 }
 
+/**
+ * @brief Loads a PickUp component from JSON onto an entity.
+ * @param componentData The JSON data for the pickup component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadPickUp(const json &componentData, std::shared_ptr<Entity> entity)
 {
     int pickUpTypeValue = componentData.value("pickUpType", componentData.value("itemType", static_cast<int>(PickUpType::Coin)));
@@ -240,6 +301,11 @@ void SceneLoader::loadPickUp(const json &componentData, std::shared_ptr<Entity> 
     entity->addComponent(pickUp, ComponentTypes::PickUp);
 }
 
+/**
+ * @brief Loads a ContactDamage component from JSON onto an entity.
+ * @param componentData The JSON data for the contact damage component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadContactDamage(const json &componentData, std::shared_ptr<Entity> entity)
 {
     float damage = componentData.value("damage", 0.0f);
@@ -251,6 +317,11 @@ void SceneLoader::loadContactDamage(const json &componentData, std::shared_ptr<E
     entity->addComponent(contactDamage, ComponentTypes::ContactDamage);
 }
 
+/**
+ * @brief Loads an AI component from JSON onto an entity.
+ * @param componentData The JSON data for the AI component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadAI(const json &componentData, std::shared_ptr<Entity> entity)
 {
     float moveSpeed = componentData.value("moveSpeed", 300.0f);
@@ -282,6 +353,11 @@ void SceneLoader::loadAI(const json &componentData, std::shared_ptr<Entity> enti
     entity->addComponent(ai, ComponentTypes::AI);
 }
 
+/**
+ * @brief Loads a Shooter component from JSON onto an entity.
+ * @param componentData The JSON data for the shooter component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadShooter(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto shooter = std::make_shared<Shooter>();
@@ -297,6 +373,11 @@ void SceneLoader::loadShooter(const json &componentData, std::shared_ptr<Entity>
     entity->addComponent(shooter, ComponentTypes::Shooter);
 }
 
+/**
+ * @brief Loads a LifeTime component from JSON onto an entity.
+ * @param componentData The JSON data for the lifetime component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadLifeTime(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto lifeTime = std::make_shared<LifeTime>(componentData.value("lifeTimeDuration", 0.0f));
@@ -304,6 +385,12 @@ void SceneLoader::loadLifeTime(const json &componentData, std::shared_ptr<Entity
     entity->addComponent(lifeTime, ComponentTypes::LifeTime);
 }
 
+/**
+ * @brief Loads a Spawner component from JSON onto an entity.
+ * @param componentData The JSON data for the spawner component.
+ * @param entity The entity receiving the component.
+ * @param scene The scene that owns the spawned entity context.
+ */
 void SceneLoader::loadSpawner(const json &componentData, std::shared_ptr<Entity> entity, Scene& scene)
 {
     auto spawner = std::make_shared<Spawner>();
@@ -316,6 +403,11 @@ void SceneLoader::loadSpawner(const json &componentData, std::shared_ptr<Entity>
     entity->addComponent(spawner, ComponentTypes::Spawner);
 }
 
+/**
+ * @brief Loads a Door component from JSON onto an entity.
+ * @param componentData The JSON data for the door component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadDoor(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto door = std::make_shared<Door>();
@@ -326,6 +418,11 @@ void SceneLoader::loadDoor(const json &componentData, std::shared_ptr<Entity> en
     entity->addComponent(door, ComponentTypes::Door);
 }
 
+/**
+ * @brief Loads a Key component from JSON onto an entity.
+ * @param componentData The JSON data for the key component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadKey(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto key = std::make_shared<Key>();
@@ -333,6 +430,11 @@ void SceneLoader::loadKey(const json &componentData, std::shared_ptr<Entity> ent
     entity->addComponent(key, ComponentTypes::Key);
 }
 
+/**
+ * @brief Loads a Script component and its rules from JSON onto an entity.
+ * @param componentData The JSON data for the script component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadScript(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto script = std::make_shared<Script>();
@@ -364,6 +466,12 @@ void SceneLoader::loadScript(const json &componentData, std::shared_ptr<Entity> 
     entity->addComponent(script, ComponentTypes::Script);
 }
 
+/**
+ * @brief Loads a Text component from JSON onto an entity.
+ * @param componentData The JSON data for the text component.
+ * @param entity The entity receiving the component.
+ * @param resourceManager The resource manager used to retrieve the font.
+ */
 void SceneLoader::loadText(const json &componentData, std::shared_ptr<Entity> entity, ResourceManager& resourceManager)
 {
     std::string fontID = componentData.value("font", "");
@@ -391,6 +499,11 @@ void SceneLoader::loadText(const json &componentData, std::shared_ptr<Entity> en
     }
 }
 
+/**
+ * @brief Loads a Switch component from JSON onto an entity.
+ * @param componentData The JSON data for the switch component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadSwitch(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto switchComponent = std::make_shared<Switch>();
@@ -400,6 +513,11 @@ void SceneLoader::loadSwitch(const json &componentData, std::shared_ptr<Entity> 
     entity->addComponent(switchComponent, ComponentTypes::Switch);
 }
 
+/**
+ * @brief Loads a PowerUp component from JSON onto an entity.
+ * @param componentData The JSON data for the power-up component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadPowerUp(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto powerUp = std::make_shared<PowerUp>();
@@ -412,6 +530,12 @@ void SceneLoader::loadPowerUp(const json &componentData, std::shared_ptr<Entity>
     entity->addComponent(powerUp, ComponentTypes::PowerUp);
 }
 
+/**
+ * @brief Loads a PopText component from JSON onto an entity.
+ * @param componentData The JSON data for the pop text component.
+ * @param entity The entity receiving the component.
+ * @param resourceManager The resource manager used to retrieve the font.
+ */
 void SceneLoader::loadPopText(const json &componentData, std::shared_ptr<Entity> entity, ResourceManager& resourceManager)
 {
     std::string fontID = componentData.value("font", ResourceManager::DefaultFontID);
@@ -438,6 +562,11 @@ void SceneLoader::loadPopText(const json &componentData, std::shared_ptr<Entity>
     }
 }
 
+/**
+ * @brief Loads a Loot component from JSON onto an entity.
+ * @param componentData The JSON data for the loot component.
+ * @param entity The entity receiving the component.
+ */
 void SceneLoader::loadLoot(const json &componentData, std::shared_ptr<Entity> entity)
 {
     auto loot = std::make_shared<Loot>();
@@ -445,4 +574,27 @@ void SceneLoader::loadLoot(const json &componentData, std::shared_ptr<Entity> en
     loot->score = componentData.value("score", loot->score);
     loot->experience = componentData.value("experience", loot->experience);
     entity->addComponent(loot, ComponentTypes::Loot);
+}
+
+/**
+ * @brief Loads a Sound component from JSON onto an entity.
+ * @param componentData The JSON data for the sound component.
+ * @param entity The entity receiving the component.
+ * @param resourceManager The resource manager used to retrieve the sound buffer.
+ */
+void SceneLoader::loadSound(const json &componentData, std::shared_ptr<Entity> entity, ResourceManager& resourceManager)
+{
+    std::string soundBufferID = componentData.value("soundBuffer", componentData.value("soundBufferID", ""));
+    if (soundBufferID.empty()) {
+        std::cerr << "Sound component missing sound buffer ID." << std::endl;
+        return;
+    }
+
+    try {
+        auto sound = std::make_shared<Sound>(resourceManager.getSoundBuffer(soundBufferID), soundBufferID);
+        entity->addComponent(sound, ComponentTypes::Sound);
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Failed to create sound component: " << e.what() << std::endl;
+    }
 }

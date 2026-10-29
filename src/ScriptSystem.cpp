@@ -5,8 +5,17 @@
 #include "PopText.h"
 #include "Loot.h"
 #include "Random.h"
+#include "Sound.h"
 #include <iostream>
 
+/**
+ * @brief Runs all script actions that match a specific script event.
+ * @param scene The scene where the script event is being processed.
+ * @param entity The entity that owns the script.
+ * @param script The script component containing rules and actions.
+ * @param event The event type to dispatch.
+ * @param dt The delta time for frame-scaled actions.
+ */
 void ScriptSystem::runEvent(Scene& scene, std::shared_ptr<Entity> entity, Script& script, ScriptEvent event, float dt)
 {
     for (const auto& rule : script.rules) {
@@ -142,14 +151,26 @@ void ScriptSystem::runEvent(Scene& scene, std::shared_ptr<Entity> entity, Script
             case ScriptActionType::ReloadCurrentScene:
                 scene.requestSceneLoad(scene.getCurrentScenePath().string());
                 break;
+            case ScriptActionType::PlaySound: 
+                if (auto sound = entity->getComponent<Sound>()) {
+                    sound->play();
+                }
+                break;
+            case ScriptActionType::StopSound:
+                if (auto sound = entity->getComponent<Sound>()) {
+                    sound->stop();
+                }
+                break;
             }
-            
-            
-
         }
     }
 }
 
+/**
+ * @brief Updates script components and dispatches start and update events.
+ * @param scene The scene containing scripted entities.
+ * @param dt The delta time since the previous update.
+ */
 void ScriptSystem::update(Scene &scene, float dt)
 {
     for (auto& entity : scene.getEntities()) {
@@ -169,12 +190,25 @@ void ScriptSystem::update(Scene &scene, float dt)
 
 }
 
+/**
+ * @brief Dispatches a timeout event for an entity.
+ * @param scene The scene containing the entity.
+ * @param dt The delta time for the current frame.
+ * @param entity The entity whose timer expired.
+ */
 void ScriptSystem::OnTimeout(Scene& scene, float dt, std::shared_ptr<Entity> entity) {
     auto script = entity->getComponent<Script>();
     if (script)
     runEvent(scene, entity, *script, ScriptEvent::OnTimeout, dt);
 }
 
+/**
+ * @brief Dispatches collision-related script events.
+ * @param scene The scene where the collision occurred.
+ * @param dt The delta time for the current frame.
+ * @param entityA The entity whose script should receive the collision event.
+ * @param entityB The other entity involved in the collision.
+ */
 void ScriptSystem::onCollision(Scene &scene, float dt, std::shared_ptr<Entity> entityA, std::shared_ptr<Entity> entityB)
 {
     auto script = entityA->getComponent<Script>();
@@ -187,6 +221,12 @@ void ScriptSystem::onCollision(Scene &scene, float dt, std::shared_ptr<Entity> e
 
 }
 
+/**
+ * @brief Dispatches an entity destruction script event.
+ * @param scene The scene containing the destroyed entity.
+ * @param dt The delta time for the current frame.
+ * @param entity The entity being destroyed.
+ */
 void ScriptSystem::onDestroyed(Scene &scene, float dt, std::shared_ptr<Entity> entity)
 {
     auto script = entity->getComponent<Script>();
@@ -195,6 +235,12 @@ void ScriptSystem::onDestroyed(Scene &scene, float dt, std::shared_ptr<Entity> e
 
 }
 
+/**
+ * @brief Dispatches a switch activation script event.
+ * @param scene The scene containing the switch.
+ * @param dt The delta time for the current frame.
+ * @param entity The entity whose switch was activated.
+ */
 void ScriptSystem::onSwitchActivate(Scene &scene, float dt, std::shared_ptr<Entity> entity)
 {
     auto script = entity->getComponent<Script>();
@@ -202,6 +248,12 @@ void ScriptSystem::onSwitchActivate(Scene &scene, float dt, std::shared_ptr<Enti
     runEvent(scene, entity, *script, ScriptEvent::OnSwitchActivate, dt);
 }
 
+/**
+ * @brief Dispatches a switch deactivation script event.
+ * @param scene The scene containing the switch.
+ * @param dt The delta time for the current frame.
+ * @param entity The entity whose switch was deactivated.
+ */
 void ScriptSystem::onSwitchDeactivate(Scene &scene, float dt, std::shared_ptr<Entity> entity)
 {
     auto script = entity->getComponent<Script>();
@@ -209,6 +261,12 @@ void ScriptSystem::onSwitchDeactivate(Scene &scene, float dt, std::shared_ptr<En
     runEvent(scene, entity, *script, ScriptEvent::OnSwitchDeactivate, dt);
 }
 
+/**
+ * @brief Dispatches a power-up collected script event.
+ * @param scene The scene containing the power-up entity.
+ * @param dt The delta time for the current frame.
+ * @param entity The power-up entity that was collected.
+ */
 void ScriptSystem::OnPowerUpCollected(Scene &scene, float dt, std::shared_ptr<Entity> entity)
 {
     auto script = entity->getComponent<Script>();
@@ -216,6 +274,11 @@ void ScriptSystem::OnPowerUpCollected(Scene &scene, float dt, std::shared_ptr<En
     runEvent(scene, entity, *script, ScriptEvent::OnPowerUpCollected, dt);
 }
 
+/**
+ * @brief Dispatches a player death event to all active scripted entities.
+ * @param scene The scene containing the scripted entities.
+ * @param dt The delta time for the current frame.
+ */
 void ScriptSystem::OnPlayerDeath(Scene &scene, float dt)
 {
     for (auto& entity : scene.getEntities()) {
@@ -230,6 +293,11 @@ void ScriptSystem::OnPlayerDeath(Scene &scene, float dt)
     }
 }
 
+/**
+ * @brief Dispatches destruction events for entities that are no longer alive.
+ * @param scene The scene containing the entities to inspect.
+ * @param dt The delta time for the current frame.
+ */
 void ScriptSystem::dispatchDestroyedEvents(Scene& scene, float dt)
 {
     for (auto& entity : scene.getEntities()) {

@@ -45,6 +45,7 @@ add_executable(MyGameEngine
     src/Renderer.cpp
     src/PhysicsSystem.cpp
     src/CollisionSystem.cpp
+    src/AudioSystem.cpp
     src/Health.cpp
     src/InputSystem.cpp
     src/Interactable.cpp
@@ -63,6 +64,10 @@ add_executable(MyGameEngine
 
 target_include_directories(MyGameEngine PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/external
+)
+
+target_compile_definitions(MyGameEngine PRIVATE
+    PROJECT_ROOT_PATH="${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
 target_link_libraries(MyGameEngine PRIVATE

@@ -3,13 +3,23 @@
 #include <SFML/System/Vector2.hpp>
 #include <string>
 
+/**
+ * @brief Enum representing available projectile firing modes.
+ */
 enum class GunMode {
     default,
     Shotgun
 };
 
+/**
+ * @class Shooter
+ * @brief Component that stores projectile firing settings for an entity.
+ */
 class Shooter : public Component {
     public:
+    /**
+     * @brief Constructs a shooter component with default projectile settings.
+     */
     Shooter() = default;
     GunMode gunMode = GunMode::default;
     float shotGunPelletCount = 5.f;

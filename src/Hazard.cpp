@@ -2,9 +2,19 @@
 #include "Scene.h"
 #include "ScriptSystem.h"
 #include <iostream>
+/**
+ * @brief Constant representing the duration of control loss when an entity takes damage.
+ */
 const static float ControlLossOnDamage = .1f;
+/**
+ * @brief Constant representing the duration of the hit flash effect when an entity takes damage.
+ */
 const static float HitFlashDuration = .15f;
 
+/**
+ * @brief Applies the effects of a hazard to another entity, including damage, knockback, and movement lock.
+ * @param otherEntity The entity that is affected by the hazard.
+ */
 void Hazard::applyHazard(std::shared_ptr<Entity> otherEntity, std::shared_ptr<Entity> hazardEntity, Scene &scene, ScriptSystem &scriptSystem, float dt)
 {
     auto& contactDamage = hazardEntity->getComponent<ContactDamage>();

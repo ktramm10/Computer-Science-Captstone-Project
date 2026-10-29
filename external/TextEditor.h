@@ -1,3 +1,7 @@
+/**
+ * @file TextEditor.h
+ * @brief Declares the embedded ImGui text editor used by the engine editor UI.
+ */
 #pragma once
 
 #include <string>
@@ -10,6 +14,10 @@
 #include <regex>
 #include "imgui.h"
 
+/**
+ * @class TextEditor
+ * @brief ImGui-based source text editor widget used for editing script text in the editor.
+ */
 class TextEditor
 {
 public:

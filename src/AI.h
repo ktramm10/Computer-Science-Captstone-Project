@@ -3,13 +3,24 @@
 #include "MovementType.h"
 #include "cmath"
 
+/**
+ * @enum class PlatformerMovementStates
+ * @brief Enum representing different movement states that NPC's can move between.
+ * 
+ */
 enum class PlatformerMovementStates {
     Strafe,
     Follow,
     Idle
 };
 
-
+/**
+ * @class AI
+ * @brief AI component class that inherits from Component.
+ * 
+ * @details This class represents the AI behavior of an entity in a game. It contains various properties and
+ *  methods related to movement, including movement type, speed, acceleration, deceleration, and specific behaviors for both platformer and top-down movement types.
+ */
 class AI : public Component {
     public:
     MovementType movementType = MovementType::Platformer;

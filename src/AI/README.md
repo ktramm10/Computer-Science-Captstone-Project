@@ -20,6 +20,14 @@ py -m venv .venv
 
 This creates `src/AI/game_prompt_model.joblib`.
 
+## Export Cleaned Dataset
+
+```powershell
+.\.venv\Scripts\python src\AI\train_model.py --export-cleaned
+```
+
+This creates `src/AI/cleaned_training.csv`, which is the documented cleaned dataset artifact for submission.
+
 ## Predict
 
 ```powershell
@@ -27,3 +35,12 @@ This creates `src/AI/game_prompt_model.joblib`.
 ```
 
 The current dataset is very small, so the first model is only a starter. Add more rows to `training.csv` for better predictions.
+
+## Documentation
+
+Submission documentation is in `docs/`:
+
+- `docs/BUSINESS_REQUIREMENTS.md`
+- `docs/DATA_PRODUCT_DOCUMENTATION.md`
+- `docs/SUBMISSION_CHECKLIST.md`
+- `docs/screenshots/README.md`

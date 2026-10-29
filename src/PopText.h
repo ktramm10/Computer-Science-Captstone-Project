@@ -3,6 +3,12 @@
 #include "Text.h"
 #include "LifeTime.h"
 #include "Transform.h"
+
+/**
+ * @class PopText
+ * @brief PopText component class that inherits from Component.
+ * @details This class represents the popup text properties of an entity in a game. It contains various properties related to popup text.
+ */
 class PopText : public Component {
 public:
     std::shared_ptr<Text> text;
@@ -29,7 +35,10 @@ public:
         color = text->fillColor;
         style = text->style;
     }
-
+    /**
+     * @brief Applies the properties of the PopText component to its associated Text, LifeTime, and Transform components.
+     * @param parentWorldPosition The world position of the parent entity, used to calculate the
+     */
     void applyProperties(sf::Vector2f parentWorldPosition) {
         if (text) {
             text->fontID = fontID;
@@ -46,7 +55,9 @@ public:
             transform->setWorldPosition(parentWorldPosition + offset);
         }
     }
-
+    /**
+     * @brief Applies the properties of the PopText component to its associated Text, LifeTime, and Transform components without specifying a parent world position.
+     */
     void applyProperties() {
         applyProperties({0.0f, 0.0f});
     }

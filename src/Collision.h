@@ -4,6 +4,12 @@
 #include "Factions.h"
 #include <SFML/Graphics.hpp>
 
+/**
+ * @class Collision
+ * @brief Collision component class that inherits from Component.
+ * @details This class represents the collision properties of an entity in a game. It contains various properties related to collision detection and response,
+ *  including size, offset, knockback distance, static state, physical collider state, faction, and whether to resolve physical collisions with team members.
+ */
 class Collision : public Component
 {
     

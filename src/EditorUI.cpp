@@ -1,5 +1,7 @@
 #include "EditorUI.h"
+#include "ProjectPaths.h"
 
+#include <algorithm>
 #include <cstdio>
 #include <cstring>
 #include <iostream>
@@ -8,10 +10,18 @@
 #include <unordered_map>
 #include <nlohmann/json.hpp>
 
+/**
+ * @brief Anonymous namespace for internal helper functions.
+ */
 namespace {   
 
+/**
+ * @brief Gets the content of a JSON script file as a string.
+ * @param filePath The path to the JSON script file.
+ * @return The content of the file as a string.
+ */
 std::string getJsonScriptAsString(std::string filePath) {
-    std::ifstream file(filePath);
+    std::ifstream file(resolveProjectPath(filePath));
     if (!file) {
         std::cerr << "Failed to open file -> " << filePath << std::endl;
     }
@@ -19,16 +29,24 @@ std::string getJsonScriptAsString(std::string filePath) {
     buffer << file.rdbuf();
     return buffer.str();
 }
-
+/**
+ * @brief Writes a string into a JSON file.
+ * @param content The string content to write into the file.
+ * @param filePath The path to the JSON file.
+ */
 void writeStringIntoJsonFile(std::string content, std::string filePath) {
-    std::ofstream file(filePath);
+    std::ofstream file(resolveProjectPath(filePath));
     if (!file) {
         std::cerr << "Could not open file -> " << filePath << std::endl;
         return;
     }
     file << content;
 }
-
+/**
+ * @brief Loads a Script object from a JSON object.
+ * @param data The JSON object containing the script data.
+ * @param script The Script object to populate.
+ */
 void loadScriptFromJson(const nlohmann::json& data, Script& script) {
     script.started = data.value("started", false);
     script.filePath = data.value("filePath", script.filePath);
@@ -66,7 +84,11 @@ void loadScriptFromJson(const nlohmann::json& data, Script& script) {
         script.rules.push_back(rule);
     }
 }
-
+/**
+ * @brief calculates the proper base name for a duplicated entity by removing any existing numeric suffix.
+ * @param entityName The name of the entity to duplicate.
+ * @return Returns a string representing the base name of the entity without any numeric suffix.
+ */
 std::string getDuplicateBaseName(const std::string& entityName)
 {
     size_t separatorPosition = entityName.find_last_of('_');
@@ -82,7 +104,12 @@ std::string getDuplicateBaseName(const std::string& entityName)
 
     return entityName.substr(0, separatorPosition);
 }
-
+/**
+ * @brief Generates a unique name for a duplicated entity by appending a numeric suffix to the base name.
+ * @param scene The scene containing the existing entities.
+ * @param entityName The name of the entity to duplicate.
+ * @return Returns a string representing the unique name for the duplicated entity.
+ */
 std::string makeDuplicateEntityName(const Scene& scene, const std::string& entityName)
 {
     std::string baseName = getDuplicateBaseName(entityName);
@@ -103,7 +130,11 @@ std::string makeDuplicateEntityName(const Scene& scene, const std::string& entit
         ++suffix;
     }
 }
-
+/**
+ * @brief Retrieves the label corresponding to a given Faction enum value.
+ * @param faction The Faction enum value.
+ * @return Returns a const char* representing the label of the faction.
+ */
 const char* getFactionLabel(Faction faction)
 {
     switch (faction) {
@@ -119,7 +150,11 @@ const char* getFactionLabel(Faction faction)
 
     }
 }
-
+/**
+ * @brief Draws a combo box for selecting a Faction value.
+ * @param label The label for the combo box.
+ * @param faction The Faction value to be modified based on user selection.
+ */
 void drawFactionCombo(const char* label, Faction& faction)
 {
     if (ImGui::BeginCombo(label, getFactionLabel(faction))) {
@@ -130,22 +165,26 @@ void drawFactionCombo(const char* label, Faction& faction)
         ImGui::EndCombo();
     }
 }
-
+/**
+ * @brief Retrieves the file path for the scene outline based on the provided AIPromptResult.
+ * @param result The AIPromptResult containing the scene template and genre information.
+ * @return Returns a string representing the file path of the scene outline.
+ */
 std::string getSceneOutlinePath(const AIPromptResult& result)
 {
     static const std::unordered_map<std::string, std::string> sceneOutlines = {
-        {"platformer", "../../src/json/scene_outlines/platformer_outline.json"},
-        {"platformer_basic", "../../src/json/scene_outlines/platformer_outline.json"},
-        {"top_down_shooter", "../../src/json/scene_outlines/shooter_outline.json"},
-        {"top_down_shooter_basic", "../../src/json/scene_outlines/shooter_outline.json"},
-        {"shooter", "../../src/json/scene_outlines/shooter_outline.json"},
-        {"puzzle", "../../src/json/scene_outlines/puzzler_outline.json"},
-        {"puzzle_basic", "../../src/json/scene_outlines/puzzler_outline.json"},
-        {"puzzler", "../../src/json/scene_outlines/puzzler_outline.json"},
-        {"space_shooter", "../../src/json/scene_outlines/space_shooter_outline.json"},
-        {"space_shooter_basic", "../../src/json/scene_outlines/space_shooter_outline.json"},
-        {"runner", "../../src/json/scene_outlines/runner_outline.json"},
-        {"runner_basic", "../../src/json/scene_outlines/runner_outline.json"},
+        {"platformer", resolveProjectPath("src/json/scene_outlines/platformer_outline.json").string()},
+        {"platformer_basic", resolveProjectPath("src/json/scene_outlines/platformer_outline.json").string()},
+        {"top_down_shooter", resolveProjectPath("src/json/scene_outlines/shooter_outline.json").string()},
+        {"top_down_shooter_basic", resolveProjectPath("src/json/scene_outlines/shooter_outline.json").string()},
+        {"shooter", resolveProjectPath("src/json/scene_outlines/shooter_outline.json").string()},
+        {"puzzle", resolveProjectPath("src/json/scene_outlines/puzzler_outline.json").string()},
+        {"puzzle_basic", resolveProjectPath("src/json/scene_outlines/puzzler_outline.json").string()},
+        {"puzzler", resolveProjectPath("src/json/scene_outlines/puzzler_outline.json").string()},
+        {"space_shooter", resolveProjectPath("src/json/scene_outlines/space_shooter_outline.json").string()},
+        {"space_shooter_basic", resolveProjectPath("src/json/scene_outlines/space_shooter_outline.json").string()},
+        {"runner", resolveProjectPath("src/json/scene_outlines/runner_outline.json").string()},
+        {"runner_basic", resolveProjectPath("src/json/scene_outlines/runner_outline.json").string()},
     };
 
     auto templateMatch = sceneOutlines.find(result.sceneTemplate);
@@ -160,7 +199,11 @@ std::string getSceneOutlinePath(const AIPromptResult& result)
 
     return "";
 }
-
+/**
+ * @brief Joins a vector of strings into a single string, separated by commas.
+ * @param values The vector of strings to join.
+ * @return Returns a string representing the joined values.
+ */
 std::string joinValues(const std::vector<std::string>& values)
 {
     std::string joined;
@@ -172,7 +215,126 @@ std::string joinValues(const std::vector<std::string>& values)
     }
     return joined;
 }
+/**
+ * @brief Draws a gauge for displaying AI metrics with a progress bar and optional detail text.
+ * @param label The label for the gauge.
+ * @param value The value of the metric (between 0.0 and 1.0).
+ * @param detail Optional detail text to display below the gauge.
+ */
+void drawAIMetricGauge(const char* label, float value, const std::string& detail)
+{
+    const float clampedValue = std::clamp(value, 0.0f, 1.0f);
+    ImGui::TextUnformatted(label);
+    const std::string overlay = std::to_string(static_cast<int>(clampedValue * 100.0f)) + "%";
+    ImGui::ProgressBar(clampedValue, ImVec2(-1.0f, 0.0f), overlay.c_str());
+    if (!detail.empty()) {
+        ImGui::TextWrapped("%s", detail.c_str());
+    }
+}
+/**
+ * @brief Draws a histogram for displaying AI label distributions.
+ * @param result The AI prompt result containing label distribution data.
+ */
+void drawAILabelHistogram(const AIPromptResult& result)
+{
+    if (result.labelDistribution.empty()) {
+        ImGui::TextUnformatted("No label distribution returned by the model.");
+        return;
+    }
 
+    std::vector<float> values;
+    values.reserve(result.labelDistribution.size());
+    int maxCount = 0;
+    for (const auto& label : result.labelDistribution) {
+        values.push_back(static_cast<float>(label.second));
+        maxCount = std::max(maxCount, label.second);
+    }
+
+    ImGui::PlotHistogram("##aiLabelHistogram", values.data(), static_cast<int>(values.size()), 0, nullptr, 0.0f, static_cast<float>(maxCount), ImVec2(-1.0f, 120.0f));
+    if (ImGui::BeginTable("AI Label Counts", 2, ImGuiTableFlags_BordersInnerV | ImGuiTableFlags_RowBg)) {
+        ImGui::TableSetupColumn("Genre");
+        ImGui::TableSetupColumn("Rows");
+        ImGui::TableHeadersRow();
+        for (const auto& label : result.labelDistribution) {
+            ImGui::TableNextRow();
+            ImGui::TableSetColumnIndex(0);
+            ImGui::TextUnformatted(label.first.c_str());
+            ImGui::TableSetColumnIndex(1);
+            ImGui::Text("%d", label.second);
+        }
+        ImGui::EndTable();
+    }
+}
+
+/**
+ * @brief Draws a heatmap for displaying AI requirement coverage.
+ * @param result The AI prompt result containing requirement coverage data.
+ */
+void drawAIRequirementHeatmap(const AIPromptResult& result)
+{
+    if (result.requirementCoverage.empty()) {
+        ImGui::TextUnformatted("No requirement coverage returned by the model.");
+        return;
+    }
+
+    const int columns = 3;
+    const float spacing = ImGui::GetStyle().ItemSpacing.x;
+    const float cellWidth = (ImGui::GetContentRegionAvail().x - spacing * (columns - 1)) / columns;
+    for (int index = 0; index < static_cast<int>(result.requirementCoverage.size()); ++index) {
+        const auto& requirement = result.requirementCoverage[index];
+        const ImVec4 color = requirement.second ? ImVec4(0.20f, 0.56f, 0.32f, 1.0f) : ImVec4(0.58f, 0.22f, 0.18f, 1.0f);
+        ImGui::PushStyleColor(ImGuiCol_Button, color);
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color);
+        ImGui::PushStyleColor(ImGuiCol_ButtonActive, color);
+        ImGui::Button(requirement.first.c_str(), ImVec2(cellWidth, 34.0f));
+        ImGui::PopStyleColor(3);
+        if (ImGui::IsItemHovered()) {
+            ImGui::SetTooltip("%s requirement: %s", requirement.first.c_str(), requirement.second ? "available" : "missing");
+        }
+        if ((index + 1) % columns != 0) {
+            ImGui::SameLine();
+        }
+    }
+}
+/**
+ * @brief Draws the AI diagnostics dashboard, including metrics, label histogram, requirement coverage, and raw diagnostics JSON.
+ * @param result The AI prompt result containing diagnostic data.
+ */
+void drawAIPromptDashboard(const AIPromptResult& result)
+{
+    ImGui::SeparatorText("AI Diagnostics Dashboard");
+    if (ImGui::BeginTable("AI Dashboard Metrics", 3, ImGuiTableFlags_SizingStretchSame | ImGuiTableFlags_BordersInnerV)) {
+        ImGui::TableNextRow();
+        ImGui::TableSetColumnIndex(0);
+        drawAIMetricGauge("Prediction Confidence", result.confidence, "Current prompt classification certainty.");
+        ImGui::TableSetColumnIndex(1);
+        drawAIMetricGauge("Model Accuracy", result.modelAccuracy, result.accuracyKind.empty() ? "Latest saved evaluation score." : result.accuracyKind + " evaluation score.");
+        ImGui::TableSetColumnIndex(2);
+        ImGui::TextUnformatted("Dataset Health");
+        ImGui::Text("Rows: %d", result.datasetRowCount);
+        ImGui::Text("Missing cells: %d", result.missingCellsAfterCleaning);
+        if (!result.trainedAtUtc.empty()) {
+            ImGui::TextWrapped("Trained: %s", result.trainedAtUtc.c_str());
+        }
+        ImGui::EndTable();
+    }
+
+    ImGui::SeparatorText("Training Label Histogram");
+    drawAILabelHistogram(result);
+
+    ImGui::SeparatorText("Requirement Coverage");
+    drawAIRequirementHeatmap(result);
+
+    if (ImGui::CollapsingHeader("Raw Diagnostics JSON")) {
+        ImGui::TextWrapped("%s", result.diagnosticsReport.c_str());
+    }
+}
+/**
+ * @brief Sanitizes a scene file name by replacing invalid characters and trimming trailing dots or spaces.
+ * @param sceneName The original scene name to sanitize.
+ * @param result The AI prompt result containing genre information.
+ * @return The sanitized scene file name.
+ */
 std::string sanitizeSceneFileName(const std::string& sceneName, const AIPromptResult& result)
 {
     std::string sanitized;
@@ -196,7 +358,11 @@ std::string sanitizeSceneFileName(const std::string& sceneName, const AIPromptRe
     }
     return sanitized;
 }
-
+/**
+ * @brief Retrieves the label corresponding to a given PickUpType enum value.
+ * @param pickUpType The PickUpType enum value.
+ * @return The label for the given enum value.
+ */
 const char* getPickUpTypeLabel(PickUpType pickUpType)
 {
     switch (pickUpType) {
@@ -209,7 +375,11 @@ const char* getPickUpTypeLabel(PickUpType pickUpType)
         return "Coin";
     }
 }
-
+/**
+ * @brief Draws a combo box for selecting a PickUpType value.
+ * @param label The label for the combo box.
+ * @param pickUpType The PickUpType value to be modified based on user selection.
+ */
 void drawPickUpTypeCombo(const char* label, PickUpType& pickUpType)
 {
     if (ImGui::BeginCombo(label, getPickUpTypeLabel(pickUpType))) {
@@ -219,7 +389,11 @@ void drawPickUpTypeCombo(const char* label, PickUpType& pickUpType)
         ImGui::EndCombo();
     }
 }
-
+/**
+ * @brief Retrieves the label corresponding to a given KnockbackMethod enum value.
+ * @param knockbackMethod The KnockbackMethod enum value.
+ * @return The label for the given enum value.
+ */
 const char* getKnockbackMethodLabel(KnockbackMethod knockbackMethod)
 {
     switch (knockbackMethod) {
@@ -230,7 +404,11 @@ const char* getKnockbackMethodLabel(KnockbackMethod knockbackMethod)
         return "Auto";
     }
 }
-
+/**
+ * @brief Draws a combo box for selecting a KnockbackMethod value.
+ * @param label The label for the combo box.
+ * @param knockbackMethod The KnockbackMethod value to be modified based on user selection.
+ */
 void drawKnockbackMethodCombo(const char* label, KnockbackMethod& knockbackMethod)
 {
     if (ImGui::BeginCombo(label, getKnockbackMethodLabel(knockbackMethod))) {
@@ -239,7 +417,11 @@ void drawKnockbackMethodCombo(const char* label, KnockbackMethod& knockbackMetho
         ImGui::EndCombo();
     }
 }
-
+/**
+ * @brief Retrieves the label corresponding to a given SpawnMethod enum value.
+ * @param spawnMethod The SpawnMethod enum value.
+ * @return The label for the given enum value.
+ */
 const char* getSpawnMethodLabel(SpawnMethod spawnMethod)
 {
     switch (spawnMethod) {
@@ -250,7 +432,11 @@ const char* getSpawnMethodLabel(SpawnMethod spawnMethod)
         return "Random";
     }
 }
-
+/**
+ * @brief Draws a combo box for selecting a SpawnMethod value.
+ * @param label The label for the combo box.
+ * @param spawnMethod The SpawnMethod value to be modified based on user selection.
+ */
 void drawSpawnMethodCombo(const char* label, SpawnMethod& spawnMethod)
 {
     if (ImGui::BeginCombo(label, getSpawnMethodLabel(spawnMethod))) {
@@ -260,6 +446,11 @@ void drawSpawnMethodCombo(const char* label, SpawnMethod& spawnMethod)
     }
 }
 
+/**
+ * @brief Retrieves the label corresponding to a given TextStyle enum value.
+ * @param style The TextStyle enum value.
+ * @return The label for the given enum value.
+ */
 const char* getTextStyleLabel(sf::Text::Style style)
 {
     switch (style) {
@@ -277,6 +468,11 @@ const char* getTextStyleLabel(sf::Text::Style style)
     }
 }
 
+/**
+ * @brief Draws a combo box for selecting a TextStyle value.
+ * @param label The label for the combo box.
+ * @param text The Text object whose style will be modified based on user selection.
+ */
 void drawTextStyleCombo(const char* label, Text& text)
 {
     if (ImGui::BeginCombo(label, getTextStyleLabel(text.style))) {
@@ -290,6 +486,11 @@ void drawTextStyleCombo(const char* label, Text& text)
     }
 }
 
+/**
+ * @brief Retrieves the label corresponding to a given GameValue enum value.
+ * @param value The GameValue enum value.
+ * @return The label for the given enum value.
+ */
 const char* getGameValueLabel(GameValue value)
 {
     switch (value) {
@@ -305,7 +506,11 @@ const char* getGameValueLabel(GameValue value)
         return "Player Health";
     }
 }
-
+/**
+ * @brief Draws a combo box for selecting a GameValue value.
+ * @param label The label for the combo box.
+ * @param text The Text object whose linked game value will be modified based on user selection.
+ */
 void drawGameValueCombo(const char* label, Text& text)
 {
     if (ImGui::BeginCombo(label, getGameValueLabel(text.linkedGameValue))) {
@@ -318,7 +523,16 @@ void drawGameValueCombo(const char* label, Text& text)
 }
 }
 
-
+/**
+ * @brief Builds the editor UI for the scene editor.
+ * @param scene The scene to build the UI for.
+ * @param resourceManager The resource manager for loading and managing resources.
+ * @param sceneSerializer The scene serializer for saving and loading scenes.
+ * @param sceneLoader The scene loader for loading scenes from files.
+ * @param isPlaying A reference to a boolean indicating whether the scene is currently playing.
+ * @param camera The camera view for the scene.
+ * @param musicPlayer The music player for managing background music in the scene.
+ */
 void EditorUI::buildUI(Scene &scene, ResourceManager &resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer)
 {
     if (isSceneLoaded) {
@@ -358,7 +572,13 @@ void EditorUI::buildUI(Scene &scene, ResourceManager &resourceManager, SceneSeri
         buildAIPromptPanel(scene, resourceManager, sceneLoader, camera, sceneSerializer);
     }
 }
-
+/**
+ * @brief Builds the scene selection UI panel, allowing users to select or create scenes.
+ * @param scene The scene to build the UI for.
+ * @param sceneLoader The scene loader for loading scenes from files.
+ * @param resourceManager The resource manager for loading and managing resources.
+ * @param camera The camera view for the scene.
+ */
 void EditorUI::buildSceneSelect(Scene& scene, SceneLoader& sceneLoader, ResourceManager& resourceManager, sf::View& camera) {
     std::vector<SceneFile> scenes = scene.loadSceneList(sceneFolderPath);
     ImGui::Begin("Select Scene");
@@ -381,7 +601,11 @@ void EditorUI::buildSceneSelect(Scene& scene, SceneLoader& sceneLoader, Resource
 
     
 }
-
+/**
+ * @brief Handles the drag-and-drop movement of the selected entity in the scene editor.
+ * @param window The SFML render window for the scene.
+ * @param isPlaying A reference to a boolean indicating whether the scene is currently playing.
+ */
 void EditorUI::handleDragMove(sf::RenderWindow& window, bool isPlaying)
 {
     bool mouseDown = sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
@@ -397,7 +621,10 @@ void EditorUI::handleDragMove(sf::RenderWindow& window, bool isPlaying)
         transform->setWorldPosition(worldPosition);
     }
 }
-
+/**
+ * @brief Builds the scene hierarchy panel in the editor UI, displaying a list of entities in the scene and allowing selection and creation of new entities.
+ * @param scene The scene to build the hierarchy for.
+ */
 void EditorUI::buildSceneHierarchy(Scene& scene)
 {
     ImGui::Begin("Scene Hierarchy");
@@ -413,7 +640,10 @@ void EditorUI::buildSceneHierarchy(Scene& scene)
     }
     ImGui::End();
 }
-
+/**
+ * @brief Builds the entity creator panel in the editor UI, allowing users to input a name for a new entity and create it in the scene.
+ * @param scene The scene to create the new entity in.
+ */
 void EditorUI::buildEntityCreator(Scene& scene) {
     ImGui::Begin("Create Entity");
     static char entityName[128] = "";
@@ -432,7 +662,11 @@ void EditorUI::buildEntityCreator(Scene& scene) {
     }
     ImGui::End();
 }
-
+/**
+ * @brief Duplicates the currently selected entity in the scene, creating a new entity with the same components and properties, and offsetting its position slightly to avoid overlap.
+ * @param scene The scene containing the selected entity to duplicate.
+ * @param resourceManager The resource manager for loading and managing resources, used to duplicate components that reference external resources (e.g., textures, fonts).
+ */
 void EditorUI::duplicateSelectedEntity(Scene& scene, ResourceManager& resourceManager)
 {
     if (!selectedEntity || !selectedEntity->isAlive()) {
@@ -547,10 +781,19 @@ void EditorUI::duplicateSelectedEntity(Scene& scene, ResourceManager& resourceMa
         auto loot = selectedEntity->getComponent<Loot>();
         duplicatedEntity->addComponent(std::make_shared<Loot>(*loot), ComponentTypes::Loot);
     }
+    if ((componentMask & ComponentTypes::Sound) != 0) {
+        auto sound = selectedEntity->getComponent<Sound>();
+        if (sound && resourceManager.hasSoundBuffer(sound->soundBufferID)) {
+            auto duplicatedSound = std::make_shared<Sound>(resourceManager.getSoundBuffer(sound->soundBufferID), sound->soundBufferID);
+            duplicatedEntity->addComponent(duplicatedSound, ComponentTypes::Sound);
+        }
+    }
 
     selectedEntity = duplicatedEntity;
 }
-
+/**
+ * @brief Builds the rename entity popup in the editor UI, allowing users to input a new name for the selected entity and apply the change.
+ */
 void EditorUI::buildRenameEntityPopup()
 {
     ImGui::Begin("Rename Entity");
@@ -573,12 +816,20 @@ void EditorUI::buildRenameEntityPopup()
     }
     ImGui::End();
 }
-
+/**
+ * @brief Builds the add component popup in the editor UI, allowing users to select a component type to add to the selected entity.
+ * @param scene The scene containing the selected entity to which the component will be added.
+ * @param resourceManager The resource manager for loading and managing resources, used to create components that reference external resources (e.g., textures, fonts).
+ */
 void EditorUI::buildAddComponentPopup(Scene &scene, ResourceManager& resourceManager)
 {
     ImGui::Begin("Add Component");
     for (const auto& componentName : componentNames) {
         if (ImGui::Selectable(componentName.c_str())) {
+                if (componentName == "Sound" && resourceManager.getSoundBuffers().empty()) {
+                    std::cerr << "Cannot add Sound component: no sound buffers loaded." << std::endl;
+                    continue;
+                }
                 if (componentName == "Transform") {
                     auto transform = std::make_shared<Transform>();
                     selectedEntity->addComponent(transform, ComponentTypes::Transform);
@@ -666,6 +917,12 @@ void EditorUI::buildAddComponentPopup(Scene &scene, ResourceManager& resourceMan
                     auto loot = std::make_shared<Loot>();
                     selectedEntity->addComponent(loot, ComponentTypes::Loot);
                 }
+                else if (componentName == "Sound") {
+                    const auto& soundBuffers = resourceManager.getSoundBuffers();
+                    const auto& firstSoundBuffer = *soundBuffers.begin();
+                    auto sound = std::make_shared<Sound>(resourceManager.getSoundBuffer(firstSoundBuffer.first), firstSoundBuffer.first);
+                    selectedEntity->addComponent(sound, ComponentTypes::Sound);
+                }
                 
             componentPopupOpen = false; // Close the popup after adding a component
             
@@ -679,7 +936,9 @@ void EditorUI::buildAddComponentPopup(Scene &scene, ResourceManager& resourceMan
     ImGui::End();
 
 }
-
+/**
+ * @brief Builds the create script popup in the editor UI, allowing users to input a name for a new script or select an existing script to link to the selected entity's Script component.
+ */
 void EditorUI::buildCreateScriptPopup() {
     ImGui::Begin("Script Configuration");
     auto entityScript = selectedEntity->getComponent<Script>();
@@ -754,14 +1013,20 @@ void EditorUI::buildCreateScriptPopup() {
 
 
 }
-
+/**
+ * @brief Opens the script editor for a given script file, setting the current file name and path, and indicating that the script editor should be opened.
+ * @param fileName The name of the script file to open.
+ * @param filePath The path to the script file to open.
+ */
 void EditorUI::openScriptInEditor(std::string fileName, std::string filePath)
 {
     currentFileName = fileName;
     currentFilePath = filePath;
     openScriptEditor = true;
 }
-
+/**
+ * @brief Builds the hidden editor panel in the editor UI, providing a button to show the editor panels when they are hidden.
+ */
 void EditorUI::buildHiddenEditorPanel()
 {
     ImGui::Begin("Hidden");
@@ -770,7 +1035,9 @@ void EditorUI::buildHiddenEditorPanel()
     }
     ImGui::End();
 }
-
+/**
+ * @brief Builds the remove component popup in the editor UI, allowing users to select a component type to remove from the selected entity.
+ */
 void EditorUI::buildRemoveComponentPopup()
 {
     ImGui::Begin("Remove Component");
@@ -861,6 +1128,10 @@ void EditorUI::buildRemoveComponentPopup()
         selectedEntity->removeComponent<Loot>(ComponentTypes::Loot);
         removeComponentPopupOpen = false;
     }
+    if ((componentMask & ComponentTypes::Sound) != 0 && ImGui::Selectable("Sound")) {
+        selectedEntity->removeComponent<Sound>(ComponentTypes::Sound);
+        removeComponentPopupOpen = false;
+    }
 
     ImGui::Separator();
     if (ImGui::Button("Cancel")) {
@@ -868,7 +1139,17 @@ void EditorUI::buildRemoveComponentPopup()
     }
     ImGui::End();
 }
-
+/**
+ * @brief Builds the scene configuration panel in the editor UI, allowing users to view and modify scene properties such as player entity, player stats, gravity,
+ *  camera settings, background color, and background music.
+ * @param scene The scene to build the configuration panel for.
+ * @param resourceManager The resource manager for loading and managing resources.
+ * @param sceneSerializer The scene serializer for saving and loading scenes.
+ * @param sceneLoader The scene loader for loading scenes from files.
+ * @param isPlaying A reference to a boolean indicating whether the scene is currently playing.
+ * @param camera The camera view for the scene.
+ * @param musicPlayer The music player for managing background music in the scene.
+ */
 void EditorUI::buildScenePanel(Scene& scene, ResourceManager& resourceManager, SceneSerializer& sceneSerializer, SceneLoader& sceneLoader, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer)
 {
     ImGui::Begin("Scene Configuration");
@@ -954,7 +1235,14 @@ void EditorUI::buildScenePanel(Scene& scene, ResourceManager& resourceManager, S
     ImGui::End();
 }
 
-
+/**
+ * @brief Builds the "Save Scene As" panel in the editor UI, allowing users to input a new name for the current scene and save it as a new file.
+ * @param sceneSerializer The scene serializer for saving the scene to a file.
+ * @param sceneLoader The scene loader for loading the newly saved scene from a file.
+ * @param scene The scene to be saved.
+ * @param resourceManager The resource manager for loading and managing resources.
+ * @param camera The camera view for the scene.
+ */
 void EditorUI::buildSaveSceneAsPanel(SceneSerializer& sceneSerializer,SceneLoader& sceneLoader, Scene& scene, ResourceManager& resourceManager, sf::View& camera) {
     ImGui::Begin("Save Scene As");
     static char sceneName[128] = "";
@@ -976,7 +1264,14 @@ void EditorUI::buildSaveSceneAsPanel(SceneSerializer& sceneSerializer,SceneLoade
     ImGui::End();
 
 }
-
+/**
+ * @brief Builds the "Create New Scene" panel in the editor UI, allowing users to input a name for a new scene and create it as a new file.
+ * @param sceneSerializer The scene serializer for saving the scene to a file.
+ * @param sceneLoader The scene loader for loading the newly created scene from a file.
+ * @param scene The scene to be created.
+ * @param resourceManager The resource manager for loading and managing resources.
+ * @param camera The camera view for the scene.
+ */
 void EditorUI::buildNewScenePanel(SceneSerializer &sceneSerializer, SceneLoader &sceneLoader, Scene &scene, ResourceManager &resourceManager, sf::View& camera)
 {
     ImGui::Begin("Create New Scene");
@@ -998,7 +1293,16 @@ void EditorUI::buildNewScenePanel(SceneSerializer &sceneSerializer, SceneLoader 
     }
     ImGui::End(); 
 }
-
+/**
+ * @brief Builds the toolbar panel in the editor UI, providing buttons for controlling scene playback, saving/loading scenes, and accessing additional features.
+ * @param sceneSerializer The scene serializer for saving the scene to a file.
+ * @param sceneLoader The scene loader for loading scenes from files.
+ * @param scene The scene to be controlled by the toolbar.
+ * @param resourceManager The resource manager for loading and managing resources.
+ * @param isPlaying A reference to a boolean indicating whether the scene is currently playing.
+ * @param camera The camera view for the scene.
+ * @param musicPlayer The music player for managing background music in the scene.
+ */
 void EditorUI::buildToolBarPanel(SceneSerializer &sceneSerializer, SceneLoader &sceneLoader, Scene &scene, ResourceManager &resourceManager, bool& isPlaying, sf::View& camera, sf::Music& musicPlayer)
 {
     ImGui::Begin("ToolBar");
@@ -1016,7 +1320,7 @@ void EditorUI::buildToolBarPanel(SceneSerializer &sceneSerializer, SceneLoader &
         if (ImGui::Button("Play")) {
             if (sceneSerializer.saveToFile(scene.getCurrentScenePath().string(), scene, resourceManager)) {
                 isPlaying = true;
-                if (musicPlayer.openFromFile(MUSIC_FILE_PATH)) {
+                if (musicPlayer.openFromFile(resolveProjectPath(MUSIC_FILE_PATH))) {
                     musicPlayer.play();
                 }
             }
@@ -1048,12 +1352,23 @@ void EditorUI::buildToolBarPanel(SceneSerializer &sceneSerializer, SceneLoader &
         saveSceneAsOpen = true;
     }
     ImGui::SameLine();
+    if (ImGui::Button("AI Prompt")) {
+        openAIPromptPanel = true;
+    }
+    ImGui::SameLine();
     if (ImGui::Button("Hide Editor")) {
         hideEditorPanels = true;
     }
     ImGui::End();
 }
-
+/**
+ * @brief Builds the AI prompt panel in the editor UI, allowing users to input a prompt for AI scene generation, specify a scene name, and generate a new scene based on the AI's prediction.
+ * @param scene The scene to be generated based on the AI's prediction.
+ * @param resourceManager The resource manager for loading and managing resources.
+ * @param sceneLoader The scene loader for loading scenes from files.
+ * @param camera The camera view for the scene.
+ * @param sceneSerializer The scene serializer for saving the generated scene to a file.
+ */
 void EditorUI::buildAIPromptPanel(Scene& scene, ResourceManager& resourceManager, SceneLoader& sceneLoader, sf::View& camera, SceneSerializer& sceneSerializer)
 {
     ImGui::Begin("AI Prompt");
@@ -1090,21 +1405,18 @@ void EditorUI::buildAIPromptPanel(Scene& scene, ResourceManager& resourceManager
             }
             aiPromptBuffer[0] = '\0';
             aiSceneName[0] = '\0';
-            openAIPromptPanel = false;
             isSceneLoaded = true;
 
             std::cout << "AI Prediction Result:" << std::endl;
             std::cout << "Genre: " << result.genre << std::endl;
             std::cout << "Scene Template: " << result.sceneTemplate << std::endl;
             std::cout << "Confidence: " << result.confidence << std::endl;
+            std::cout << result.diagnosticsReport << std::endl;
         }
         else {
             aiPromptStatus = "AI prediction failed: " + aiPromptBridge.getLastError();
         }
     }
-
-
-        
 
     if (!aiPromptStatus.empty()) {
         ImGui::Separator();
@@ -1116,10 +1428,16 @@ void EditorUI::buildAIPromptPanel(Scene& scene, ResourceManager& resourceManager
         ImGui::Text("Confidence: %.3f", lastAIPromptResult.confidence);
         ImGui::TextWrapped("Entities: %s", joinValues(lastAIPromptResult.entities).c_str());
         ImGui::TextWrapped("Components: %s", joinValues(lastAIPromptResult.components).c_str());
+        drawAIPromptDashboard(lastAIPromptResult);
+        if (ImGui::Button("Close AI Dashboard")) {
+            openAIPromptPanel = false;
+        }
     }
     ImGui::End();
 }
-
+/**
+ * @brief Builds the script editor panel in the editor UI, allowing users to edit and save scripts associated with entities in the scene.
+ */
 void EditorUI::buildScriptEditor()
 {
 
@@ -1159,10 +1477,13 @@ void EditorUI::buildScriptEditor()
 
     ImGui::End();
 }
-
+/**
+ * @brief Builds the entity inspector panel in the editor UI, allowing users to view and modify properties of the selected entity, including its components and hierarchy.
+ * @param scene The scene containing the selected entity.
+ * @param resourceManager The resource manager for loading and managing resources.
+ */
 void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManager)
 {
-    // redundancy
     ImGui::Begin("Entity Inspector");
     if (!selectedEntity || !selectedEntity->isAlive()) {
         selectedEntity = nullptr;
@@ -1292,6 +1613,31 @@ void EditorUI::buildEntityInspector(Scene& scene, ResourceManager& resourceManag
                 if (isSelected) ImGui::SetItemDefaultFocus();
             }
             ImGui::EndCombo();
+        }
+    }
+
+    auto sound = selectedEntity->getComponent<Sound>();
+    if (sound) {
+        ImGui::Separator();
+        ImGui::Text("Sound");
+        const auto& soundBuffers = resourceManager.getSoundBuffers();
+        const char* preview = sound->soundBufferID.empty() ? "none" : sound->soundBufferID.c_str();
+        if (ImGui::BeginCombo("Sound Buffer ID", preview)) {
+            for (const auto& option : soundBuffers) {
+                bool isSelected = option.first == sound->soundBufferID;
+                if (ImGui::Selectable(option.first.c_str(), isSelected)) {
+                    sound->setSoundBuffer(resourceManager.getSoundBuffer(option.first), option.first);
+                }
+                if (isSelected) ImGui::SetItemDefaultFocus();
+            }
+            ImGui::EndCombo();
+        }
+        if (ImGui::Button("Play Sound")) {
+            sound->play();
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Stop Sound")) {
+            sound->stop();
         }
     }
 

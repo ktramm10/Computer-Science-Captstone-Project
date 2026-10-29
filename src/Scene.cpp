@@ -3,6 +3,11 @@
 #include <algorithm>
 #include <iostream>
 
+/**
+ * @brief Retrieves all scene JSON file paths from a folder.
+ * @param folder The folder to search for scene files.
+ * @return A vector containing paths for each JSON scene file found.
+ */
 std::vector<std::filesystem::path> Scene::getSceneFiles(const std::filesystem::path &folder)
 {
     std::vector<std::filesystem::path> sceneFiles;
@@ -17,6 +22,11 @@ std::vector<std::filesystem::path> Scene::getSceneFiles(const std::filesystem::p
     return sceneFiles;
 }
 
+/**
+ * @brief Loads scene metadata for display in the scene selection UI.
+ * @param folder The folder containing saved scene JSON files.
+ * @return A vector of SceneFile entries containing display names and paths.
+ */
 std::vector<SceneFile> Scene::loadSceneList(const std::filesystem::path &folder)
 {
     std::vector<SceneFile> scenes;
@@ -35,12 +45,23 @@ std::vector<SceneFile> Scene::loadSceneList(const std::filesystem::path &folder)
     return scenes;
 }
 
+/**
+ * @brief Creates a new entity with the next available scene ID.
+ * @param name The name to assign to the entity.
+ * @return A shared pointer to the newly created entity.
+ */
 std::shared_ptr<Entity> Scene::createEntity(const std::string& name) {
     auto entity = std::make_shared<Entity>(nextEntityID++, name);
     entities.push_back(entity);
     return entity;
 }
 
+/**
+ * @brief Creates a new entity with a specific ID.
+ * @param id The ID to assign to the entity.
+ * @param name The name to assign to the entity.
+ * @return A shared pointer to the created entity, or the existing entity if the ID is already in use.
+ */
 std::shared_ptr<Entity> Scene::createEntityWithID(unsigned int id, const std::string& name) {
     auto existingEntity = getEntityByID(id);
     if (existingEntity) {
@@ -54,19 +75,34 @@ std::shared_ptr<Entity> Scene::createEntityWithID(unsigned int id, const std::st
     return entity;
 }
 
+/**
+ * @brief Retrieves the scene's active entity collection.
+ * @return A const reference to the vector of active entities.
+ */
 const std::vector<std::shared_ptr<Entity>>& Scene::getEntities() const {
     return entities;
 }
 
+/**
+ * @brief Retrieves the entity currently assigned as the player.
+ * @return A shared pointer to the player entity, or nullptr if none is assigned.
+ */
 std::shared_ptr<Entity> Scene::getPlayerEntity() const
 {
     return playerEntity;
 }
 
+/**
+ * @brief Marks an entity for destruction.
+ * @param entity The entity to destroy.
+ */
 void Scene::destroyEntity(std::shared_ptr<Entity> entity) {
     entity->destroy();
 }
 
+/**
+ * @brief Removes entities that have been marked as no longer alive.
+ */
 void Scene::cleanupDestroyedEntities() {
     entities.erase(std::remove_if(entities.begin(), entities.end(),
         [](const std::shared_ptr<Entity>& entity) {
@@ -74,6 +110,9 @@ void Scene::cleanupDestroyedEntities() {
         }), entities.end());
 }
 
+/**
+ * @brief Prints debug information for all entities and their component masks.
+ */
 void Scene::debugPrintEntities() const {
     std::cout << "Scene entities (" << entities.size() << ")" << std::endl;
 
@@ -121,6 +160,11 @@ void Scene::debugPrintEntities() const {
     }
 }
 
+/**
+ * @brief Finds an entity by its unique scene ID.
+ * @param id The ID to search for.
+ * @return A shared pointer to the matching entity, or nullptr if none is found.
+ */
 std::shared_ptr<Entity> Scene::getEntityByID(unsigned int id) const
 {
     for (const auto& entity : entities) {
@@ -131,6 +175,11 @@ std::shared_ptr<Entity> Scene::getEntityByID(unsigned int id) const
     return nullptr;
 }
 
+/**
+ * @brief Calculates an entity's world position, accounting for parent transforms.
+ * @param entity The entity whose world position should be calculated.
+ * @return The entity's world position.
+ */
 sf::Vector2f Scene::getWorldPosition(std::shared_ptr<Entity> entity) const
 {
     if (entity->getParentEntity().lock()) {
@@ -140,6 +189,11 @@ sf::Vector2f Scene::getWorldPosition(std::shared_ptr<Entity> entity) const
     return entity->getComponent<Transform>()->getWorldPosition();
 }
 
+/**
+ * @brief Moves an entity in either local or world space depending on whether it has a parent.
+ * @param entity The entity to move.
+ * @param delta The movement delta to apply.
+ */
 void Scene::moveEntity(std::shared_ptr<Entity> entity, sf::Vector2f delta)
 {
     if (!entity) return;
@@ -155,6 +209,11 @@ void Scene::moveEntity(std::shared_ptr<Entity> entity, sf::Vector2f delta)
 }
 
 
+/**
+ * @brief Sets one entity as the parent of another while preserving the child's world position.
+ * @param childID The ID of the child entity.
+ * @param parentID The ID of the parent entity.
+ */
 void Scene::setParent(unsigned int childID, unsigned int parentID)
 {
     if (childID == parentID) {
@@ -197,6 +256,11 @@ void Scene::setParent(unsigned int childID, unsigned int parentID)
     }
     
 }
+
+/**
+ * @brief Removes an entity's parent while preserving its world position.
+ * @param childID The ID of the child entity to detach.
+ */
 void Scene::clearParent(unsigned int childID)
 {
     auto child = getEntityByID(childID);
@@ -218,6 +282,11 @@ void Scene::clearParent(unsigned int childID)
     }
 }
 
+/**
+ * @brief Removes a child relationship from a parent entity.
+ * @param parentID The ID of the parent entity.
+ * @param childID The ID of the child entity to remove.
+ */
 void Scene::removeChild(unsigned int parentID, unsigned int childID)
 {
     auto parent = getEntityByID(parentID);
@@ -241,6 +310,12 @@ void Scene::removeChild(unsigned int parentID, unsigned int childID)
     std::cerr << "Child entity " << childID << " is not a child of parent entity " << parentID << std::endl;
 }
 
+/**
+ * @brief Checks whether one entity is a descendant of another entity.
+ * @param childID The ID of the entity to test as the child.
+ * @param parentID The ID of the possible ancestor entity.
+ * @return True if the child is descended from the parent, false otherwise.
+ */
 bool Scene::isChildOf(unsigned int childID, unsigned int parentID) const
 {
     auto child = getEntityByID(childID);
@@ -250,6 +325,10 @@ bool Scene::isChildOf(unsigned int childID, unsigned int parentID) const
 
     auto parent = child->getParentEntity().lock();
     while (parent) {
+
+/**
+ * @brief Updates door lock states based on the keys collected in the scene game state.
+ */
         if (parent->getID() == parentID) {
             return true;
         }
@@ -277,10 +356,17 @@ void Scene::updateDoorLockStates()
     }
 }
 
+/**
+ * @brief Initializes scene-level resource access used by runtime state updates.
+ * @param resourceManager The resource manager to copy into the scene.
+ */
 void Scene::initialize(ResourceManager& resourceManager) {
     rm = resourceManager;
 }
 
+/**
+ * @brief Clears all scene entities, player state, scene load requests, and game state values.
+ */
 void Scene::clear() {
     entities.clear();
     playerEntity.reset();

@@ -9,6 +9,12 @@
 #include <algorithm>
 #include "Component.h"
 
+/**
+ * @class Entity
+ * @brief Entity class that represents a game object in the entity-component system.
+ * @details This class encapsulates the properties and behaviors of a game entity, including its unique identifier, 
+ * name, component mask, and relationships with parent and child entities.
+ */
 class Entity : public std::enable_shared_from_this<Entity>
 {
     private:

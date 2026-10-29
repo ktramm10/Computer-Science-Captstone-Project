@@ -1,5 +1,10 @@
 #include "Renderer.h"
 
+/**
+ * @brief Renders the entities in the given scene onto the specified SFML render window.
+ * @param scene The scene containing the entities to be rendered.
+ * @param window The SFML render window where the entities will be drawn.
+ */
 void Renderer::render(const Scene& scene, sf::RenderWindow& window)
 {
     for (const auto& entity : scene.getEntities()) {

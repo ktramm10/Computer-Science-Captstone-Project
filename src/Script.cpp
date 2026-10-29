@@ -1,6 +1,11 @@
 #include "Script.h"
 #include <iostream>
 
+/**
+ * @brief Loads the list of available script JSON files from a folder.
+ * @param folder The folder to search for script files.
+ * @return A vector containing the paths of all JSON script files found in the folder.
+ */
 std::vector<std::filesystem::path> Script::loadScriptsList(const std::filesystem::path &folder)
 {
     std::vector<std::filesystem::path> scriptPaths;
